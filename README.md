@@ -21,8 +21,8 @@ Maandag:
 Dinsdag: 
 - NTGent -> vragenlijst maken 
 - components
-  Ayko -> User 
-  Eva -> Admin 
+  - Ayko -> User 
+  - Eva -> Admin 
 
 Woensdag: 
 - components -> logica 
