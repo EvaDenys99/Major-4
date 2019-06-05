@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 
 import Home from "./admin/Home";
+import UserHome from "./user/Home";
 import { ROUTES } from "../constants";
 // import Login from "./Login";
 // import Register from "./Register";
@@ -14,6 +15,7 @@ class App extends Component {
     return (
       <main>
         <Switch>
+          <Route path={ROUTES.home} exact strict component={UserHome} />
           <Route path={ROUTES.homeAdmin} exact strict component={Home} />
           {/* <Route path={ROUTES.aftercare} exact strict component={Aftercare} />
           <Route path={ROUTES.login} component={Login} />
