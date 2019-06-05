@@ -1,21 +1,23 @@
 import React from "react";
 
-const MeerVoorstellingen = () => {
+const MeerVoorstellingen = ({ voorstellingen }) => {
   return (
     <>
       <ul>
-        <li>
-          <img src="" alt="foto" />
-          <p>titel</p>
-        </li>
-        <li>
-          <img src="" alt="foto" />
-          <p>titel</p>
-        </li>
-        <li>
-          <img src="" alt="foto" />
-          <p>titel</p>
-        </li>
+        {console.log(voorstellingen)}
+        {voorstellingen.slice(1).map(voorstelling => {
+          return (
+            <li key={voorstelling.id}>
+              <img
+                src={voorstelling.imageUser}
+                alt={voorstelling.titel}
+                width="316"
+                height="284"
+              />
+              <p>{voorstelling.titel}</p>
+            </li>
+          );
+        })}
       </ul>
     </>
   );
