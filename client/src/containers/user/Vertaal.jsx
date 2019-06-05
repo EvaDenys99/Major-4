@@ -2,14 +2,14 @@ import React from "react";
 
 import VertaalForm from "./../../components/user/VertaalForm";
 
-import Navigatie from "./../../components/user/Navigatie";
+import NavigatieVertaling from "../../components/user/NavigatieVertaling";
 
 const Vertaal = () => {
   return (
     <>
-      <h1>Vertaalpagina</h1>
+      <h1>Vertaal je zin</h1>
       <VertaalForm />
-      <Navigatie />
+      <NavigatieVertaling />
     </>
   );
 };

@@ -3,7 +3,20 @@ import React from "react";
 const MeerVoorstellingen = () => {
   return (
     <>
-      <h1>MeerVoorstellingen</h1>
+      <ul>
+        <li>
+          <img src="" alt="foto" />
+          <p>titel</p>
+        </li>
+        <li>
+          <img src="" alt="foto" />
+          <p>titel</p>
+        </li>
+        <li>
+          <img src="" alt="foto" />
+          <p>titel</p>
+        </li>
+      </ul>
     </>
   );
 };

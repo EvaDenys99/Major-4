@@ -1,6 +1,6 @@
 import React from "react";
 
-import Navigatie from "./../../components/user/Navigatie";
+import NavigatieHome from "../../components/user/NavigatieHome";
 
 import info from "./../../data/info.json";
 
@@ -22,7 +22,7 @@ const Home = () => {
       {/* OF */}
       {/* button andere */}
       {/* forEach (hoofdZalen as hoofdZaal) => {<Link to="idk"><p>AMUZ</p></Link>} */}
-      <Navigatie />
+      <NavigatieHome />
     </>
   );
 };

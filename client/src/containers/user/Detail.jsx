@@ -3,16 +3,15 @@ import React from "react";
 import Voorstelling from "./../../components/user/Voorstelling";
 import MeerVoorstellingen from "./../../components/user/MeerVoorstellingen";
 
-import Navigatie from "./../../components/user/Navigatie";
+import NavigatieHome from "../../components/user/NavigatieHome";
 
 const Detail = () => {
   return (
     <>
-      <h1>Detailpagina</h1>
-      <h2>Antwerpen</h2>
       <Voorstelling />
+      <p>Ontdek meer</p>
       <MeerVoorstellingen />
-      <Navigatie />
+      <NavigatieHome />
     </>
   );
 };
