@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 
-// import Home from "./Home";
-// import { ROUTES } from "../constants";
+import Home from "./admin/Home";
+import { ROUTES } from "../constants";
 // import Login from "./Login";
 // import Register from "./Register";
 // import Add from "./Add";
@@ -14,8 +14,8 @@ class App extends Component {
     return (
       <main>
         <Switch>
-          {/* <Route path={ROUTES.home} exact strict component={Home} />
-          <Route path={ROUTES.aftercare} exact strict component={Aftercare} />
+          <Route path={ROUTES.homeAdmin} exact strict component={Home} />
+          {/* <Route path={ROUTES.aftercare} exact strict component={Aftercare} />
           <Route path={ROUTES.login} component={Login} />
           <Route path={ROUTES.register} component={Register} />
           <Route path={ROUTES.addTattoo} component={Add} />
