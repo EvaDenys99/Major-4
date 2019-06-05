@@ -1,0 +1,19 @@
+{
+  "name": "Tattookeeper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/devinehowest/wad-opdracht-2019-EvaDenys99",
+  "author": "Eva Denys",
+  "license": "MIT",
+  "scripts": {
+    "start": "cd server/ && yarn && yarn start",
+    "build": "cd client/ && yarn && yarn build"
+  },
+  "cacheDirectories": [
+    "client/node_modules",
+    "server/node_modules"
+  ],
+  "dependencies": {
+    "@storybook/react": "^5.0.11"
+  }
+}
