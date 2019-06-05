@@ -9,13 +9,21 @@ class NotificatieStore {
 
   constructor(rootStore) {
     this.rootStore = rootStore;
+    this._addNotificatie(1, `hallo`, 1);
+    this._addNotificatie(2, `IK BEN KABOTER PLOP`, 1);
+
+    this._addNotificatie(2, `IK BEN ...`, 2);
+    this._addNotificatie(2, `IK WIL SNOEP`, 2);
+
+    this._addNotificatie(3, `IK BEN KABOTER KLUS`, 3);
+
     this.api = new Api(`notificaties`);
     this.getAll();
   }
 
   findByAktId = id => {
     console.log(id);
-    const notificatie = this.notificaties.find(test => test.AktId === id);
+    const notificatie = this.notificaties.find(test => test.AktId == id);
     if (!notificatie) {
       this.api.getById(id);
     }
@@ -40,13 +48,29 @@ class NotificatieStore {
     });
   };
 
-  _addNotificatie = values => {
-    console.log(values);
+  _addNotificatie = (id, tekst, AktId) => {
+    console.log(id, tekst, AktId);
     const notificatie = new Notificatie();
-    notificatie.updateFromServer(values);
+    notificatie.updateFromServer(id, tekst, AktId);
     runInAction(() => this.notificaties.push(notificatie));
     console.log(notificatie);
   };
+
+  // _addNotificatie = (tekst, AktId) => {
+  //   console.log(tekst, AktId);
+  //   const notificatie = new Notificatie();
+  //   notificatie.updateFromServer(tekst, AktId);
+  //   runInAction(() => this.notificaties.push(notificatie));
+  //   console.log(notificatie);
+  // };
+
+  // _addNotificatie = values => {
+  //   console.log(values);
+  //   const notificatie = new Notificatie();
+  //   notificatie.updateFromServer(values);
+  //   runInAction(() => this.notificaties.push(notificatie));
+  //   console.log(notificatie);
+  // };
 }
 
 decorate(NotificatieStore, {

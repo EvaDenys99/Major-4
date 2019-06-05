@@ -1,13 +1,14 @@
 import { decorate, observable, action, computed } from "mobx";
+import uuid from "uuid";
 class Notificatie {
-  constructor(id, tekst, AktId, store) {
-    this.id = id;
+  constructor(tekst, AktId, store) {
+    this.id = uuid.v4();
     this.tekst = tekst;
     this.AktId = AktId;
     this.store = store;
   }
 
-  setId = id => (this.id = id);
+  setId = value => (this.id = value);
   setTekst = value => (this.tekst = value);
   setAktId = value => (this.AktId = value);
 
@@ -15,11 +16,17 @@ class Notificatie {
     return this.store.aktStore.resolveAkt(this.AktId);
   }
 
-  updateFromServer = values => {
-    if (values._id) this.setId(values._id);
-    this.setTekst(values.tekst);
-    this.setAktId(values.AktId);
+  updateFromServer = (id, tekst, AktId) => {
+    if (id._id) this.setId(id._id);
+    this.setTekst((this.tekst = tekst));
+    this.setAktId((this.AktId = AktId));
   };
+
+  // updateFromServer = values => {
+  //   if (values._id) this.setId(values._id);
+  //   this.setTekst(values.tekst);
+  //   this.setAktId(values.AktId);
+  // };
 
   get values() {
     return {
