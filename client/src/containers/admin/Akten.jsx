@@ -22,15 +22,6 @@ const Akten = ({ id, aktStore }) => {
       <p>Loading akts</p>
     </div>
   );
-
-  //   return (
-  //     <div>
-  //       <BovenMenu />
-  //       <section>
-  //         <p>{akt.naam} </p>
-  //       </section>
-  //     </div>
-  //   );
 };
 
 Akten.propTypes = {
