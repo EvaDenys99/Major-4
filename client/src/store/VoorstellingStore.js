@@ -17,9 +17,9 @@ class VoorstellingStore {
     this.addVoorstelling(
       1,
       `BACH STUDIOS`,
-      `testestestest`,
-      `2u`,
-      `1xpauze`,
+      `Ballet Vlaanderen haalt met de Franse choreograaf Benjamin Millepied een van de meest gerenommeerde hedendaagse balletchoreografen voor het eerst naar België. Hij creëert voor het eerst een avondvullend werk gebaseerd op werk van Johann Sebastian Bach. Het belooft een unieke, abstracte en toch hoogst emotionele balletavond te worden, gecreëerd door een van de meest innovatieve balletchoreografen van het moment.`,
+      `1u45`,
+      `1x`,
       bachUser,
       bach,
       `gent`
@@ -27,23 +27,23 @@ class VoorstellingStore {
 
     this.addVoorstelling(
       2,
+      `MACBETH`,
+      `Macbeth van Shakespeare is ongetwijfeld het meest demonische werk van Giuseppe Verdi. De focus ligt op de vergankelijkheid van de macht. We zijn getuige hoe er een ketting van geweld, terreur en paranoia ontstaat waarbij Macbeth, Lady Macbeth en de heksen op een fatale en destructieve manier aan elkaar zijn overgeleverd. De Duitse regisseur Michael Thalheimer creëert daarmee, na de producties La Forza del Destino en Otello, zijn eigen Verdi-trilogie bij Opera Vlaanderen.`,
+      `3u`,
+      `1x15min`,
+      macbethUser,
+      macbeth,
+      `antwerpen`
+    );
+
+    this.addVoorstelling(
+      3,
       `MIDDAGCONCERT: DEMONS, WITCHES AND MADNESS`,
       `testestestest`,
       `2u`,
       `1xpauze`,
       demonsUser,
       demons,
-      `gent`
-    );
-
-    this.addVoorstelling(
-      3,
-      `MACBETH`,
-      `testestestest`,
-      `2u`,
-      `1xpauze`,
-      macbethUser,
-      macbeth,
       `gent`
     );
   }
@@ -70,6 +70,12 @@ class VoorstellingStore {
         plaats
       )
     );
+  };
+
+  findById = testId => {
+    console.log(testId);
+    const voorstelling = this.voorstellingen.find(test => test.id == testId);
+    return voorstelling;
   };
 
   // resolveVoorstelling = id => this.voorstellingen.find(test => test.id === id);

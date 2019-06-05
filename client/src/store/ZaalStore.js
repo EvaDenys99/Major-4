@@ -9,8 +9,8 @@ class ZaalStore {
 
   constructor(rootStore) {
     this.rootStore = rootStore;
-    this.addZaal(1, `Antwerpen`, 1, antwerpen);
-    this.addZaal(2, `Gent`, 2, gent);
+    this.addZaal(1, `Gent`, 1, gent);
+    this.addZaal(2, `Antwerpen`, 2, antwerpen);
     this.addZaal(3, `'t Eilandje`, 3, eilandje);
   }
 

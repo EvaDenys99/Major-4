@@ -13,8 +13,8 @@ const Home = ({ zaalStore }) => {
       {/* <h1>PushLines</h1> */}
       {zalen.map(zaal => {
         return (
-          <Link to={`zaal/${zaal.id}`}>
-            <div key={zaal.id}>
+          <Link to={`zaal/${zaal.id}`} key={zaal.id}>
+            <div>
               <img src={zaal.img} alt={zaal.naam} />
             </div>
           </Link>
