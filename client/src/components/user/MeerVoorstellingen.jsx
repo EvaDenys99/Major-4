@@ -7,7 +7,7 @@ const MeerVoorstellingen = ({ voorstellingen }) => {
         {console.log(voorstellingen)}
         {voorstellingen.slice(1).map(voorstelling => {
           return (
-            <li>
+            <li key={voorstelling.id}>
               <img
                 src={voorstelling.imageUser}
                 alt={voorstelling.titel}
