@@ -8,7 +8,7 @@ import store from "./store";
 import "./styles/index.css";
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider {...store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
