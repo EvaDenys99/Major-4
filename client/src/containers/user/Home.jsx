@@ -1,21 +1,23 @@
 import React from "react";
+import { inject } from "mobx-react";
+import { Link } from "react-router-dom";
 
 import NavigatieHome from "../../components/user/NavigatieHome";
 
-import info from "./../../data/info.json";
-
 // zoals editshort van opdrachtWAD -> als er geklikt wordt op de 'andere' worden de buttons weergeven
 
-const Home = () => {
+const Home = ({ zaalStore }) => {
+  const { zalen } = zaalStore;
   return (
     <>
-      <h1>Homepagina</h1>
-      {/* forEach (hoofdZalen as hoofdZaal) => {<Link to="idk"><img src="hoofdZaal.img"></Link>} */}
-      {info.hoofdZalen.map(zalen => {
+      {/* <h1>PushLines</h1> */}
+      {zalen.map(zaal => {
         return (
-          <div>
-            <p>{zalen.name}</p>
-          </div>
+          <Link to={`zaal/${zaal.id}`}>
+            <div key={zaal.id}>
+              <img src={zaal.img} alt={zaal.naam} />
+            </div>
+          </Link>
         );
       })}
       {/* button andere */}
@@ -27,4 +29,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default inject(`zaalStore`)(Home);

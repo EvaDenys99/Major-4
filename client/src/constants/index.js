@@ -1,7 +1,7 @@
 export const ROUTES = {
   home: `/`,
   akt: `/admin/voorstelling/:id`,
-  detail: `/detail`,
+  detail: `/zaal/:id`,
   vertaal: `/vertaal`,
   lines: `/lines`,
   homeAdmin: `/admin`,

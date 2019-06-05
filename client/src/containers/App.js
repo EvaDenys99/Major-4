@@ -17,7 +17,10 @@ class App extends Component {
       <main>
         <Switch>
           <Route path={ROUTES.home} exact strict component={UserHome} />
-          <Route path={ROUTES.detail} exact strict component={UserDetail} />
+          <Route
+            path={ROUTES.detail}
+            render={({ match }) => <UserDetail id={match.params.id} />}
+          />
           <Route path={ROUTES.vertaal} exact strict component={UserVertaal} />
           <Route path={ROUTES.lines} exact strict component={UserLines} />
           <Route path={ROUTES.homeAdmin} exact strict component={Home} />

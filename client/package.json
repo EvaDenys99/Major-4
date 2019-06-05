@@ -15,7 +15,7 @@
     "react-scripts": "^2.1.8",
     "uuid": "^3.3.2"
   },
-  "proxy": "http://localhost:4000",
+  "proxy": "http://localhost:3000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
