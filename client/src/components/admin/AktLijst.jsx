@@ -2,8 +2,8 @@ import React from "react";
 import { inject } from "mobx-react";
 import { Link } from "react-router-dom";
 
-const VoorstellingLijst = ({ voorstellingStore }) => {
-  const { voorstellingen } = voorstellingStore;
+const AktLijst = ({ aktStore }) => {
+  const { akts } = aktStore;
   return (
     <>
       <div>
@@ -25,4 +25,4 @@ const VoorstellingLijst = ({ voorstellingStore }) => {
   );
 };
 
-export default inject(`voorstellingStore`)(VoorstellingLijst);
+export default inject(`aktStore`)(AktLijst);

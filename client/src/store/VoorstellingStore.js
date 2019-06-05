@@ -71,6 +71,8 @@ class VoorstellingStore {
       )
     );
   };
+
+  // resolveVoorstelling = id => this.voorstellingen.find(test => test.id === id);
 }
 
 decorate(VoorstellingStore, {
