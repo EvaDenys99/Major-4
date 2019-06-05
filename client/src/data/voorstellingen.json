@@ -1,0 +1,129 @@
+{
+  "hoofdZalen": [
+    {
+      "id": 1,
+      "name": "Antwerpen",
+      "voorstellingen": [
+        {
+          "id": 1,
+          "title": "Macbeth",
+          "description": "Macbeth van Shakespeare is ongetwijfeld het meest demonische werk van Giuseppe Verdi. De focus ligt op de vergankelijkheid van de macht. We zijn getuige hoe er een ketting van geweld, terreur en paranoia ontstaat waarbij Macbeth, Lady Macbeth en de heksen op een fatale en destructieve manier aan elkaar zijn overgeleverd. De Duitse regisseur Michael Thalheimer creëert daarmee, na de producties La Forza del Destino en Otello, zijn eigen Verdi-trilogie bij Opera Vlaanderen.",
+          "duur": "3 uur",
+          "pauze": "1x15min",
+          "img": "macbeth.jpg"
+        },
+        {
+          "id": 2,
+          "title": "Middagconcert: Demons, Witchess and Madness",
+          "img": "demons.jpg"
+        },
+        {
+          "id": 3,
+          "title": "Afscheid en nieuw begin",
+          "img": "afscheidennieuwbegin.jpg"
+        },
+        {
+          "id": 4,
+          "title": "Don Carlos",
+          "img": "doncarlos.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Gent",
+      "voorstellingen": [
+        {
+          "id": 1,
+          "title": "Bach Studios",
+          "description": "Ballet Vlaanderen haalt met de Franse choreograaf Benjamin Millepied een van de meest gerenommeerde hedendaagse balletchoreografen voor het eerst naar België. Hij creëert voor het eerst een avondvullend werk gebaseerd op werk van Johann Sebastian Bach. Het belooft een unieke, abstracte en toch hoogst emotionele balletavond te worden, gecreëerd door een van de meest innovatieve balletchoreografen van het moment.",
+          "duur": "1u45",
+          "pauze": "1x",
+          "img": "bach.jpg"
+        },
+        {
+          "id": 2,
+          "title": "Afscheid en nieuw begin",
+          "img": "afscheidennieuwbegin.jpg"
+        },
+        {
+          "id": 3,
+          "title": "Mozart: A Symphony of Songs",
+          "img": "mozart.jpg"
+        },
+        {
+          "id": 4,
+          "title": "Requiem",
+          "img": "requiem.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "'t Eiland",
+      "voorstellingen": [{}]
+    }
+  ],
+  "bijZalen": [
+    {
+      "id": 4,
+      "name": "AMUZ",
+      "voorstellingen": [{}]
+    },
+    {
+      "id": 5,
+      "name": "De Bijloke",
+      "voorstellingen": [{}]
+    },
+    {
+      "id": 6,
+      "name": "Geuzenhuis",
+      "voorstellingen": [{}]
+    },
+    {
+      "id": 7,
+      "name": "St-Pieterskerk",
+      "voorstellingen": [{}]
+    },
+    {
+      "id": 8,
+      "name": "St-Pauluskerk",
+      "voorstellingen": [{}]
+    },
+    {
+      "id": 9,
+      "name": "Vooruit",
+      "voorstellingen": [{}]
+    },
+    {
+      "id": 10,
+      "name": "Cinema Zuid",
+      "voorstellingen": [{}]
+    },
+    {
+      "id": 11,
+      "name": "De Singel",
+      "voorstellingen": [{}]
+    },
+    {
+      "id": 12,
+      "name": "K. Elizabethzaal",
+      "voorstellingen": [{}]
+    },
+    {
+      "id": 13,
+      "name": "St-Carolus",
+      "voorstellingen": [{}]
+    },
+    {
+      "id": 14,
+      "name": "Schouwburg A.",
+      "voorstellingen": [{}]
+    },
+    {
+      "id": 15,
+      "name": "Zebrastraat",
+      "voorstellingen": [{}]
+    }
+  ]
+}
