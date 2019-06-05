@@ -2,6 +2,7 @@ import React from "react";
 import BovenMenu from "../../components/admin/BovenMenu";
 import OnderMenu from "../../components/admin/OnderMenu";
 import { inject, PropTypes, observer } from "mobx-react";
+import { Link } from "react-router-dom";
 
 const Akten = ({ id, aktStore }) => {
   const akt = aktStore.findByVoorstellingId(id);
@@ -13,7 +14,9 @@ const Akten = ({ id, aktStore }) => {
       <BovenMenu />
       <section>
         <h2>{akt.VoorstellingTitel}</h2>
-        <p>{akt.naam} </p>
+        <Link to={`/notificatie/${akt.id}`}>
+          <p>{akt.naam} </p>
+        </Link>
       </section>
     </div>
   ) : (

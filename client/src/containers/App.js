@@ -8,6 +8,8 @@ import UserVertaal from "./user/Vertaal";
 import UserLines from "./user/Lines";
 import { ROUTES } from "../constants";
 import Akten from "./admin/Akten";
+import Notificaties from "./admin/Notificaties";
+import Add from "./admin/Add";
 // import Login from "./Login";
 // import Register from "./Register";
 
@@ -24,10 +26,13 @@ class App extends Component {
           <Route path={ROUTES.vertaal} exact strict component={UserVertaal} />
           <Route path={ROUTES.lines} exact strict component={UserLines} />
           <Route path={ROUTES.homeAdmin} exact strict component={Home} />
-
+          <Route path={ROUTES.addNotification} component={Add} />
           {/* <Route path={ROUTES.login} component={Login} />
           <Route path={ROUTES.register} component={Register} /> */}
-
+          <Route
+            path={ROUTES.notificaties}
+            render={({ match }) => <Notificaties id={match.params.id} />}
+          />
           <Route
             path={ROUTES.akt}
             render={({ match }) => <Akten id={match.params.id} />}
