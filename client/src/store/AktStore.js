@@ -24,7 +24,7 @@ class AktStore {
     this.akts.push(new Akt(id, naam, VoorstellingId, VoorstellingTitel));
   };
 
-  //   resolveAkt = id => this.akts.find(akt => akt.id === id);
+  resolveAkt = id => this.akts.find(akt => akt.id === id);
 }
 
 decorate(AktStore, {
