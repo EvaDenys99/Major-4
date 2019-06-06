@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+
 class OnderMenu2 extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +16,7 @@ class OnderMenu2 extends Component {
   handleAddReset = e => {
     e.preventDefault();
     this.setState({ adding: false });
+    this.props.history.goBack();
   };
 
   handlePlay = e => {
@@ -29,6 +32,7 @@ class OnderMenu2 extends Component {
   handleStop = e => {
     e.preventDefault();
     this.setState({ playing: false });
+    this.props.history.goBack();
     console.log(`voorstelling afgelopen`);
   };
 
@@ -59,4 +63,4 @@ class OnderMenu2 extends Component {
   }
 }
 
-export default OnderMenu2;
+export default withRouter(OnderMenu2);
