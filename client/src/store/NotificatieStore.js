@@ -9,13 +9,13 @@ class NotificatieStore {
 
   constructor(rootStore) {
     this.rootStore = rootStore;
-    this._addNotificatie(1, `hallo`, 1);
-    this._addNotificatie(2, `IK BEN KABOTER PLOP`, 1);
+    // this._addNotificatie(1, `hallo`, 1);
+    // this._addNotificatie(2, `IK BEN KABOTER PLOP`, 1);
 
-    this._addNotificatie(2, `IK BEN ...`, 2);
-    this._addNotificatie(2, `IK WIL SNOEP`, 2);
+    // this._addNotificatie(2, `IK BEN ...`, 2);
+    // this._addNotificatie(2, `IK WIL SNOEP`, 2);
 
-    this._addNotificatie(3, `IK BEN KABOTER KLUS`, 3);
+    // this._addNotificatie(3, `IK BEN KABOTER KLUS`, 3);
 
     this.api = new Api(`notificaties`);
     this.getAll();

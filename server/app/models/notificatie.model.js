@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const NotificatieSchema = mongoose.Schema(
   {
     tekst: String,
-    AktId: Number
+    AktId: String
   },
   {
     timestamps: true

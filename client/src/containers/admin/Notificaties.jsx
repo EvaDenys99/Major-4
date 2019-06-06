@@ -24,10 +24,6 @@ const Notificaties = ({ id, notificatieStore }) => {
           <p>Maak een notificatie aan.</p>
         </div>
       )}
-      {/* <Link to={`/notificatie/${id}/add`} id={id}>
-        <button>+</button>
-      </Link> */}
-
       <OnderMenu2 id={id} />
     </div>
   ) : (
@@ -35,9 +31,6 @@ const Notificaties = ({ id, notificatieStore }) => {
       <BovenMenu />
       <p>Loading Notificaties</p>
       <OnderMenu2 />
-      {/* <Link to={`/notificatie/${id}/add`} id={id}>
-        <button>+</button>
-      </Link> */}
     </div>
   );
 
