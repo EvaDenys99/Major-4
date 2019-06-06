@@ -1,9 +1,9 @@
 class Akt {
-  constructor(id, naam, VoorstellingId, VoorstellingTitel, store) {
+  constructor(id, naam, VoorstellingId, store) {
     this.id = id;
     this.naam = naam;
     this.VoorstellingId = VoorstellingId;
-    this.VoorstellingTitel = VoorstellingTitel;
+
     this.store = store;
   }
 

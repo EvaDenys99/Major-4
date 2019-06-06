@@ -2,19 +2,41 @@ import React from "react";
 import BovenMenu from "../../components/admin/BovenMenu";
 import OnderMenu2 from "../../components/admin/OnderMenu2";
 import { inject, PropTypes, observer } from "mobx-react";
-import { Link } from "react-router-dom";
 
 const Notificaties = ({ id, notificatieStore }) => {
-  const notificatie = notificatieStore.findByAktId(id);
-  console.log(id);
+  //HIER WERD ENKEL HET EERSTE OPGEHAALT
+  // const notificatie = notificatieStore.findByAktId(id);
+  // console.log(id);
 
-  return notificatie ? (
+  // return notificatie ? (
+  //   <div>
+  //     <BovenMenu />
+  //     <section>
+  //       <p>{notificatie.tekst}</p>
+  //       <button>📤</button>
+  //     </section>
+  //     <OnderMenu2 />
+  //   </div>
+  // ) : (
+  //   <div>
+  //     <BovenMenu />
+  //     <p>Loading Notificaties</p>
+  //     <OnderMenu2 />
+  //   </div>
+  // );
+
+  // HIER WORDEN ALLE NOTIFICATIES DIE OVEREEN KOMEN OPGEHAALD
+  const notificaties = notificatieStore.findAllesByAktId(id);
+
+  return notificaties ? (
     <div>
       <BovenMenu />
-      <section>
-        <p>{notificatie.tekst}</p>
-        <button>📤</button>
-      </section>
+      {notificaties.map(notificatie => (
+        <section key={notificatie.id}>
+          <p>{notificatie.tekst}</p>
+          <button>📤</button>
+        </section>
+      ))}
       <OnderMenu2 />
     </div>
   ) : (

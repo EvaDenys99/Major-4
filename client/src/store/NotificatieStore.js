@@ -21,6 +21,7 @@ class NotificatieStore {
     this.getAll();
   }
 
+  // OM 1 NOTIFICATIE DIE OVEREEN KOMT TE VINDEN
   findByAktId = id => {
     console.log(id);
     const notificatie = this.notificaties.find(test => test.AktId == id);
@@ -28,6 +29,14 @@ class NotificatieStore {
       this.api.getById(id);
     }
     return notificatie;
+  };
+
+  // OM ALLE NOTIFICATIES DIE OVEREEN KOMEN TE VINDEN
+  findAllesByAktId = id => {
+    console.log(id);
+    const notificaties2 = this.notificaties.filter(test => test.AktId == id);
+    console.log(notificaties2);
+    return notificaties2;
   };
 
   getAll = () => {

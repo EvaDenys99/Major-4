@@ -8,7 +8,10 @@ const VoorstellingLijst = ({ voorstellingStore }) => {
     <>
       <div>
         {voorstellingen.map(voorstelling => (
-          <Link to={`admin/voorstelling/${voorstelling.id}`}>
+          <Link
+            key={voorstelling.id}
+            to={`admin/voorstelling/${voorstelling.id}`}
+          >
             <div>
               <img
                 src={voorstelling.imageAdmin}
