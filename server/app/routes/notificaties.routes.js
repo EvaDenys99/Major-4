@@ -3,5 +3,5 @@ module.exports = app => {
   const controller = require("../controllers/notificaties.controller.js");
   app.post("/api/notificaties", controller.create);
   app.get("/api/notificaties", controller.findAll);
-  app.delete("/api/notificaties/:notificatieId", controller.delete);
+  app.delete("/api/notificaties/:notificatieId", checkToken, controller.delete);
 };

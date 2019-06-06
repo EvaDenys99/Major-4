@@ -3,6 +3,8 @@ import React from "react";
 import BovenMenu from "../../components/admin/BovenMenu";
 import OnderMenu from "../../components/admin/OnderMenu";
 import VoorstellingLijst from "../../components/admin/VoorstellingLijst";
+import withAuthentication from "../../components/auth/WithAuthentication";
+import { observer } from "mobx-react";
 
 const Home = () => {
   return (
@@ -19,4 +21,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default withAuthentication(observer(Home));

@@ -10,8 +10,8 @@ import { ROUTES } from "../constants";
 import Akten from "./admin/Akten";
 import Notificaties from "./admin/Notificaties";
 import Add from "./admin/Add";
-// import Login from "./Login";
-// import Register from "./Register";
+import Login from "../containers/admin/Login";
+import Register from "../containers/admin/Register";
 
 class App extends Component {
   render() {
@@ -27,8 +27,8 @@ class App extends Component {
           <Route path={ROUTES.lines} exact strict component={UserLines} />
           <Route path={ROUTES.homeAdmin} exact strict component={Home} />
 
-          {/* <Route path={ROUTES.login} component={Login} />
-          <Route path={ROUTES.register} component={Register} /> */}
+          <Route path={ROUTES.login} component={Login} />
+          <Route path={ROUTES.register} component={Register} />
           <Route
             path={ROUTES.notificaties}
             render={({ match }) => <Notificaties id={match.params.id} />}
