@@ -4,35 +4,6 @@ import { Link } from "react-router-dom";
 
 import NavigatieHome from "../../components/user/NavigatieHome";
 
-// zoals editshort van opdrachtWAD -> als er geklikt wordt op de 'andere' worden de buttons weergeven
-
-// const Home = ({ zaalStore }) => {
-//   return (
-//     <>
-//       {zaalStore.hoofdZalen.map(zaal => {
-//         return (
-//           <Link to={`zaal/${zaal.id}`} key={zaal.id}>
-//             <div>
-//               <img src={zaal.img} alt={zaal.naam} />
-//             </div>
-//           </Link>
-//         );
-//       })}
-
-//       {zaalStore.bijZalen.map(zaal => {
-//         return (
-//           <Link to={`zaal/${zaal.id}`} key={zaal.id}>
-//             <div>
-//               <p>{zaal.naam}</p>
-//             </div>
-//           </Link>
-//         );
-//       })}
-//       <NavigatieHome />
-//     </>
-//   );
-// };
-
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -41,13 +12,11 @@ class Home extends Component {
 
   handleSubmitMeer = e => {
     e.preventDefault();
-    console.log(this.props);
     this.setState({ uitgeklapt: true });
   };
 
   handleSubmitMinder = e => {
     e.preventDefault();
-    console.log(this.props);
     this.setState({ uitgeklapt: false });
   };
 

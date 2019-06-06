@@ -33,7 +33,7 @@ const Notificaties = ({ id, notificatieStore }) => {
           <p>Maak een notificatie aan.</p>
         </div>
       )}
-      <OnderMenu2 id={id} />
+      <OnderMenu2 id={id} adding={false} />
     </div>
   ) : (
     <div>

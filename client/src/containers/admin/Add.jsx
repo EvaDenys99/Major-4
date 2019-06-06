@@ -1,7 +1,7 @@
 import React from "react";
 import { inject, observer } from "mobx-react";
 import BovenMenu from "../../components/admin/BovenMenu";
-import OnderMenu from "../../components/admin/OnderMenu";
+import OnderMenu2 from "../../components/admin/OnderMenu2";
 import AddNotificatie from "../../components/admin/AddNotificatie";
 import BackLink from "../../components/admin/BackLink";
 
@@ -16,7 +16,7 @@ const Add = ({ notificatieStore, id }) => {
           <h2>Melding toevoegen</h2>
           <AddNotificatie id={id} />
         </section>
-        <OnderMenu />
+        <OnderMenu2 adding="true" />
       </div>
     </>
   );
