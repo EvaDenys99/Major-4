@@ -2,11 +2,12 @@ import React from "react";
 import { ROUTES } from "../../constants";
 import { Link } from "react-router-dom";
 
-const OnderMenu2 = () => {
+const OnderMenu2 = id => {
+  console.log(id.id);
   return (
     <>
       <p>test</p>
-      <Link to={`/notificatie/:id/add`}>
+      <Link to={`/add/${id.id}`} id={id.id}>
         <button>+</button>
       </Link>
     </>

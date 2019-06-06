@@ -3,11 +3,12 @@ import { inject, observer } from "mobx-react";
 import BovenMenu from "../../components/admin/BovenMenu";
 import OnderMenu from "../../components/admin/OnderMenu";
 import AddNotificatie from "../../components/admin/AddNotificatie";
-import { Link } from "react-router-dom";
-import { ROUTES } from "../../constants";
+// import { Link } from "react-router-dom";
+// import { ROUTES } from "../../constants";
 import BackLink from "../../components/admin/BackLink";
 
-const Add = ({ notificatieStore }) => {
+const Add = ({ notificatieStore, id }) => {
+  console.log(id);
   return (
     <>
       <div>
@@ -16,7 +17,7 @@ const Add = ({ notificatieStore }) => {
           <BackLink />
 
           <h2>Melding toevoegen</h2>
-          <AddNotificatie />
+          <AddNotificatie id={id} />
         </section>
         <OnderMenu />
       </div>
