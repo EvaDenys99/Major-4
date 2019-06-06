@@ -26,7 +26,7 @@ class App extends Component {
           <Route path={ROUTES.vertaal} exact strict component={UserVertaal} />
           <Route path={ROUTES.lines} exact strict component={UserLines} />
           <Route path={ROUTES.homeAdmin} exact strict component={Home} />
-          <Route path={ROUTES.addNotification} component={Add} />
+          {/* <Route path={ROUTES.addNotification} component={Add} /> */}
           {/* <Route path={ROUTES.login} component={Login} />
           <Route path={ROUTES.register} component={Register} /> */}
           <Route
@@ -36,6 +36,10 @@ class App extends Component {
           <Route
             path={ROUTES.akt}
             render={({ match }) => <Akten id={match.params.id} />}
+          />
+          <Route
+            path={ROUTES.addNotification}
+            render={({ match }) => <Add id={match.params.id} />}
           />
         </Switch>
       </main>

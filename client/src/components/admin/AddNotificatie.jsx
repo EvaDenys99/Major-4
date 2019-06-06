@@ -4,21 +4,25 @@ import { withRouter } from "react-router-dom";
 
 import { ROUTES } from "../../constants";
 
-const AddNotificatie = ({ notificatieStore, history }) => {
+const AddNotificatie = ({ notificatieStore, history, id }) => {
+  console.log(id);
   const tekstRef = React.createRef();
+  const AktRef = React.createRef();
 
   const handleSubmitForm = e => {
     e.preventDefault();
     if (tekstRef.current.value) {
       notificatieStore
         .addNotificatie({
-          tekst: tekstRef.current.value
+          tekst: tekstRef.current.value,
+          AktId: AktRef.current.value
         })
         .then(() => {
           history.goBack();
         });
 
       tekstRef.current.value = ``;
+      AktRef.current.value = ``;
     }
   };
 
@@ -35,6 +39,12 @@ const AddNotificatie = ({ notificatieStore, history }) => {
               type="text"
               ref={tekstRef}
               required
+            />
+            <input
+              type="number"
+              placeholder={id}
+              defaultValue={id}
+              ref={AktRef}
             />
           </div>
         </div>
