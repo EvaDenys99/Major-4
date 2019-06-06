@@ -23,7 +23,7 @@ const Akten = ({ id, aktStore, voorstellingStore }) => {
               {akten.map(akt => (
                 <div key={akt.id}>
                   <Link to={`/notificatie/${akt.id}`}>
-                    <p>{akt.naam} </p>
+                    <p>{akt.naam} ></p>
                   </Link>
                 </div>
               ))}
