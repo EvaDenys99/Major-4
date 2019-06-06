@@ -9,13 +9,10 @@ const Vertaal = () => {
       <p>Bekijk hier de vorige pushlines</p>
       <ul>
         <li>
-          <p>blabla</p>
+          <p>De geit is een belangrijke plot twist, mis hem niet!</p>
         </li>
         <li>
-          <p>blabla</p>
-        </li>
-        <li>
-          <p>blabla</p>
+          <p>Blablabla</p>
         </li>
       </ul>
       <NavigatieLines />

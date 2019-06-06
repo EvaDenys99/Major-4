@@ -6,6 +6,8 @@ import MeerVoorstellingen from "./../../components/user/MeerVoorstellingen";
 
 import NavigatieHome from "../../components/user/NavigatieHome";
 
+import emptyVoorstelling from "../../assets/user/emptyVoorstelling.png";
+
 const Detail = ({ id, voorstellingStore }) => {
   const voorstelling = voorstellingStore.findById(id);
   const voorstellingen = voorstellingStore.voorstellingen;
@@ -20,6 +22,9 @@ const Detail = ({ id, voorstellingStore }) => {
   ) : (
     <>
       <div>Geen voorstellingen</div>
+      <img src={emptyVoorstelling} alt="titel" />
+      <p>Ontdek meer</p>
+      <MeerVoorstellingen voorstellingen={voorstellingen} />
       <NavigatieHome />
     </>
   );

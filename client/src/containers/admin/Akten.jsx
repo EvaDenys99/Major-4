@@ -8,7 +8,7 @@ const Akten = ({ id, aktStore, voorstellingStore }) => {
   // HIER WORDEN ALLE AKTS DIE OVEREEN KOMEN OPGEHAALD
   // om de titel op te halen van de voorstelling moeten we eerst de voorstelling ophalen die hierbij hoort
   const voorstellingTitel = voorstellingStore.findById(id);
-  console.log(voorstellingTitel);
+  // console.log(voorstellingTitel);
   // om de akts op te halen
   const akten = aktStore.findAllesByVoorstellingId(id);
 

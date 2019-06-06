@@ -1,9 +1,11 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 const Voorstelling = ({ voorstelling }) => {
   return (
     <>
-      <p>{voorstelling.id}</p>
+      <Link to="/">Terug</Link>
       <img src={voorstelling.imageUser} alt="foto" />
       <p>{voorstelling.titel}</p>
       <p>progressiebar</p>
