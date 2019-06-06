@@ -3,7 +3,7 @@ import BovenMenu from "../../components/admin/BovenMenu";
 import OnderMenu from "../../components/admin/OnderMenu";
 import { inject, PropTypes, observer } from "mobx-react";
 import { Link } from "react-router-dom";
-import AddNotificatie from "../../components/admin/AddNotificatie";
+import Arrow from "../../assets/admin/arrowAkt.png";
 
 const Akten = ({ id, aktStore, voorstellingStore }) => {
   // HIER WORDEN ALLE AKTS DIE OVEREEN KOMEN OPGEHAALD
@@ -24,7 +24,15 @@ const Akten = ({ id, aktStore, voorstellingStore }) => {
               {akten.map(akt => (
                 <div key={akt.id}>
                   <Link to={`/notificatie/${akt.id}`}>
-                    <p>{akt.naam} ></p>
+                    <p>
+                      {akt.naam}
+                      <img
+                        src={Arrow}
+                        alt="een pijltje"
+                        width="40"
+                        height="40"
+                      />
+                    </p>
                   </Link>
                 </div>
               ))}
@@ -35,6 +43,7 @@ const Akten = ({ id, aktStore, voorstellingStore }) => {
             </div>
           )}
         </section>
+        <OnderMenu />
       </div>
     </>
   ) : (
@@ -42,6 +51,7 @@ const Akten = ({ id, aktStore, voorstellingStore }) => {
       <BovenMenu />
       <h2>{voorstellingTitel.titel}</h2>
       <p>Loading akts</p>
+      <BovenMenu />
     </div>
   );
 

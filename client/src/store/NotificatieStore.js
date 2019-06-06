@@ -9,13 +9,13 @@ class NotificatieStore {
 
   constructor(rootStore) {
     this.rootStore = rootStore;
-    this._addNotificatie(1, `hallo`, 1);
-    this._addNotificatie(2, `IK BEN KABOTER PLOP`, 1);
+    // this._addNotificatie(1, `hallo`, 1);
+    // this._addNotificatie(2, `IK BEN KABOTER PLOP`, 1);
 
-    this._addNotificatie(2, `IK BEN ...`, 2);
-    this._addNotificatie(2, `IK WIL SNOEP`, 2);
+    // this._addNotificatie(2, `IK BEN ...`, 2);
+    // this._addNotificatie(2, `IK WIL SNOEP`, 2);
 
-    this._addNotificatie(3, `IK BEN KABOTER KLUS`, 3);
+    // this._addNotificatie(3, `IK BEN KABOTER KLUS`, 3);
 
     this.api = new Api(`notificaties`);
     this.getAll();
@@ -57,34 +57,24 @@ class NotificatieStore {
     });
   };
 
-  _addNotificatie = (id, tekst, AktId) => {
-    console.log(id, tekst, AktId);
+  _addNotificatie = values => {
+    console.log(values);
     const notificatie = new Notificatie();
-    notificatie.updateFromServer(id, tekst, AktId);
+    notificatie.updateFromServer(values);
     runInAction(() => this.notificaties.push(notificatie));
     console.log(notificatie);
   };
 
-  // _addNotificatie = (tekst, AktId) => {
-  //   console.log(tekst, AktId);
-  //   const notificatie = new Notificatie();
-  //   notificatie.updateFromServer(tekst, AktId);
-  //   runInAction(() => this.notificaties.push(notificatie));
-  //   console.log(notificatie);
-  // };
-
-  // _addNotificatie = values => {
-  //   console.log(values);
-  //   const notificatie = new Notificatie();
-  //   notificatie.updateFromServer(values);
-  //   runInAction(() => this.notificaties.push(notificatie));
-  //   console.log(notificatie);
-  // };
+  deleteNotificatie = notificatie => {
+    this.notificaties.remove(notificatie);
+    this.api.delete(notificatie);
+  };
 }
 
 decorate(NotificatieStore, {
   notificaties: observable,
-  addNotificatie: action
+  addNotificatie: action,
+  deleteNotificatie: action
 });
 
 export default NotificatieStore;

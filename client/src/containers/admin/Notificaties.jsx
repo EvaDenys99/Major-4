@@ -3,6 +3,8 @@ import BovenMenu from "../../components/admin/BovenMenu";
 import OnderMenu2 from "../../components/admin/OnderMenu2";
 import { inject, PropTypes, observer } from "mobx-react";
 
+import Verzend from "../../assets/admin/send.png";
+
 const Notificaties = ({ id, notificatieStore }) => {
   // HIER WORDEN ALLE NOTIFICATIES DIE OVEREEN KOMEN OPGEHAALD
   const notificaties = notificatieStore.findAllesByAktId(id);
@@ -15,7 +17,14 @@ const Notificaties = ({ id, notificatieStore }) => {
           {notificaties.map(notificatie => (
             <section key={notificatie.id}>
               <p>{notificatie.tekst}</p>
-              <button>📤</button>
+              <button>
+                <img src={Verzend} alt="" width="45" height="45" />
+              </button>
+              <button
+                onClick={() => notificatieStore.deleteNotificatie(notificatie)}
+              >
+                X
+              </button>
             </section>
           ))}
         </>
@@ -24,10 +33,6 @@ const Notificaties = ({ id, notificatieStore }) => {
           <p>Maak een notificatie aan.</p>
         </div>
       )}
-      {/* <Link to={`/notificatie/${id}/add`} id={id}>
-        <button>+</button>
-      </Link> */}
-
       <OnderMenu2 id={id} />
     </div>
   ) : (
@@ -35,9 +40,6 @@ const Notificaties = ({ id, notificatieStore }) => {
       <BovenMenu />
       <p>Loading Notificaties</p>
       <OnderMenu2 />
-      {/* <Link to={`/notificatie/${id}/add`} id={id}>
-        <button>+</button>
-      </Link> */}
     </div>
   );
 

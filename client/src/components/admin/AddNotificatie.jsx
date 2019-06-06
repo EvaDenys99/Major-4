@@ -2,8 +2,6 @@ import React from "react";
 import { PropTypes, inject } from "mobx-react";
 import { withRouter } from "react-router-dom";
 
-import { ROUTES } from "../../constants";
-
 const AddNotificatie = ({ notificatieStore, history, id }) => {
   console.log(id);
   const tekstRef = React.createRef();
