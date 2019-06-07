@@ -20,7 +20,9 @@ const Notificaties = ({ id, notificatieStore }) => {
     console.log(e.currentTarget.value);
     console.log(tekstRef.current.value);
     socket.emit(`chat message`, e.currentTarget.value);
+    // socket.emit(`chat message`, tekstRef.current.value);
     console.log(tekstRef.current.value);
+
     return false;
   };
 
