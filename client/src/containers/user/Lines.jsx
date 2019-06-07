@@ -1,5 +1,7 @@
 import React from "react";
 import NavigatieLines from "./../../components/user/NavigatieLines";
+import { decorate, observable } from "mobx";
+import { observer } from "mobx-react";
 const io = require(`socket.io-client`);
 
 const Lines = () => {
@@ -21,9 +23,21 @@ const Lines = () => {
       <p>Bekijk hier de vorige pushlines</p>
       <ul id="messages" />
       <ul>
-        {messages.map(message => (
+        {/* {messages.map(message => (
           <li key={message}>{message}</li>
-        ))}
+        ))} */}
+
+        {messages.length > 0 ? (
+          <>
+            {messages.map(message => (
+              <li key={message}>{message}</li>
+            ))}
+          </>
+        ) : (
+          <div>
+            <p>Nog geen messages.</p>
+          </div>
+        )}
         {/* <li>
           <p>De geit is een belangrijke plot twist, mis hem niet!</p>
         </li>
@@ -36,4 +50,8 @@ const Lines = () => {
   );
 };
 
-export default Lines;
+decorate(Lines, {
+  messages: observable
+});
+
+export default observer(Lines);

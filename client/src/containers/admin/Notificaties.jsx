@@ -2,13 +2,15 @@ import React from "react";
 import BovenMenu from "../../components/admin/BovenMenu";
 import OnderMenu2 from "../../components/admin/OnderMenu2";
 import { inject, PropTypes, observer } from "mobx-react";
-import Lines from "../user/Lines";
+
 import Verzend from "../../assets/admin/send.png";
 
 const io = require(`socket.io-client`);
 
 const Notificaties = ({ id, notificatieStore }) => {
+  // SOCKET.IO DEFINIEREN
   const socket = io.connect(`http://localhost:3000`);
+  // NOTIFICATIE TEKST VOOR TE VERZENDEN
   const tekstRef = React.createRef();
   // HIER WORDEN ALLE NOTIFICATIES DIE OVEREEN KOMEN OPGEHAALD
   const notificaties = notificatieStore.findAllesByAktId(id);
