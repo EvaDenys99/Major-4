@@ -2,7 +2,7 @@ import React from "react";
 import BovenMenu from "../../components/admin/BovenMenu";
 import OnderMenu2 from "../../components/admin/OnderMenu2";
 import { inject, PropTypes, observer } from "mobx-react";
-
+import Lines from "../user/Lines";
 import Verzend from "../../assets/admin/send.png";
 
 const io = require(`socket.io-client`);
@@ -18,22 +18,29 @@ const Notificaties = ({ id, notificatieStore }) => {
   const handleSubmit = e => {
     e.preventDefault();
     socket.emit(`chat message`, tekstRef.current.value);
-    console.log(tekstRef.current.value);
+    // console.log(tekstRef.current.value);
+    return false;
   };
 
   socket.on(`chat message`, function(msg) {
     messages.push(msg);
     window.scrollTo(0, document.body.scrollHeight);
     console.log(msg);
-    console.log(messages);
-    return messages;
   });
+
+  console.log(messages);
 
   return notificaties ? (
     <div>
       <BovenMenu />
       <section>
-        {messages.length > 0 ? (
+        <Lines messages={messages} />
+        {messages.map(message => (
+          <ul key={message.id}>
+            <li>{message}</li>
+          </ul>
+        ))}
+        {/* {messages.length > 0 ? (
           <>
             {messages.map(message => (
               <ul key={message.id}>
@@ -45,7 +52,7 @@ const Notificaties = ({ id, notificatieStore }) => {
           <div>
             <p>Nog geen messages verzonden.</p>
           </div>
-        )}
+        )} */}
       </section>
       <section>
         {notificaties.length > 0 ? (
