@@ -23,7 +23,7 @@ class NotificatieStore {
 
   // OM 1 NOTIFICATIE DIE OVEREEN KOMT TE VINDEN
   findByAktId = id => {
-    console.log(id);
+    // console.log(id);
     const notificatie = this.notificaties.find(test => test.AktId == id);
     if (!notificatie) {
       this.api.getById(id);
@@ -33,9 +33,9 @@ class NotificatieStore {
 
   // OM ALLE NOTIFICATIES DIE OVEREEN KOMEN TE VINDEN
   findAllesByAktId = id => {
-    console.log(id);
+    // console.log(id);
     const notificaties2 = this.notificaties.filter(test => test.AktId == id);
-    console.log(notificaties2);
+    // console.log(notificaties2);
     return notificaties2;
   };
 
@@ -58,11 +58,11 @@ class NotificatieStore {
   };
 
   _addNotificatie = values => {
-    console.log(values);
+    // console.log(values);
     const notificatie = new Notificatie();
     notificatie.updateFromServer(values);
     runInAction(() => this.notificaties.push(notificatie));
-    console.log(notificatie);
+    // console.log(notificatie);
   };
 
   deleteNotificatie = notificatie => {
