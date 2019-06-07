@@ -24,7 +24,7 @@ const io = require("socket.io")(server);
 io.on("connection", () => {
   /* … */
 });
-server.listen(3001);
+server.listen(3000);
 
 app.use(express.static(path.resolve(__dirname, "../client/build/")));
 
