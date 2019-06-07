@@ -5,34 +5,63 @@ import { inject, PropTypes, observer } from "mobx-react";
 
 import Verzend from "../../assets/admin/send.png";
 
+const io = require(`socket.io-client`);
+
 const Notificaties = ({ id, notificatieStore }) => {
+  const socket = io.connect(`http://localhost:3000`);
+  const tekstRef = React.createRef();
   // HIER WORDEN ALLE NOTIFICATIES DIE OVEREEN KOMEN OPGEHAALD
   const notificaties = notificatieStore.findAllesByAktId(id);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(e);
+    socket.emit(`chat message`, tekstRef.current.value);
+  };
+
+  socket.on(`chat message`, function(msg) {
+    `#messages`.append(`<li>`.text(msg));
+    window.scrollTo(0, document.body.scrollHeight);
+  });
 
   return notificaties ? (
     <div>
       <BovenMenu />
-      {notificaties.length > 0 ? (
-        <>
-          {notificaties.map(notificatie => (
-            <section key={notificatie.id}>
-              <p>{notificatie.tekst}</p>
-              <button>
-                <img src={Verzend} alt="" width="45" height="45" />
-              </button>
-              <button
-                onClick={() => notificatieStore.deleteNotificatie(notificatie)}
-              >
-                X
-              </button>
-            </section>
-          ))}
-        </>
-      ) : (
-        <div>
-          <p>Maak een notificatie aan.</p>
-        </div>
-      )}
+      <section>
+        <ul id="messages" />
+      </section>
+      <section>
+        {notificaties.length > 0 ? (
+          <>
+            {notificaties.map(notificatie => (
+              <form onSubmit={handleSubmit} key={notificatie.id}>
+                <input
+                  name="tekst"
+                  placeholder="Kijk nu naar de man in het zwart."
+                  defaultValue={notificatie.tekst}
+                  type="text"
+                  ref={tekstRef}
+                  required
+                />
+                <button>
+                  <img src={Verzend} alt="" width="45" height="45" />
+                </button>
+                <button
+                  onClick={() =>
+                    notificatieStore.deleteNotificatie(notificatie)
+                  }
+                >
+                  X
+                </button>
+              </form>
+            ))}
+          </>
+        ) : (
+          <div>
+            <p>Maak een notificatie aan.</p>
+          </div>
+        )}
+      </section>
       <OnderMenu2 id={id} adding={false} />
     </div>
   ) : (
