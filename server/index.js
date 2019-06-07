@@ -24,13 +24,17 @@ const io = require("socket.io")(server);
 
 io.on("connection", function(socket) {
   console.log("connected");
+  //moet erin anders werkt niet
   socket.on("chat message", function(msg) {
     io.emit("chat message", msg);
   });
   /* … */
 });
 
-server.listen(3000);
+// server.listen(3000);
+server.listen(3000, function() {
+  console.log("listening on *:" + 3000);
+});
 
 app.use(express.static(path.resolve(__dirname, "../client/build/")));
 
