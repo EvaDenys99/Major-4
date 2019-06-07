@@ -21,10 +21,16 @@ const app = express();
 
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
-io.on("connection", () => {
+
+io.on("connection", function(socket) {
+  console.log("connected");
+  socket.on("chat message", function(msg) {
+    io.emit("chat message", msg);
+  });
   /* … */
 });
-server.listen(3001);
+
+server.listen(3000);
 
 app.use(express.static(path.resolve(__dirname, "../client/build/")));
 

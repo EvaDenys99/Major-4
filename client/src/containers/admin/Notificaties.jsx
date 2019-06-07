@@ -12,23 +12,40 @@ const Notificaties = ({ id, notificatieStore }) => {
   const tekstRef = React.createRef();
   // HIER WORDEN ALLE NOTIFICATIES DIE OVEREEN KOMEN OPGEHAALD
   const notificaties = notificatieStore.findAllesByAktId(id);
+  // messages opvangen
+  const messages = [];
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(e);
     socket.emit(`chat message`, tekstRef.current.value);
+    console.log(tekstRef.current.value);
   };
 
   socket.on(`chat message`, function(msg) {
-    `#messages`.append(`<li>`.text(msg));
+    messages.push(msg);
     window.scrollTo(0, document.body.scrollHeight);
+    console.log(msg);
+    console.log(messages);
+    return messages;
   });
 
   return notificaties ? (
     <div>
       <BovenMenu />
       <section>
-        <ul id="messages" />
+        {messages.length > 0 ? (
+          <>
+            {messages.map(message => (
+              <ul key={message.id}>
+                <li>{message}</li>
+              </ul>
+            ))}
+          </>
+        ) : (
+          <div>
+            <p>Nog geen messages verzonden.</p>
+          </div>
+        )}
       </section>
       <section>
         {notificaties.length > 0 ? (
