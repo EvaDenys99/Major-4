@@ -17,8 +17,9 @@ const Notificaties = ({ id, notificatieStore }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    socket.emit(`chat message`, tekstRef.current.value);
+    // socket.emit(`chat message`, tekstRef.current.value);
     console.log(tekstRef.current.value);
+
     return false;
   };
 
@@ -31,15 +32,17 @@ const Notificaties = ({ id, notificatieStore }) => {
             {notificaties.map(notificatie => (
               <form onSubmit={handleSubmit} key={notificatie.id}>
                 <input
-                  name="tekst"
-                  placeholder="Kijk nu naar de man in het zwart."
                   defaultValue={notificatie.tekst}
                   type="text"
                   ref={tekstRef}
-                  required
                 />
-                <button>
-                  <img src={Verzend} alt="" width="45" height="45" />
+                <button type="submit">
+                  <img
+                    src={Verzend}
+                    alt="een verzend icon"
+                    width="45"
+                    height="45"
+                  />
                 </button>
                 <button
                   onClick={() =>

@@ -5,7 +5,7 @@ import OnderMenu2 from "../../components/admin/OnderMenu2";
 import AddNotificatie from "../../components/admin/AddNotificatie";
 import BackLink from "../../components/admin/BackLink";
 
-const Add = ({ notificatieStore, id }) => {
+const Add = ({ id }) => {
   console.log(id);
   return (
     <>
@@ -22,4 +22,4 @@ const Add = ({ notificatieStore, id }) => {
   );
 };
 
-export default inject(`notificatieStore`)(observer(Add));
+export default observer(Add);
