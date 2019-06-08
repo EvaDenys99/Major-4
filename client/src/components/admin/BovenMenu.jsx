@@ -2,6 +2,7 @@ import React from "react";
 import { ROUTES } from "../../constants";
 import { inject, observer } from "mobx-react";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const BovenMenu = ({ uiStore, history }) => {
   const handleSubmit = e => {
@@ -15,7 +16,10 @@ const BovenMenu = ({ uiStore, history }) => {
     <>
       <nav>
         <div>
-          <h1>PushLines</h1>
+          <Link to={ROUTES.homeAdmin}>
+            <h1>PushLines</h1>
+          </Link>
+
           {uiStore.authUser ? (
             <ul>
               <li>

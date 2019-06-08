@@ -39,7 +39,7 @@ const AddNotificatie = ({ notificatieStore, history, id }) => {
               required
             />
             <input
-              type="number"
+              type="hidden"
               placeholder={id}
               defaultValue={id}
               ref={AktRef}
