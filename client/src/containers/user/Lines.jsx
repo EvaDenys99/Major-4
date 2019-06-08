@@ -8,7 +8,7 @@ class Lines extends Component {
   constructor(props) {
     super(props);
     this.state = { messages: [] };
-    const socket = io.connect(`http://localhost:3000`);
+    const socket = io.connect(`:3000`);
     const messages = [];
 
     socket.on(`chat message`, function(msg) {
