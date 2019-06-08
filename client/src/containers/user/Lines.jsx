@@ -13,7 +13,7 @@ class Lines extends Component {
 
     socket.on(`chat message`, function(msg) {
       messages.push(msg);
-      window.scrollTo(0, document.body.scrollHeight);
+      // window.scrollTo(0, document.body.scrollHeight);
       console.log(messages);
       stateAanpassing(messages);
       return messages;
