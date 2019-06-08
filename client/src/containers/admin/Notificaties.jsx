@@ -3,7 +3,7 @@ import BovenMenu from "../../components/admin/BovenMenu";
 import OnderMenu2 from "../../components/admin/OnderMenu2";
 import { inject, PropTypes, observer } from "mobx-react";
 
-import Verzend from "../../assets/admin/send.png";
+// import Verzend from "../../assets/admin/send.png";
 
 const io = require(`socket.io-client`);
 
@@ -21,8 +21,9 @@ const Notificaties = ({ id, notificatieStore }) => {
     console.log(tekstRef.current.value);
     socket.emit(`chat message`, e.currentTarget.value);
     // socket.emit(`chat message`, tekstRef.current.value);
-    console.log(tekstRef.current.value);
-
+    // tekstRef.current.value = ``;
+    // console.log(tekstRef.current.value);
+    // console.log(notificaties);
     return false;
   };
 
@@ -33,20 +34,28 @@ const Notificaties = ({ id, notificatieStore }) => {
         {notificaties.length > 0 ? (
           <>
             {notificaties.map(notificatie => (
+              // <form onSubmit={handleSubmit} key={notificatie.id}>
               <form key={notificatie.id}>
-                <input
+                {/* <input
                   name="tekst"
                   placeholder="Kijk nu naar de man in het zwart."
-                  value={notificatie.tekst}
-                  onChange={handleSubmit}
+                  defaultValue={notificatie.tekst}
+                  // value={notificatie.tekst}
+                  onClick={handleSubmit}
                   type="text"
                   ref={tekstRef}
                   required
-                />
+                /> */}
 
-                <button>
+                <input
+                  value={notificatie.tekst}
+                  onClick={handleSubmit}
+                  type="submit"
+                  ref={tekstRef}
+                />
+                {/* <button>
                   <img src={Verzend} alt="" width="45" height="45" />
-                </button>
+                </button> */}
                 <button
                   onClick={() =>
                     notificatieStore.deleteNotificatie(notificatie)
