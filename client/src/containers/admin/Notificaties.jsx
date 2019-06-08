@@ -7,15 +7,16 @@ import Verzend from "../../assets/admin/send.png";
 
 const io = require(`socket.io-client`);
 
-const Notificaties = ({ id, notificatieStore }) => {
+const Notificaties = ({ id, notificatieStore, zaal }) => {
+  // console.log(zaal);
   // SOCKET.IO DEFINIEREN
   const socket = io.connect(`:3000`);
   // HIER WORDEN ALLE NOTIFICATIES DIE OVEREEN KOMEN OPGEHAALD
   const notificaties = notificatieStore.findAllesByAktId(id);
-
+  console.log(notificaties);
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(e.currentTarget.value);
+    console.log(e.currentTarget.defaultValue);
     socket.emit(`chat message`, e.currentTarget.value);
     return false;
   };
@@ -26,28 +27,37 @@ const Notificaties = ({ id, notificatieStore }) => {
       <section>
         {notificaties.length > 0 ? (
           <>
-            {notificaties.map(notificatie => (
-              <form key={notificatie.id}>
-                {/* <input
+            {notificaties.map(
+              notificatie => (
+                console.log(notificatie),
+                (
+                  <form key={notificatie.id}>
+                    {/* <input
                   name="tekst"
                   placeholder="Kijk nu naar de man in het zwart."
                   defaultValue={notificatie.tekst}
                   type="text"
                   required
                 /> */}
-                <label>{notificatie.tekst}</label>
-                <button value={notificatie.tekst} onClick={handleSubmit}>
-                  <img src={Verzend} alt="" width="45" height="45" />
-                </button>
-                <button
-                  onClick={() =>
-                    notificatieStore.deleteNotificatie(notificatie)
-                  }
-                >
-                  X
-                </button>
-              </form>
-            ))}
+                    <label>{notificatie.tekst}</label>
+                    <button
+                      defaultValue={notificatie}
+                      // value={notificatie.AktVoorstellingZaal}
+                      onClick={handleSubmit}
+                    >
+                      <img src={Verzend} alt="" width="45" height="45" />
+                    </button>
+                    <button
+                      onClick={() =>
+                        notificatieStore.deleteNotificatie(notificatie)
+                      }
+                    >
+                      X
+                    </button>
+                  </form>
+                )
+              )
+            )}
           </>
         ) : (
           <div>
@@ -55,7 +65,7 @@ const Notificaties = ({ id, notificatieStore }) => {
           </div>
         )}
       </section>
-      <OnderMenu2 id={id} adding={false} />
+      <OnderMenu2 id={id} zaal={zaal} adding={false} />
     </div>
   ) : (
     <div>

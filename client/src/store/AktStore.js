@@ -6,12 +6,12 @@ class AktStore {
 
   constructor(rootStore) {
     this.rootStore = rootStore;
-    this.addAkt(1, `Akte |`, 1);
-    this.addAkt(2, `Akte ||`, 1);
+    this.addAkt(1, `Akte |`, 1, `gent`);
+    this.addAkt(2, `Akte ||`, 1, `gent`);
 
-    this.addAkt(3, `Akte |`, 2);
-    this.addAkt(4, `Akte ||`, 2);
-    this.addAkt(5, `Akte |||`, 2);
+    this.addAkt(3, `Akte |`, 2, `antwerpen`);
+    this.addAkt(4, `Akte ||`, 2, `antwerpen`);
+    this.addAkt(5, `Akte |||`, 2, `antwerpen`);
   }
 
   // OM 1 AKT DIE OVEREEN KOMT TE VINDEN
@@ -30,8 +30,8 @@ class AktStore {
     return akten;
   };
 
-  addAkt = (id, naam, VoorstellingId) => {
-    this.akts.push(new Akt(id, naam, VoorstellingId));
+  addAkt = (id, naam, VoorstellingId, VoorstellingZaal) => {
+    this.akts.push(new Akt(id, naam, VoorstellingId, VoorstellingZaal));
   };
 
   resolveAkt = id => this.akts.find(akt => akt.id === id);

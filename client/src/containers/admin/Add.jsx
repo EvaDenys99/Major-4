@@ -5,7 +5,7 @@ import OnderMenu2 from "../../components/admin/OnderMenu2";
 import AddNotificatie from "../../components/admin/AddNotificatie";
 import BackLink from "../../components/admin/BackLink";
 
-const Add = ({ id }) => {
+const Add = ({ id, zaal }) => {
   console.log(id);
   return (
     <>
@@ -14,7 +14,7 @@ const Add = ({ id }) => {
         <section>
           <BackLink />
           <h2>Melding toevoegen</h2>
-          <AddNotificatie id={id} />
+          <AddNotificatie id={id} zaal={zaal} />
         </section>
         <OnderMenu2 adding="true" />
       </div>
