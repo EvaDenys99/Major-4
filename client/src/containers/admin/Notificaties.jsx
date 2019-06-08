@@ -9,7 +9,7 @@ const io = require(`socket.io-client`);
 
 const Notificaties = ({ id, notificatieStore }) => {
   // SOCKET.IO DEFINIEREN
-  const socket = io.connect(`http://localhost:3000`);
+  const socket = io.connect(`:3000`);
   // HIER WORDEN ALLE NOTIFICATIES DIE OVEREEN KOMEN OPGEHAALD
   const notificaties = notificatieStore.findAllesByAktId(id);
 
