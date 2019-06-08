@@ -1,19 +1,17 @@
-import { decorate, observable, action, computed } from "mobx";
+import { decorate, observable, action } from "mobx";
 import uuid from "uuid";
 class Notificatie {
-  constructor(tekst, AktId) {
+  constructor(tekst, AktId, AktVoorstellingZaal) {
     this.id = uuid.v4();
     this.tekst = tekst;
     this.AktId = AktId;
+    this.AktVoorstellingZaal = AktVoorstellingZaal;
   }
 
   setId = value => (this.id = value);
   setTekst = value => (this.tekst = value);
   setAktId = value => (this.AktId = value);
-
-  // get akt() {
-  //   return this.store.aktStore.resolveAkt(this.AktId);
-  // }
+  setAktVoorstellingZaal = value => (this.AktVoorstellingZaal = value);
 
   // updateFromServer = (id, tekst, AktId) => {
   //   if (id._id) this.setId(id._id);
@@ -25,12 +23,14 @@ class Notificatie {
     if (values._id) this.setId(values._id);
     this.setTekst(values.tekst);
     this.setAktId(values.AktId);
+    this.setAktVoorstellingZaal(values.AktVoorstellingZaal);
   };
 
   get values() {
     return {
       tekst: this.tekst,
-      AktId: this.AktId
+      AktId: this.AktId,
+      AktVoorstellingZaal: this.AktVoorstellingZaal
     };
   }
 }
@@ -39,10 +39,11 @@ decorate(Notificatie, {
   id: observable,
   AktId: observable,
   tekst: observable,
+  AktVoorstellingZaal: observable,
   setId: action,
   setTekst: action,
-  setAktId: action
-  // akt: computed
+  setAktId: action,
+  setAktVoorstellingZaal: action
 });
 
 export default Notificatie;

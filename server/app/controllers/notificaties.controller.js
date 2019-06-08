@@ -7,7 +7,8 @@ exports.create = (req, res) => {
 
   const notificatie = new Notificatie({
     tekst: req.body.tekst,
-    AktId: req.body.AktId
+    AktId: req.body.AktId,
+    AktVoorstellingZaal: req.body.AktVoorstellingZaal
   });
 
   notificatie
@@ -57,7 +58,8 @@ exports.update = async (req, res) => {
       },
       {
         tekst: req.body.tekst,
-        AktId: req.body.AktId
+        AktId: req.body.AktId,
+        AktVoorstellingZaal: req.body.AktVoorstellingZaal
       },
       {
         new: true

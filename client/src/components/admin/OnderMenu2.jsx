@@ -37,9 +37,10 @@ class OnderMenu2 extends Component {
   };
 
   render() {
-    const { id } = this.props;
+    const { id, zaal } = this.props;
     const { playing } = this.state;
     const { adding } = this.state;
+    // console.log(zaal);
 
     return adding ? (
       <p onClick={this.handleAddReset}>x</p>
@@ -47,7 +48,7 @@ class OnderMenu2 extends Component {
       <>
         <p onClick={this.handlePauze}>pauze</p>
         <p onClick={this.handleStop}>stop</p>
-        <Link to={`/add/${id}`} id={id}>
+        <Link to={`/add/${id}/${zaal}`} id={id} zaal={zaal}>
           <p>+</p>
         </Link>
       </>
@@ -55,7 +56,7 @@ class OnderMenu2 extends Component {
       <>
         <p onClick={this.handlePlay}>play</p>
         <p onClick={this.handleStop}>stop</p>
-        <Link to={`/add/${id}`} id={id}>
+        <Link to={`/add/${id}/${zaal}`} id={id} zaal={zaal}>
           <p>+</p>
         </Link>
       </>

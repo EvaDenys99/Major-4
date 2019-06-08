@@ -1,6 +1,7 @@
 import React from "react";
 import BovenMenu from "../../components/admin/BovenMenu";
 import OnderMenu from "../../components/admin/OnderMenu";
+import Notificaties from "./Notificaties";
 import { inject, PropTypes, observer } from "mobx-react";
 import { Link } from "react-router-dom";
 import Arrow from "../../assets/admin/arrowAkt.png";
@@ -23,7 +24,11 @@ const Akten = ({ id, aktStore, voorstellingStore }) => {
             <>
               {akten.map(akt => (
                 <div key={akt.id}>
-                  <Link to={`/notificatie/${akt.id}`}>
+                  <Link
+                    to={`/notificatie/${akt.id}/${akt.VoorstellingZaal}`}
+                    // zaal={akt.VoorstellingZaal}
+                  >
+                    {/* <Notificaties id={akt.id} zaal={akt.VoorstellingZaal} /> */}
                     <p>
                       {akt.naam}
                       <img

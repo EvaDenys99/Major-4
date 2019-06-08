@@ -2,10 +2,11 @@ import React from "react";
 import { PropTypes, inject } from "mobx-react";
 import { withRouter } from "react-router-dom";
 
-const AddNotificatie = ({ notificatieStore, history, id }) => {
-  console.log(id);
+const AddNotificatie = ({ notificatieStore, history, id, zaal }) => {
+  console.log(zaal);
   const tekstRef = React.createRef();
   const AktRef = React.createRef();
+  const ZaalRef = React.createRef();
 
   const handleSubmitForm = e => {
     e.preventDefault();
@@ -13,7 +14,8 @@ const AddNotificatie = ({ notificatieStore, history, id }) => {
       notificatieStore
         .addNotificatie({
           tekst: tekstRef.current.value,
-          AktId: AktRef.current.value
+          AktId: AktRef.current.value,
+          AktVoorstellingZaal: ZaalRef.current.value
         })
         .then(() => {
           history.goBack();
@@ -21,6 +23,7 @@ const AddNotificatie = ({ notificatieStore, history, id }) => {
 
       tekstRef.current.value = ``;
       AktRef.current.value = ``;
+      ZaalRef.current.value = ``;
     }
   };
 
@@ -43,6 +46,12 @@ const AddNotificatie = ({ notificatieStore, history, id }) => {
               placeholder={id}
               defaultValue={id}
               ref={AktRef}
+            />
+            <input
+              type="hidden"
+              placeholder={zaal}
+              defaultValue={zaal}
+              ref={ZaalRef}
             />
           </div>
         </div>

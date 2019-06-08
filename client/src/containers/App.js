@@ -31,15 +31,20 @@ class App extends Component {
           <Route path={ROUTES.register} component={Register} />
           <Route
             path={ROUTES.notificaties}
-            render={({ match }) => <Notificaties id={match.params.id} />}
+            render={({ match }) => (
+              <Notificaties id={match.params.id} zaal={match.params.zaal} />
+            )}
           />
+
           <Route
             path={ROUTES.akt}
             render={({ match }) => <Akten id={match.params.id} />}
           />
           <Route
             path={ROUTES.addNotification}
-            render={({ match }) => <Add id={match.params.id} />}
+            render={({ match }) => (
+              <Add id={match.params.id} zaal={match.params.zaal} />
+            )}
           />
         </Switch>
       </main>
