@@ -21,9 +21,7 @@ const Notificaties = ({ id, notificatieStore, zaal }) => {
     cogoToast.success(`Notificatie is verzonden`, {
       position: `top-center`
     });
-    cogoToast.error(`Er is iets mis met de verbinding`, {
-      position: `top-center`
-    });
+
     return false;
   };
 
