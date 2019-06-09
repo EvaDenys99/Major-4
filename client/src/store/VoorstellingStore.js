@@ -4,6 +4,10 @@ import Voorstelling from "../models/Voorstelling";
 import bach from "../assets/admin/bach.png";
 import demons from "../assets/admin/demons.png";
 import macbeth from "../assets/admin/macbeth.png";
+import afscheid from "../assets/admin/afscheid.png";
+import doncarlos from "../assets/admin/doncarlos.png";
+import mozart from "../assets/admin/mozart.png";
+import requiem from "../assets/admin/requiem.png";
 
 import bachUser from "../assets/user/bach.png";
 import demonsUser from "../assets/user/demons.png";
@@ -44,24 +48,24 @@ class VoorstellingStore {
 
     this.addVoorstelling(
       3,
-      `AFSCHEID EN NIEUW BEGIN`,
+      `DON CARLOS`,
       `testestestest`,
       `2u`,
       `1xpauze`,
-      afscheidUser,
-      afscheidUser,
+      doncarlosUser,
+      doncarlos,
       `antwerpen`,
       2
     );
 
     this.addVoorstelling(
       4,
-      `DON CARLOS`,
+      `AFSCHEID EN NIEUW BEGIN`,
       `testestestest`,
       `2u`,
       `1xpauze`,
-      doncarlosUser,
-      doncarlosUser,
+      afscheidUser,
+      afscheid,
       `antwerpen`,
       2
     );
@@ -85,7 +89,7 @@ class VoorstellingStore {
       `2u`,
       `1xpauze`,
       afscheidUser,
-      afscheidUser,
+      afscheid,
       `gent`,
       1
     );
@@ -97,7 +101,7 @@ class VoorstellingStore {
       `2u`,
       `1xpauze`,
       mozartUser,
-      mozartUser,
+      mozart,
       `gent`,
       1
     );
@@ -109,7 +113,7 @@ class VoorstellingStore {
       `2u`,
       `1xpauze`,
       requiemUser,
-      requiemUser,
+      requiem,
       `gent`,
       1
     );

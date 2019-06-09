@@ -3,7 +3,7 @@ import { inject, observer } from "mobx-react";
 import { decorate, observable } from "mobx";
 import { Link } from "react-router-dom";
 import Select from "react-select";
-
+import emptyVoorstelling from "../../assets/user/emptyVoorstelling.png";
 class VoorstellingLijst extends Component {
   constructor(props) {
     super(props);
@@ -93,7 +93,8 @@ class VoorstellingLijst extends Component {
             )
           ) : (
             <div>
-              <p>Geen voorstellingen beschikbaar op deze plaats.</p>
+              <div>Geen voorstellingen</div>
+              <img src={emptyVoorstelling} alt="titel" />
             </div>
           )}
         </ul>

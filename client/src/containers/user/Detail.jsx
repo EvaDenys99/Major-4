@@ -23,8 +23,8 @@ const Detail = ({ id, voorstellingStore }) => {
     <>
       <div>Geen voorstellingen</div>
       <img src={emptyVoorstelling} alt="titel" />
-      <p>Ontdek meer</p>
-      <MeerVoorstellingen voorstellingen={voorstellingen} />
+      {/* <p>Ontdek meer</p>
+      <MeerVoorstellingen voorstellingen={voorstellingen} /> */}
       <NavigatieHome />
     </>
   );
