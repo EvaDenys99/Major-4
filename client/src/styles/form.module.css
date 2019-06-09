@@ -1,0 +1,21 @@
+.form {
+    width: 45rem;
+}
+
+.label {
+    font-size: 2.5rem;
+    width: 100%;
+}
+
+.formInput {
+    composes: listItem from "./uiControls.module.css";
+    composes: adminParagraphs from "./typo.module.css";
+    margin: 1rem 0rem 2rem 0rem;
+    width: 100%;
+    height: 6.9rem;
+    background-color: white;
+}
+
+.button { 
+    composes: button from "./uiControls.module.css";
+}

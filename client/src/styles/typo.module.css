@@ -1,0 +1,29 @@
+@import "./colors.module.css";
+
+:global(:root){
+    --font-base-user: 1.7rem;
+    --font-base-admin: 2rem;
+    --font-family: "Open Sans"; 
+}
+
+.userTitel {
+    font-family: 'Montserrat';
+    font-size: 1.8rem;
+    height: 3.5rem;
+    composes: color-primary from "./colors.module.css";
+}
+
+.userParagraphs {
+    font-size: var(--font-base-user)
+}
+
+.adminTitel {
+    font-family: 'Montserrat';
+    font-size: 4rem;
+    height: 93.6rem;
+    composes: color-primary from "./colors.module.css";
+}
+
+.adminParagraphs {
+    font-size: var(--font-base-admin);
+}

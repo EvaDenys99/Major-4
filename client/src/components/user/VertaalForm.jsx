@@ -23,13 +23,9 @@ class VertaalForm extends Component {
 
     return vertaald ? (
       <>
-        <select name="" id="">
-          <option value="Nederlands">Nederlands</option>
-        </select>
+        <p>Nederlands</p>
         <img src={switchImg} alt="switch" width="50" height="50" />
-        <select name="" id="">
-          <option value="Engels">Engels</option>
-        </select>
+        <p>Engels</p>
         <div>
           <input type="text" defaultValue="Ik ken geen andere taal" />
           <p>I don't know any other languages</p>

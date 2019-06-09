@@ -2,6 +2,7 @@ import React from "react";
 import { PropTypes, inject } from "mobx-react";
 import { withRouter } from "react-router-dom";
 import cogoToast from "cogo-toast";
+import styles from "./../../styles/form.module.css";
 
 const AddNotificatie = ({ notificatieStore, history, id, zaal }) => {
   console.log(zaal);
@@ -38,7 +39,7 @@ const AddNotificatie = ({ notificatieStore, history, id, zaal }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmitForm}>
+      <form onSubmit={handleSubmitForm} className={styles.form}>
         <div>
           <div>
             <label htmlFor="tekst">Beschrijving</label>
@@ -49,6 +50,7 @@ const AddNotificatie = ({ notificatieStore, history, id, zaal }) => {
               type="text"
               ref={tekstRef}
               required
+              className={styles.formInput}
             />
             <input
               type="hidden"

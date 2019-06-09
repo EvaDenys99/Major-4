@@ -1,0 +1,28 @@
+/* purple -> titels */
+/* lightpurple -> vertaling */
+/* white -> kleinetitel */
+/* black -> broodtekst */
+
+:global(:root){
+    --primary-color: #4F152D;
+    --light-color: #A78A96;
+    --succes-color: #00ADA9;
+    --error-color: #E73B44;
+}
+
+.color-primary {
+    color: var(--primary-color);
+}
+
+.color-light {
+    color: var(--light-color);
+}
+
+.color-succes {
+    color: white; 
+    background-color: var(--succes-color);
+}
+
+.color-error {
+    color: var(--error-color);
+}
