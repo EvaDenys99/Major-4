@@ -9,8 +9,8 @@ import NavigatieHome from "../../components/user/NavigatieHome";
 import emptyVoorstelling from "../../assets/user/emptyVoorstelling.png";
 
 const Detail = ({ id, voorstellingStore }) => {
-  const voorstelling = voorstellingStore.findById(id);
-  const voorstellingen = voorstellingStore.findByZaalId(id);
+  const voorstelling = voorstellingStore.findByZaalId(id);
+  const voorstellingen = voorstellingStore.findAllesByZaalId(id);
 
   return voorstelling ? (
     <>

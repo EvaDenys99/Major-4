@@ -145,12 +145,17 @@ class VoorstellingStore {
     );
   };
 
-  findById = id => {
-    const voorstelling = this.voorstellingen.find(test => test.zaalId == id);
+  findById = testId => {
+    const voorstelling = this.voorstellingen.find(test => test.id == testId);
     return voorstelling;
   };
 
   findByZaalId = id => {
+    const voorstelling = this.voorstellingen.find(test => test.zaalId == id);
+    return voorstelling;
+  };
+
+  findAllesByZaalId = id => {
     const voorstelling = this.voorstellingen.filter(test => test.zaalId == id);
     return voorstelling;
   };
