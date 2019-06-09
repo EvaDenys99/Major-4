@@ -16,7 +16,7 @@ const Notificaties = ({ id, notificatieStore, zaal }) => {
   console.log(notificaties);
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(e.currentTarget.defaultValue);
+    console.log(e.currentTarget.value);
     socket.emit(`chat message`, e.currentTarget.value);
     return false;
   };
@@ -40,11 +40,7 @@ const Notificaties = ({ id, notificatieStore, zaal }) => {
                   required
                 /> */}
                     <label>{notificatie.tekst}</label>
-                    <button
-                      defaultValue={notificatie}
-                      // value={notificatie.AktVoorstellingZaal}
-                      onClick={handleSubmit}
-                    >
+                    <button value={notificatie.tekst} onClick={handleSubmit}>
                       <img src={Verzend} alt="" width="45" height="45" />
                     </button>
                     <button
