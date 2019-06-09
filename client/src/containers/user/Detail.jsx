@@ -10,7 +10,7 @@ import emptyVoorstelling from "../../assets/user/emptyVoorstelling.png";
 
 const Detail = ({ id, voorstellingStore }) => {
   const voorstelling = voorstellingStore.findById(id);
-  const voorstellingen = voorstellingStore.voorstellingen;
+  const voorstellingen = voorstellingStore.findByZaalId(id);
 
   return voorstelling ? (
     <>

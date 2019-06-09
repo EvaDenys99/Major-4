@@ -1,6 +1,7 @@
 import React from "react";
 import { PropTypes, inject } from "mobx-react";
 import { withRouter } from "react-router-dom";
+import cogoToast from "cogo-toast";
 
 const AddNotificatie = ({ notificatieStore, history, id, zaal }) => {
   console.log(zaal);
@@ -21,9 +22,17 @@ const AddNotificatie = ({ notificatieStore, history, id, zaal }) => {
           history.goBack();
         });
 
+      cogoToast.success(`Notificatie is toegevoegd`, {
+        position: `top-center`
+      });
+
       tekstRef.current.value = ``;
       AktRef.current.value = ``;
       ZaalRef.current.value = ``;
+    } else {
+      cogoToast.error(`Er liep iets mis bij het toevoegen`, {
+        position: `top-center`
+      });
     }
   };
 

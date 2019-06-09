@@ -7,7 +7,8 @@ class Voorstelling {
     pauze,
     imageUser,
     imageAdmin,
-    plaats
+    plaats,
+    zaalId
   ) {
     this.id = id;
     this.titel = titel;
@@ -17,6 +18,7 @@ class Voorstelling {
     this.imageUser = imageUser;
     this.imageAdmin = imageAdmin;
     this.plaats = plaats;
+    this.zaalId = zaalId;
   }
 }
 

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "cloudinary": "^1.14.0",
+    "cogo-toast": "^2.0.1",
     "js-cookie": "^2.2.0",
     "mobx": "^4.2.0",
     "mobx-react": "^5.0.0",

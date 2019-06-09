@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Select from "react-select";
 import NavigatieLines from "./../../components/user/NavigatieLines";
 import { decorate, observable } from "mobx";
 import { observer } from "mobx-react";
@@ -31,38 +30,13 @@ class Lines extends Component {
       return <li key={index}>{message}</li>;
     };
 
-    const handleSelection = e => {
-      console.log(e.value);
-      if (e.value === `antwerpen`) {
-        console.log(`antwerpen`);
-      }
-      console.log(messages);
-
-      //in principe zou dit toch moeten werken:
-      // const gefilterdeMessages = [];
-      // messages.map(message =>
-      //   e.value === message.zaal
-      //     ? gefilterdeMessages.push(message)
-      //     : console.log(`nope`)
-      // );
-
-      // this.setState({ messages: gefilterdeMessages });
-    };
-
     const { messages } = this.state;
-
-    const options = [
-      { label: `antwerpen`, value: `antwerpen` },
-      { label: `gent`, value: `gent` },
-      { label: `'t eilandje`, value: `eilandje` }
-    ];
 
     return (
       <>
         {/* {console.log(messages)} */}
         <h1>Overzicht</h1>
         <p>Bekijk hier de vorige pushlines</p>
-        <Select name="" id="" onChange={handleSelection} options={options} />
 
         <ul id="messages" />
         <ul>
