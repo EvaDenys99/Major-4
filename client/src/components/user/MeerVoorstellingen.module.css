@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    background-image: url(./../../assets/user/BgMore.png);
+    height: 35rem;
+    margin-bottom: 4.6rem;
+    padding: 1rem;
+}
+
+.item {
+    width: 28.6rem;
+    height: 23.4rem;
+    font-size: 1.7rem;
+    color: var(--primary-color);
+    background-color: white;
+    border: 0.2rem solid var(--primary-color);
+    margin: 2rem;
+}
+
+.item > img {
+    border-bottom: 0.2rem solid var(--primary-color);
+}
+
+.item > p {
+    height: 6rem;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

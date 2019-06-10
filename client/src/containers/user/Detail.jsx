@@ -8,6 +8,8 @@ import NavigatieHome from "../../components/user/NavigatieHome";
 
 import emptyVoorstelling from "../../assets/user/emptyVoorstelling.png";
 
+import styles from "./Detail.module.css";
+
 const Detail = ({ id, voorstellingStore }) => {
   const voorstelling = voorstellingStore.findByZaalId(id);
   const voorstellingen = voorstellingStore.findAllesByZaalId(id);
@@ -16,17 +18,23 @@ const Detail = ({ id, voorstellingStore }) => {
   return voorstelling ? (
     <>
       <Voorstelling voorstelling={voorstelling} />
-      <p>Ook in deze zaal</p>
+      <div className={styles.container}>
+        <p className={styles.meerTitel}>Ook in deze zaal</p>
+      </div>
       <MeerVoorstellingen voorstellingen={voorstellingen} />
       <NavigatieHome />
     </>
   ) : (
     <>
-      <div>Geen voorstellingen</div>
-      <img src={emptyVoorstelling} alt="titel" />
-      <p>In andere zalen</p>
-      <MeerVoorstellingen voorstellingen={alleVoorstellingen} />
-      <NavigatieHome />
+      <div className={styles.container}>
+        <p>Geen voorstellingen</p>
+        <img src={emptyVoorstelling} alt="titel" />
+        <div className={styles.container}>
+          <p className={styles.meerTitel}>In andere zalen</p>
+        </div>
+        <MeerVoorstellingen voorstellingen={alleVoorstellingen} />
+        <NavigatieHome />
+      </div>
     </>
   );
 };

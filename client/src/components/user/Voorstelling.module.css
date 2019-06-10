@@ -1,0 +1,137 @@
+.header {
+    margin-top: -26rem;
+    height: 24rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.header > p {
+    color: white; 
+    text-transform: capitalize;
+    font-size: 1.7rem;
+    font-weight: bold; 
+    margin: 2rem;
+    text-align: center;
+    width: 65%;
+}
+
+.titel {
+    font-family: 'Montserrat';
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 37.5rem;;
+    padding: 2rem;
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem 0rem;
+}
+
+.info {
+    width: 9.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info > div {
+    width: 9.5rem;
+    margin: 1rem 0rem;
+}
+
+.descriptionContainer {
+    background-color: white;
+}
+
+.description {
+    composes: userParagraphs from "./../../styles/typo.module.css";
+    font-size: 1.6rem;
+    padding: 1rem;
+    line-height: 2.2rem;
+}
+
+.descriptionBoven {
+    background-image: url(./../../assets/user/BgDescription.png);
+    background-position: top right; 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 2rem;
+}
+
+.descriptionOnder {
+    background-image: url(./../../assets/user/BgDescription.png);
+    background-position: bottom right; 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 2rem;
+    transform: rotate(180deg);
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2rem 1rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 4.8rem;
+    height: 1.8rem;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--grey-color);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4rem;
+    width: 2rem;
+    left: 0.2rem;
+    bottom: 0.2rem;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--primary-color);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--primary-color);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(2.4rem);
+    -ms-transform: translateX(2.4rem);
+    transform: translateX(2.4rem);
+  }

@@ -3,6 +3,9 @@
     width: 100%;
     height: 4.4rem;
     margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .buttonDark {
@@ -10,6 +13,9 @@
     width: 100%;
     height: 4.4rem;
     margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .locatieGrid {

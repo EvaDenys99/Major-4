@@ -1,20 +1,24 @@
 import React from "react";
 
+import styles from "./MeerVoorstellingen.module.css";
+
 const MeerVoorstellingen = ({ voorstellingen }) => {
   return (
     <>
-      <ul>
+      <ul className={styles.container}>
         {console.log(voorstellingen)}
         {voorstellingen.slice(1).map(voorstelling => {
           return (
-            <li key={voorstelling.id}>
+            <li key={voorstelling.id} className={styles.item}>
               <img
                 src={voorstelling.imageUser}
                 alt={voorstelling.titel}
-                width="316"
-                height="284"
+                width="282"
+                height="170"
               />
-              <p>{voorstelling.titel}</p>
+              <p>
+                <span>{voorstelling.titel}</span>
+              </p>
             </li>
           );
         })}

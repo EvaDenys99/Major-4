@@ -15,6 +15,7 @@
     min-height: 17rem;
     text-align: center;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+    border: none;
 }
 
 .buttonCentraal{
@@ -33,7 +34,7 @@
 
 .vertalen {
     composes: userParagraphs from "./../../styles/typo.module.css";
-    background-image: url(./../../assets/BgVertalen.png);
+    background-image: url(./../../assets/user/BgVertalen.png);
     background-repeat: no-repeat;
     height: 16.8rem;
     width: 100%;
@@ -46,7 +47,7 @@
 .vertaald {
     composes: userParagraphs from "./../../styles/typo.module.css";
     color: white; 
-    background-image: url(./../../assets/BgVertaald.png);
+    background-image: url(./../../assets/user/BgVertaald.png);
     height: 16.8rem;
     width: 100%;
     margin-top: -2rem;

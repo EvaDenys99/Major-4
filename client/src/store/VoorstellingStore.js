@@ -24,7 +24,7 @@ class VoorstellingStore {
 
     this.addVoorstelling(
       1,
-      `MACBETH`,
+      `Macbeth`,
       `Macbeth van Shakespeare is ongetwijfeld het meest demonische werk van Giuseppe Verdi. De focus ligt op de vergankelijkheid van de macht. We zijn getuige hoe er een ketting van geweld, terreur en paranoia ontstaat waarbij Macbeth, Lady Macbeth en de heksen op een fatale en destructieve manier aan elkaar zijn overgeleverd. De Duitse regisseur Michael Thalheimer creëert daarmee, na de producties La Forza del Destino en Otello, zijn eigen Verdi-trilogie bij Opera Vlaanderen.`,
       `3u`,
       `1x15min`,
@@ -37,7 +37,7 @@ class VoorstellingStore {
 
     this.addVoorstelling(
       2,
-      `MIDDAGCONCERT: DEMONS, WITCHES AND MADNESS`,
+      `Middagconcert: Demons, Witches and Madness`,
       `testestestest`,
       `2u`,
       `1x15min`,
@@ -50,7 +50,7 @@ class VoorstellingStore {
 
     this.addVoorstelling(
       3,
-      `DON CARLOS`,
+      `Don Carlos`,
       `testestestest`,
       `2u`,
       `1xpauze`,
@@ -63,7 +63,7 @@ class VoorstellingStore {
 
     this.addVoorstelling(
       4,
-      `AFSCHEID EN NIEUW BEGIN`,
+      `Afscheid en Nieuw Begin`,
       `testestestest`,
       `2u`,
       `1xpauze`,
@@ -76,7 +76,7 @@ class VoorstellingStore {
 
     this.addVoorstelling(
       5,
-      `BACH STUDIOS`,
+      `Bach Studios`,
       `Ballet Vlaanderen haalt met de Franse choreograaf Benjamin Millepied een van de meest gerenommeerde hedendaagse balletchoreografen voor het eerst naar België. Hij creëert voor het eerst een avondvullend werk gebaseerd op werk van Johann Sebastian Bach. Het belooft een unieke, abstracte en toch hoogst emotionele balletavond te worden, gecreëerd door een van de meest innovatieve balletchoreografen van het moment.`,
       `1u45`,
       `1x`,
@@ -89,7 +89,7 @@ class VoorstellingStore {
 
     this.addVoorstelling(
       6,
-      `AFSCHEID EN NIEUW BEGIN`,
+      `Afscheid en Nieuw Begin`,
       `testestestest`,
       `2u`,
       `1xpauze`,
@@ -102,7 +102,7 @@ class VoorstellingStore {
 
     this.addVoorstelling(
       7,
-      `MOZART: A SYMPHONY OF SONGS`,
+      `Mozart: a Symphony of Songs`,
       `testestestest`,
       `2u`,
       `1xpauze`,
@@ -115,7 +115,7 @@ class VoorstellingStore {
 
     this.addVoorstelling(
       8,
-      `REQUIEM`,
+      `Requiem`,
       `testestestest`,
       `2u`,
       `1xpauze`,

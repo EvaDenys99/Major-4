@@ -1,0 +1,10 @@
+.container{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.meerTitel {
+    composes: userTitel from "./../../styles/typo.module.css";
+    width: 80%;
+}

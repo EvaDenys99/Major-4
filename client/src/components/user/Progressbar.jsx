@@ -19,7 +19,7 @@ class Progressbar extends Component {
 
     const startProcess = () => {
       if (this.state.percentage === 100) {
-        this.setState({ percentage: (this.state.percentage = 0) });
+        this.setState({ percentage: 0 });
       } else {
         this.setState({
           percentage:

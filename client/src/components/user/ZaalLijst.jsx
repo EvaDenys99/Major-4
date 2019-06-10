@@ -3,6 +3,7 @@ import { inject, observer } from "mobx-react";
 import { Link } from "react-router-dom";
 
 import styles from "./../user/ZaalLijst.module.css";
+import stylesUI from "./../../styles/uiControls.module.css";
 
 class ZaalLijst extends Component {
   constructor(props) {
@@ -13,11 +14,13 @@ class ZaalLijst extends Component {
   handleSubmitMeer = e => {
     e.preventDefault();
     this.setState({ uitgeklapt: true });
+    window.scrollTo({ top: 0, left: 812, behavior: `smooth` });
   };
 
   handleSubmitMinder = e => {
     e.preventDefault();
     this.setState({ uitgeklapt: false });
+    window.scrollTo({ top: 0, left: 0, behavior: `smooth` });
   };
 
   render() {
@@ -42,7 +45,8 @@ class ZaalLijst extends Component {
           })}
         </section>
         <button onClick={this.handleSubmitMinder} className={styles.buttonDark}>
-          Andere locaties
+          <p>Andere locaties</p>
+          <p className={stylesUI.upArrow}></p>
         </button>
         <ul className={styles.locatieGrid}>
           {zaalStore.bijZalen.map(zaal => {
@@ -77,7 +81,8 @@ class ZaalLijst extends Component {
           })}
         </section>
         <button onClick={this.handleSubmitMeer} className={styles.buttonLight}>
-          Andere locaties
+          <p>Andere locaties</p>
+          <p className={stylesUI.downArrow}></p>
         </button>
       </>
     );
