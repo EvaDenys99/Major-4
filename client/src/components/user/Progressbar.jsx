@@ -1,26 +1,41 @@
 import React, { Component } from "react";
 import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
-
+const io = require(`socket.io-client`);
 class Progressbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       percentage: 0
     };
-    this.nextStep = this.nextStep.bind(this);
-    this.reset = this.reset.bind(this);
+
+    const socket = io.connect(`:3000`);
+    socket.on(`start`, function(msg) {
+      startProcess();
+    });
+    socket.on(`reset`, function(msg) {
+      resetProcess();
+    });
+
+    const startProcess = () => {
+      if (this.state.percentage === 100) {
+        this.setState({ percentage: (this.state.percentage = 0) });
+      } else {
+        this.setState({
+          percentage:
+            this.state.percentage + 100 / this.props.voorstelling.aantalAkts
+        });
+      }
+    };
+
+    const resetProcess = () => {
+      this.setState({
+        percentage:
+          this.state.percentage - 100 / this.props.voorstelling.aantalAkts
+      });
+    };
   }
-  nextStep() {
-    if (this.state.percentage === 100) {
-      this.setState({ percentage: (this.state.percentage = 0) });
-    } else {
-      this.setState({ percentage: this.state.percentage + 20 });
-    }
-  }
-  reset() {
-    this.setState({ percentage: (this.state.percentage = 0) });
-  }
+
   render() {
     return (
       <div>
@@ -33,11 +48,6 @@ class Progressbar extends Component {
             }
           }}
         />
-        <div>
-          <button onClick={this.nextStep}>Next Step</button>
-          <button onClick={this.reset}>reset</button>
-        </div>
-        <div onClick={() => this.setState({ percentage: 0 })}>Reset</div>
       </div>
     );
   }

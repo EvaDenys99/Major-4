@@ -23,10 +23,10 @@ class AktStore {
 
     this.addAkt(12, `Akte |`, 5, `gent`);
     this.addAkt(13, `Akte ||`, 5, `gent`);
+    this.addAkt(14, `Akte |||`, 5, `gent`);
+    this.addAkt(15, `Akte ||||`, 5, `gent`);
 
-    this.addAkt(14, `Akte |`, 6, `gent`);
-    this.addAkt(15, `Akte ||`, 6, `gent`);
-    this.addAkt(16, `Akte |||`, 6, `gent`);
+    this.addAkt(16, `Akte |`, 6, `gent`);
 
     this.addAkt(17, `Akte |`, 7, `gent`);
     this.addAkt(18, `Akte ||`, 7, `gent`);

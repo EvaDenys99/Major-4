@@ -24,11 +24,7 @@ const Akten = ({ id, aktStore, voorstellingStore }) => {
             <>
               {akten.map(akt => (
                 <div key={akt.id}>
-                  <Link
-                    to={`/notificatie/${akt.id}/${akt.VoorstellingZaal}`}
-                    // zaal={akt.VoorstellingZaal}
-                  >
-                    {/* <Notificaties id={akt.id} zaal={akt.VoorstellingZaal} /> */}
+                  <Link to={`/notificatie/${akt.id}/${akt.VoorstellingZaal}`}>
                     <p>
                       {akt.naam}
                       <img

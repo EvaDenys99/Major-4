@@ -9,7 +9,7 @@ const Voorstelling = ({ voorstelling }) => {
       <img src={voorstelling.imageUser} alt="foto" />
       <p>{voorstelling.titel}</p>
       <p>progressiebar</p>
-      <ProgressBar />
+      <ProgressBar voorstelling={voorstelling} />
       <p>{voorstelling.duur}</p>
       <p>{voorstelling.pauze}</p>
       <p>{voorstelling.discription}</p>

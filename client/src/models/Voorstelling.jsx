@@ -8,7 +8,8 @@ class Voorstelling {
     imageUser,
     imageAdmin,
     plaats,
-    zaalId
+    zaalId,
+    aantalAkts
   ) {
     this.id = id;
     this.titel = titel;
@@ -19,6 +20,7 @@ class Voorstelling {
     this.imageAdmin = imageAdmin;
     this.plaats = plaats;
     this.zaalId = zaalId;
+    this.aantalAkts = aantalAkts;
   }
 }
 
