@@ -7,7 +7,7 @@ import stylesTypo from "./../../styles/typo.module.css";
 
 const io = require(`socket.io-client`);
 
-class Lines extends Component {
+class LinesLijst extends Component {
   constructor(props) {
     super(props);
     // console.log(props);
@@ -57,8 +57,8 @@ class Lines extends Component {
   }
 }
 
-decorate(Lines, {
+decorate(LinesLijst, {
   messages: observable
 });
 
-export default observer(Lines);
+export default observer(LinesLijst);

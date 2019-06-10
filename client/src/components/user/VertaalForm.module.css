@@ -1,0 +1,58 @@
+.talen {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.talen > select {
+    width: 13rem;
+}
+
+.formInput {
+    composes: userParagraphs from "./../../styles/typo.module.css";
+    width: 100%;
+    background-color: white;
+    min-height: 17rem;
+    text-align: center;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.buttonCentraal{
+    margin-top: 2rem;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttonRechts {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.vertalen {
+    composes: userParagraphs from "./../../styles/typo.module.css";
+    background-image: url(./../../assets/BgVertalen.png);
+    background-repeat: no-repeat;
+    height: 16.8rem;
+    width: 100%;
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+}
+
+.vertaald {
+    composes: userParagraphs from "./../../styles/typo.module.css";
+    color: white; 
+    background-image: url(./../../assets/BgVertaald.png);
+    height: 16.8rem;
+    width: 100%;
+    margin-top: -2rem;
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+}
+

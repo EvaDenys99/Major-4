@@ -2,6 +2,11 @@ import React, { Component } from "react";
 
 import switchImg from "../../assets/user/switch.png";
 
+import styles from "./VertaalForm.module.css";
+import stylesUI from "./../../styles/uiControls.module.css";
+import stylesTypo from "./../../styles/typo.module.css";
+import stylesLayout from "./../../styles/layout.module.css";
+
 class VertaalForm extends Component {
   constructor(props) {
     super(props);
@@ -23,28 +28,61 @@ class VertaalForm extends Component {
 
     return vertaald ? (
       <>
-        <p>Nederlands</p>
-        <img src={switchImg} alt="switch" width="50" height="50" />
-        <p>Engels</p>
-        <div>
-          <input type="text" defaultValue="Ik ken geen andere taal" />
-          <p>I don't know any other languages</p>
+        <div className={styles.talen}>
+          <select name="" id="" className={stylesTypo.userParagraphs}>
+            <option value="Nederlands" className={stylesTypo.userParagraphs}>
+              Nederlands
+            </option>
+          </select>
+          <img src={switchImg} alt="switch" width="50" height="50" />
+          <select name="" id="" className={stylesTypo.userParagraphs}>
+            <option value="Engels" className={stylesTypo.userParagraphs}>
+              Engels
+            </option>
+          </select>
         </div>
-        <button onClick={this.handleSubmitReset}>Opnieuw</button>
+        <div className={stylesLayout.line}></div>
+        <div>
+          <p className={styles.vertalen}>Ik ken geen andere taal</p>
+          <p className={styles.vertaald}>I don't know any other languages</p>
+        </div>
+        <div className={styles.buttonRechts}>
+          <button onClick={this.handleSubmitReset} className={stylesUI.button}>
+            Opnieuw
+          </button>
+        </div>
       </>
     ) : (
       <>
-        <select name="" id="">
-          <option value="Nederlands">Nederlands</option>
-        </select>
-        <img src={switchImg} alt="switch" width="50" height="50" />
-        <select name="" id="">
-          <option value="Engels">Engels</option>
-        </select>
-        <div>
-          <input type="text" defaultValue="Ik ken geen andere taal" />
+        <div className={styles.talen}>
+          <select name="" id="" className={stylesTypo.userParagraphs}>
+            <option value="Nederlands" className={stylesTypo.userParagraphs}>
+              Nederlands
+            </option>
+          </select>
+          <img src={switchImg} alt="switch" width="50" height="50" />
+          <select name="" id="" className={stylesTypo.userParagraphs}>
+            <option value="Engels" className={stylesTypo.userParagraphs}>
+              Engels
+            </option>
+          </select>
         </div>
-        <button onClick={this.handleSubmitVertaal}>Vertaal</button>
+        <div className={stylesLayout.line}></div>
+        <div>
+          <input
+            type="text"
+            defaultValue="Ik ken geen andere taal"
+            className={styles.formInput}
+          />
+        </div>
+        <div className={styles.buttonCentraal}>
+          <button
+            onClick={this.handleSubmitVertaal}
+            className={stylesUI.button}
+          >
+            Vertaal
+          </button>
+        </div>
       </>
     );
   }

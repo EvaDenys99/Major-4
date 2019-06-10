@@ -14,7 +14,7 @@
     height: 3.5rem;
     width: 18rem;
     composes: color-primary from "./colors.module.css";
-    border-bottom: 0.2rem solid;
+    composes: line from "./layout.module.css";
     margin: 4rem 0 3rem 0 ;
 }
 

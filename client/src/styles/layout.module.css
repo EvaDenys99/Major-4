@@ -13,3 +13,9 @@
     min-height: 76.6rem;
     margin-bottom: 4.6rem;
 }
+
+.line {
+    height: 0.2rem;
+    border-bottom: 0.2rem solid var(--primary-color);
+    margin: 2rem 0rem; 
+}
