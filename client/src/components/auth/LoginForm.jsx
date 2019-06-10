@@ -27,9 +27,10 @@ const LoginForm = ({ uiStore, history }) => {
               <input
                 type="email"
                 name="email"
-                id="email="
+                id="email"
                 ref={emailInput}
                 className={styles.formInput}
+                required
               />
             </div>
             <div>
@@ -40,6 +41,7 @@ const LoginForm = ({ uiStore, history }) => {
                 id="password"
                 ref={pwdInput}
                 className={styles.formInput}
+                required
               />
             </div>
             <p>

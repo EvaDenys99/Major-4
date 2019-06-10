@@ -4,11 +4,58 @@ import { decorate, observable } from "mobx";
 import { Link } from "react-router-dom";
 import Select from "react-select";
 import emptyVoorstelling from "../../assets/user/emptyVoorstelling.png";
+
+import macbethUser from "../../assets/user/macbeth.png";
+import macbeth from "../../assets/admin/macbeth.png";
+import demonsUser from "../../assets/user/demons.png";
+import demons from "../../assets/admin/demons.png";
+import bachUser from "../../assets/user/bach.png";
+import bach from "../../assets/admin/bach.png";
 class VoorstellingLijst extends Component {
   constructor(props) {
     super(props);
     console.log(props);
-    this.state = { voorstellingen: [] };
+
+    this.state = {
+      voorstellingen: [
+        {
+          id: 5,
+          titel: `BACH STUDIOS`,
+          discription: `testestestest`,
+          duur: `2u`,
+          pauze: `1xpauze`,
+          imageUser: bachUser,
+          imageAdmin: bach,
+          plaats: `gent`,
+          zaalId: 1,
+          aantalAkts: 4
+        },
+        {
+          id: 2,
+          titel: `MIDDAGCONCERT: DEMONS, WITCHES AND MADNESS`,
+          discription: `testestestest`,
+          duur: `2u`,
+          pauze: `1xpauze`,
+          imageUser: demonsUser,
+          imageAdmin: demons,
+          plaats: `antwerpen`,
+          zaalId: 2,
+          aantalAkts: 3
+        },
+        {
+          id: 1,
+          titel: `MACBETH`,
+          discription: `testestestest`,
+          duur: `2u`,
+          pauze: `1xpauze`,
+          imageUser: macbethUser,
+          imageAdmin: macbeth,
+          plaats: `antwerpen`,
+          zaalId: 2,
+          aantalAkts: 2
+        }
+      ]
+    };
   }
 
   render() {
