@@ -10,7 +10,9 @@ const Lines = () => {
     <>
       <section className={stylesLayout.content}>
         <h1 className={stylesTypo.userTitel}>Pushlines</h1>
-        <p>Bekijk hier de vorige pushlines</p>
+        <p className={stylesTypo.userParagraphs}>
+          Bekijk hier de vorige pushlines
+        </p>
         <LinesLijst />
       </section>
       <NavigatieLines />

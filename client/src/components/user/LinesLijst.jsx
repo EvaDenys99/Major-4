@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { decorate, observable } from "mobx";
 import { observer } from "mobx-react";
+
+import styles from "./LinesLijst.module.css";
+import stylesTypo from "./../../styles/typo.module.css";
+
 const io = require(`socket.io-client`);
 
 class Lines extends Component {
@@ -26,7 +30,11 @@ class Lines extends Component {
   }
   render() {
     const showMessage = (message, index) => {
-      return <li key={index}>{message}</li>;
+      return (
+        <p key={index} className={styles.item}>
+          {message}
+        </p>
+      );
     };
 
     const { messages } = this.state;
@@ -34,16 +42,16 @@ class Lines extends Component {
     return (
       <>
         {/* {console.log(messages)} */}
-        <ul id="messages" />
-        <ul>
+        {/* <ul id="messages" /> */}
+        <div>
           {messages.length > 0 ? (
-            messages.map((message, index) => showMessage(message, index))
-          ) : (
-            <div>
-              <p>Nog geen messages.</p>
+            <div className={styles.container}>
+              {messages.map((message, index) => showMessage(message, index))}
             </div>
+          ) : (
+            <p className={stylesTypo.userParagraphs}>Nog geen messages...</p>
           )}
-        </ul>
+        </div>
       </>
     );
   }

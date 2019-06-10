@@ -1,0 +1,9 @@
+.container { 
+    background-color: white;
+}
+
+.item {
+    composes: listItem from "./../../styles/uiControls.module.css";
+    padding: 2rem 1rem;
+    margin: 2rem 0rem;
+}
