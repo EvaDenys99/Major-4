@@ -28,6 +28,12 @@ io.on("connection", function(socket) {
   socket.on("chat message", function(msg) {
     io.emit("chat message", msg);
   });
+  socket.on("start", function(msg) {
+    io.emit("start", msg);
+  });
+  socket.on("reset", function(msg) {
+    io.emit("reset", msg);
+  });
   /* … */
 });
 

@@ -1,5 +1,5 @@
 import React from "react";
-
+import ProgressBar from "./Progressbar";
 import { Link } from "react-router-dom";
 
 const Voorstelling = ({ voorstelling }) => {
@@ -9,6 +9,7 @@ const Voorstelling = ({ voorstelling }) => {
       <img src={voorstelling.imageUser} alt="foto" />
       <p>{voorstelling.titel}</p>
       <p>progressiebar</p>
+      <ProgressBar voorstelling={voorstelling} />
       <p>{voorstelling.duur}</p>
       <p>{voorstelling.pauze}</p>
       <p>{voorstelling.discription}</p>

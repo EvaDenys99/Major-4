@@ -51,9 +51,9 @@ class NotificatieStore {
   deleteNotificatie = notificatie => {
     this.notificaties.remove(notificatie);
     this.api.delete(notificatie);
-    cogoToast.succes(`Notificatie is verwijderd`, {
-      position: `top-center`
-    });
+    // cogoToast.succes(`Notificatie is verwijderd`, {
+    //   position: `top-center`
+    // });
   };
 }
 

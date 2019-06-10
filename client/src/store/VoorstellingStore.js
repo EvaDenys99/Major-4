@@ -31,6 +31,7 @@ class VoorstellingStore {
       macbethUser,
       macbeth,
       `antwerpen`,
+      2,
       2
     );
 
@@ -43,7 +44,8 @@ class VoorstellingStore {
       demonsUser,
       demons,
       `antwerpen`,
-      2
+      2,
+      3
     );
 
     this.addVoorstelling(
@@ -55,7 +57,8 @@ class VoorstellingStore {
       doncarlosUser,
       doncarlos,
       `antwerpen`,
-      2
+      2,
+      4
     );
 
     this.addVoorstelling(
@@ -67,6 +70,7 @@ class VoorstellingStore {
       afscheidUser,
       afscheid,
       `antwerpen`,
+      2,
       2
     );
 
@@ -79,7 +83,8 @@ class VoorstellingStore {
       bachUser,
       bach,
       `gent`,
-      1
+      1,
+      4
     );
 
     this.addVoorstelling(
@@ -91,7 +96,8 @@ class VoorstellingStore {
       afscheidUser,
       afscheid,
       `gent`,
-      1
+      1,
+      3
     );
 
     this.addVoorstelling(
@@ -103,7 +109,8 @@ class VoorstellingStore {
       mozartUser,
       mozart,
       `gent`,
-      1
+      1,
+      4
     );
 
     this.addVoorstelling(
@@ -115,7 +122,8 @@ class VoorstellingStore {
       requiemUser,
       requiem,
       `gent`,
-      1
+      1,
+      2
     );
   }
 
@@ -128,7 +136,8 @@ class VoorstellingStore {
     imageUser,
     imageAdmin,
     plaats,
-    zaalId
+    zaalId,
+    aantalAkts
   ) => {
     this.voorstellingen.push(
       new Voorstelling(
@@ -140,7 +149,8 @@ class VoorstellingStore {
         imageUser,
         imageAdmin,
         plaats,
-        zaalId
+        zaalId,
+        aantalAkts
       )
     );
   };

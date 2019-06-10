@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-
+const io = require(`socket.io-client`);
 class OnderMenu2 extends Component {
   constructor(props) {
     super(props);
@@ -21,11 +21,17 @@ class OnderMenu2 extends Component {
 
   handlePlay = e => {
     e.preventDefault();
+    // SOCKET.IO DEFINIEREN
+    const socket = io.connect(`:3000`);
+    socket.emit(`start`, e.currentTarget.value);
     this.setState({ playing: true });
   };
 
   handlePauze = e => {
     e.preventDefault();
+    // SOCKET.IO DEFINIEREN
+    const socket = io.connect(`:3000`);
+    socket.emit(`reset`, e.currentTarget.value);
     this.setState({ playing: false });
   };
 
