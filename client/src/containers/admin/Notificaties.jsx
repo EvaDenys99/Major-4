@@ -5,6 +5,8 @@ import { inject, PropTypes, observer } from "mobx-react";
 import cogoToast from "cogo-toast";
 import Verzend from "../../assets/admin/send.png";
 
+import stylesLayout from "./../../styles/layout.module.css";
+
 const io = require(`socket.io-client`);
 
 const Notificaties = ({ id, notificatieStore, zaal }) => {
@@ -26,7 +28,7 @@ const Notificaties = ({ id, notificatieStore, zaal }) => {
   };
 
   return notificaties ? (
-    <div>
+    <div className={stylesLayout.layoutAdmin}>
       <BovenMenu />
       <section>
         {notificaties.length > 0 ? (
@@ -63,7 +65,7 @@ const Notificaties = ({ id, notificatieStore, zaal }) => {
       <OnderMenu2 id={id} zaal={zaal} adding={false} />
     </div>
   ) : (
-    <div>
+    <div className={stylesLayout.layoutAdmin}>
       <BovenMenu />
       <p>Loading Notificaties</p>
       <OnderMenu2 />

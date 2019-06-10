@@ -1,9 +1,13 @@
 import React from "react";
 
+import styles from "./OnderMenu.module.css";
+
 const OnderMenu = () => {
   return (
     <>
-      <p>test</p>
+      <div className={styles.container}>
+        <p className={styles.navigatie}></p>
+      </div>
     </>
   );
 };

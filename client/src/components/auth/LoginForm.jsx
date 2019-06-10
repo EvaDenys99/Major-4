@@ -3,7 +3,9 @@ import { inject } from "mobx-react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import { ROUTES } from "../../constants";
-import styles from "./../../styles/form.module.css";
+
+import stylesForm from "./../../styles/form.module.css";
+import stylesUI from "./../../styles/uiControls.module.css";
 
 const LoginForm = ({ uiStore, history }) => {
   const emailInput = React.createRef();
@@ -19,7 +21,7 @@ const LoginForm = ({ uiStore, history }) => {
   return (
     <>
       <div>
-        <form onSubmit={handleSubmit} className={styles.form}>
+        <form onSubmit={handleSubmit} className={stylesForm.form}>
           <div>
             <h2>Login</h2>
             <div>
@@ -29,7 +31,7 @@ const LoginForm = ({ uiStore, history }) => {
                 name="email"
                 id="email"
                 ref={emailInput}
-                className={styles.formInput}
+                className={stylesForm.formInput}
                 required
               />
             </div>
@@ -40,7 +42,7 @@ const LoginForm = ({ uiStore, history }) => {
                 name="password"
                 id="password"
                 ref={pwdInput}
-                className={styles.formInput}
+                className={stylesForm.formInput}
                 required
               />
             </div>
@@ -48,7 +50,7 @@ const LoginForm = ({ uiStore, history }) => {
               No account? <Link to={ROUTES.register}>Sign up!</Link>
             </p>
           </div>
-          <input type="submit" value="Login" className={styles.button} />
+          <input type="submit" value="Login" className={stylesUI.button} />
         </form>
       </div>
     </>

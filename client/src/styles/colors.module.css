@@ -6,6 +6,7 @@
 :global(:root){
     --primary-color: #4F152D;
     --light-color: #A78A96;
+    --lighter-color: #D7C8CC;
     --grey-color: #CDCDCD;
     --succes-color: #00ADA9;
     --error-color: #E73B44;

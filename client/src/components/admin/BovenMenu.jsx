@@ -4,6 +4,8 @@ import { inject, observer } from "mobx-react";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+import styles from "./BovenMenu.module.css";
+
 const BovenMenu = ({ uiStore, history }) => {
   const handleSubmit = e => {
     e.preventDefault();
@@ -15,15 +17,20 @@ const BovenMenu = ({ uiStore, history }) => {
   return (
     <>
       <nav>
-        <div>
+        <div className={styles.header}>
           <Link to={ROUTES.homeAdmin}>
-            <h1>PushLines</h1>
+            <h1 className={styles.logoName}>PushLines</h1>
           </Link>
 
           {uiStore.authUser ? (
             <ul>
               <li>
-                <button onClick={handleSubmit}>Logout</button>
+                <input
+                  type="submit"
+                  onClick={handleSubmit}
+                  value="Logout"
+                  className={styles.logout}
+                />
               </li>
             </ul>
           ) : (

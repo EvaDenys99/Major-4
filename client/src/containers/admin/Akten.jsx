@@ -6,6 +6,8 @@ import { inject, PropTypes, observer } from "mobx-react";
 import { Link } from "react-router-dom";
 import Arrow from "../../assets/admin/arrowAkt.png";
 
+import stylesLayout from "./../../styles/layout.module.css";
+
 const Akten = ({ id, aktStore, voorstellingStore }) => {
   // HIER WORDEN ALLE AKTS DIE OVEREEN KOMEN OPGEHAALD
   // om de titel op te halen van de voorstelling moeten we eerst de voorstelling ophalen die hierbij hoort
@@ -16,7 +18,7 @@ const Akten = ({ id, aktStore, voorstellingStore }) => {
 
   return akten ? (
     <>
-      <div>
+      <div className={stylesLayout.layoutAdmin}>
         <BovenMenu />
         <section>
           <h2>{voorstellingTitel.titel}</h2>
@@ -48,7 +50,7 @@ const Akten = ({ id, aktStore, voorstellingStore }) => {
       </div>
     </>
   ) : (
-    <div>
+    <div className={stylesLayout.layoutAdmin}>
       <BovenMenu />
       <h2>{voorstellingTitel.titel}</h2>
       <p>Loading akts</p>

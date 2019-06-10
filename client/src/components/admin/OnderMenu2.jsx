@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
+
+import styles from "./OnderMenu.module.css";
+
 const io = require(`socket.io-client`);
 class OnderMenu2 extends Component {
   constructor(props) {
@@ -49,22 +52,40 @@ class OnderMenu2 extends Component {
     // console.log(zaal);
 
     return adding ? (
-      <p onClick={this.handleAddReset}>x</p>
+      <div className={styles.container}>
+        <div className={styles.navigatie}>
+          <div onClick={this.handleAddReset} className={styles.sluit}></div>
+        </div>
+      </div>
     ) : playing ? (
       <>
-        <p onClick={this.handlePauze}>pauze</p>
-        <p onClick={this.handleStop}>stop</p>
-        <Link to={`/add/${id}/${zaal}`} id={id} zaal={zaal}>
-          <p>+</p>
-        </Link>
+        <div className={styles.container}>
+          <div className={styles.navigatie}>
+            <div>
+              <div onClick={this.handlePauze} className={styles.pauze}></div>
+              <div onClick={this.handleStop} className={styles.stop}></div>
+            </div>
+
+            <Link to={`/add/${id}/${zaal}`} id={id} zaal={zaal}>
+              <div className={styles.add}></div>
+            </Link>
+          </div>
+        </div>
       </>
     ) : (
       <>
-        <p onClick={this.handlePlay}>play</p>
-        <p onClick={this.handleStop}>stop</p>
-        <Link to={`/add/${id}/${zaal}`} id={id} zaal={zaal}>
-          <p>+</p>
-        </Link>
+        <div className={styles.container}>
+          <div className={styles.navigatie}>
+            <div>
+              <div onClick={this.handlePlay} className={styles.play}></div>
+              <div onClick={this.handleStop} className={styles.stop}></div>
+            </div>
+
+            <Link to={`/add/${id}/${zaal}`} id={id} zaal={zaal}>
+              <div className={styles.add}></div>
+            </Link>
+          </div>
+        </div>
       </>
     );
   }

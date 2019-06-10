@@ -6,10 +6,12 @@ import VoorstellingLijst from "../../components/admin/VoorstellingLijst";
 import withAuthentication from "../../components/auth/WithAuthentication";
 import { observer } from "mobx-react";
 
+import stylesLayout from "./../../styles/layout.module.css";
+
 const Home = () => {
   return (
     <>
-      <div>
+      <div className={stylesLayout.layoutAdmin}>
         <BovenMenu />
         <section>
           <h2>Komende voorstellingen</h2>

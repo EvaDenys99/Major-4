@@ -1,0 +1,45 @@
+.container { 
+    position: fixed;
+    bottom: 0;
+    width: 133.6rem;
+    background-image: url(./../../assets/admin/BgMenu.png);
+    background-repeat: no-repeat;
+}
+
+.navigatie {
+    height: 25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigatie > div {
+    display: flex; 
+    flex-direction: row;
+}
+
+.play {
+    composes: roundedButton from "./../../styles/uiControls.module.css";
+    background-image: url(./../../assets/admin/play.png);
+}
+
+.pauze {
+    composes: roundedButton from "./../../styles/uiControls.module.css";
+    background-image: url(./../../assets/admin/pauze.png);
+}
+
+.stop {
+    composes: roundedButton from "./../../styles/uiControls.module.css";
+    background-image: url(./../../assets/admin/stop.png);
+}
+
+.add {
+    composes: roundedButton from "./../../styles/uiControls.module.css";
+    background-image: url(./../../assets/admin/add.png);
+}
+
+.sluit {
+    composes: roundedButton from "./../../styles/uiControls.module.css";
+    background-image: url(./../../assets/admin/sluit.png);
+}

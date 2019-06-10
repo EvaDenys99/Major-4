@@ -15,7 +15,3 @@
     height: 6.9rem;
     background-color: white;
 }
-
-.button { 
-    composes: button from "./uiControls.module.css";
-}

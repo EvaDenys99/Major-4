@@ -10,11 +10,13 @@ import stylesTypo from "./../../styles/typo.module.css";
 const Home = () => {
   return (
     <>
-      <section className={stylesLayout.content}>
-        <h1 className={stylesTypo.userTitel}>Waar ben je?</h1>
-        <ZaalLijst />
-      </section>
-      <NavigatieHome />
+      <div className={stylesLayout.layout}>
+        <section className={stylesLayout.content}>
+          <h1 className={stylesTypo.userTitel}>Waar ben je?</h1>
+          <ZaalLijst />
+        </section>
+        <NavigatieHome />
+      </div>
     </>
   );
 };

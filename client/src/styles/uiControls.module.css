@@ -9,7 +9,8 @@
 .roundedButton {
     width: 13rem;
     height: 13rem;
-    background-color: var(--primary-color);
+    background-repeat: no-repeat;
+    margin: 2rem;
 }
 
 .listItem {

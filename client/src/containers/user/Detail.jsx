@@ -9,6 +9,7 @@ import NavigatieHome from "../../components/user/NavigatieHome";
 import emptyVoorstelling from "../../assets/user/emptyVoorstelling.png";
 
 import styles from "./Detail.module.css";
+import stylesLayout from "./../../styles/layout.module.css";
 
 const Detail = ({ id, voorstellingStore }) => {
   const voorstelling = voorstellingStore.findByZaalId(id);
@@ -17,23 +18,27 @@ const Detail = ({ id, voorstellingStore }) => {
 
   return voorstelling ? (
     <>
-      <Voorstelling voorstelling={voorstelling} />
-      <div className={styles.container}>
-        <p className={styles.meerTitel}>Ook in deze zaal</p>
+      <div className={stylesLayout.layout}>
+        <Voorstelling voorstelling={voorstelling} />
+        <div className={styles.container}>
+          <p className={styles.meerTitel}>Ook in deze zaal</p>
+        </div>
+        <MeerVoorstellingen voorstellingen={voorstellingen} />
+        <NavigatieHome />
       </div>
-      <MeerVoorstellingen voorstellingen={voorstellingen} />
-      <NavigatieHome />
     </>
   ) : (
     <>
-      <div className={styles.container}>
-        <p>Geen voorstellingen</p>
-        <img src={emptyVoorstelling} alt="titel" />
+      <div className={stylesLayout.layout}>
         <div className={styles.container}>
-          <p className={styles.meerTitel}>In andere zalen</p>
+          <p>Geen voorstellingen</p>
+          <img src={emptyVoorstelling} alt="titel" />
+          <div className={styles.container}>
+            <p className={styles.meerTitel}>In andere zalen</p>
+          </div>
+          <MeerVoorstellingen voorstellingen={alleVoorstellingen} />
+          <NavigatieHome />
         </div>
-        <MeerVoorstellingen voorstellingen={alleVoorstellingen} />
-        <NavigatieHome />
       </div>
     </>
   );

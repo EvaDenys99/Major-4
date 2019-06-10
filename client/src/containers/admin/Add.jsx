@@ -5,11 +5,13 @@ import OnderMenu2 from "../../components/admin/OnderMenu2";
 import AddNotificatie from "../../components/admin/AddNotificatie";
 import BackLink from "../../components/admin/BackLink";
 
+import stylesLayout from "./../../styles/layout.module.css";
+
 const Add = ({ id, zaal }) => {
   console.log(id);
   return (
     <>
-      <div>
+      <div className={stylesLayout.layoutAdmin}>
         <BovenMenu />
         <section>
           <BackLink />

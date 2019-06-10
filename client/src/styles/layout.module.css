@@ -1,8 +1,12 @@
 .layout {
-    /* main */
     max-width: 37.5rem;
     background-image: url(./../assets/user/background.png);
     background-repeat: no-repeat;
+}
+
+.layoutAdmin {
+    max-width: 136.6rem;
+    background-image: url(./../assets/admin/background.png);
 }
 
 .content {

@@ -10,11 +10,13 @@ import stylesTypo from "./../../styles/typo.module.css";
 const Vertaal = () => {
   return (
     <>
-      <section className={stylesLayout.content}>
-        <h1 className={stylesTypo.userTitel}>Vertaal je zin</h1>
-        <VertaalForm />
-      </section>
-      <NavigatieVertaling />
+      <div className={stylesLayout.layout}>
+        <section className={stylesLayout.content}>
+          <h1 className={stylesTypo.userTitel}>Vertaal je zin</h1>
+          <VertaalForm />
+        </section>
+        <NavigatieVertaling />
+      </div>
     </>
   );
 };

@@ -1,10 +1,12 @@
 import React from "react";
 import RegisterForm from "../../components/auth/RegisterForm";
 
+import stylesLayout from "./../../styles/layout.module.css";
+
 const Register = () => {
   return (
     <>
-      <div>
+      <div className={stylesLayout.layoutAdmin}>
         <h1>Tattoo Keeper</h1>
         <section>
           <RegisterForm />

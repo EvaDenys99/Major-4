@@ -12,11 +12,10 @@ import Notificaties from "./admin/Notificaties";
 import Add from "./admin/Add";
 import Login from "../containers/admin/Login";
 import Register from "../containers/admin/Register";
-import stylesLayout from "./../styles/layout.module.css";
 class App extends Component {
   render() {
     return (
-      <main className={stylesLayout.layout}>
+      <main>
         <Switch>
           <Route path={ROUTES.home} exact strict component={UserHome} />
           <Route
