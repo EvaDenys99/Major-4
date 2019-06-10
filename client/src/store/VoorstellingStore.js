@@ -145,6 +145,11 @@ class VoorstellingStore {
     );
   };
 
+  getAll = () => {
+    const voorstellingen = this.voorstellingen;
+    return voorstellingen;
+  };
+
   findById = testId => {
     const voorstelling = this.voorstellingen.find(test => test.id == testId);
     return voorstelling;

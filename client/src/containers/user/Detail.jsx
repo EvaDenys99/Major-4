@@ -11,11 +11,12 @@ import emptyVoorstelling from "../../assets/user/emptyVoorstelling.png";
 const Detail = ({ id, voorstellingStore }) => {
   const voorstelling = voorstellingStore.findByZaalId(id);
   const voorstellingen = voorstellingStore.findAllesByZaalId(id);
+  const alleVoorstellingen = voorstellingStore.getAll();
 
   return voorstelling ? (
     <>
       <Voorstelling voorstelling={voorstelling} />
-      <p>Ontdek meer</p>
+      <p>Ook in deze zaal</p>
       <MeerVoorstellingen voorstellingen={voorstellingen} />
       <NavigatieHome />
     </>
@@ -23,8 +24,8 @@ const Detail = ({ id, voorstellingStore }) => {
     <>
       <div>Geen voorstellingen</div>
       <img src={emptyVoorstelling} alt="titel" />
-      {/* <p>Ontdek meer</p>
-      <MeerVoorstellingen voorstellingen={voorstellingen} /> */}
+      <p>In andere zalen</p>
+      <MeerVoorstellingen voorstellingen={alleVoorstellingen} />
       <NavigatieHome />
     </>
   );

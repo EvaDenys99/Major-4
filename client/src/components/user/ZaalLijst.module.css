@@ -1,0 +1,49 @@
+.buttonLight {
+    composes: listItem from "./../../styles/uiControls.module.css";
+    width: 100%;
+    height: 4.4rem;
+    margin-top: 1rem;
+}
+
+.buttonDark {
+    composes: button from "./../../styles/uiControls.module.css";
+    width: 100%;
+    height: 4.4rem;
+    margin-top: 1rem;
+}
+
+.locatieGrid {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    /* padding-bottom: 4rem; */
+}
+
+.listItems {
+    composes: listItem from "./../../styles/uiControls.module.css";
+    /* width: 80%; */
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.line {
+    width: 7.3rem;
+    height: 0.2rem;
+    border-bottom: 0.2rem solid var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.groteZaal {
+    margin-bottom: 2rem;
+}

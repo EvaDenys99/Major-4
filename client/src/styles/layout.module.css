@@ -1,8 +1,15 @@
 .layout {
     /* main */
-
+    max-width: 37.5rem;
+    background-image: url(./../assets/background.png);
+    background-repeat: no-repeat;
 }
 
 .content {
-    /*  */
+    background-image: url(./../assets//BackgroundDriehoek.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    min-height: 76.6rem;
+    margin-bottom: 4.6rem;
 }

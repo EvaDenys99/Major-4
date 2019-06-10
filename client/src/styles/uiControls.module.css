@@ -15,4 +15,6 @@
 .listItem {
     color: black;
     border: 0.2rem solid var(--primary-color);
+    font-size: 1.7rem;
+    background-color: white;
 }
