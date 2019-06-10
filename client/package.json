@@ -5,6 +5,7 @@
   "dependencies": {
     "cloudinary": "^1.14.0",
     "cogo-toast": "^2.0.1",
+    "cra-append-sw": "^2.6.1",
     "js-cookie": "^2.2.0",
     "mobx": "^4.2.0",
     "mobx-react": "^5.0.0",
@@ -27,7 +28,7 @@
   },
   "proxy": "http://localhost:4000",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start ",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",

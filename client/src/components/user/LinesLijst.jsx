@@ -4,7 +4,7 @@ import { observer } from "mobx-react";
 
 import styles from "./LinesLijst.module.css";
 import stylesTypo from "./../../styles/typo.module.css";
-
+import cogoToast from "cogo-toast";
 const io = require(`socket.io-client`);
 
 class LinesLijst extends Component {
@@ -16,6 +16,9 @@ class LinesLijst extends Component {
     const messages = [];
 
     socket.on(`chat message`, function(msg) {
+      cogoToast.success(msg, {
+        position: `top-center`
+      });
       messages.push(msg);
       window.scrollTo(0, document.body.scrollHeight);
       console.log(messages);
