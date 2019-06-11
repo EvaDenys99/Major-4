@@ -8,22 +8,31 @@ import cogoToast from "cogo-toast";
 const io = require(`socket.io-client`);
 
 class LinesLijst extends Component {
+  _isMounted = false;
+
   constructor(props) {
     super(props);
     // console.log(props);
     this.state = { messages: [] };
-    const socket = io.connect(`:3000`);
+  }
+
+  componentDidMount() {
+    this._isMounted = true;
     const messages = [];
+    const socket = io.connect(`:3000`);
 
     socket.on(`chat message`, function(msg) {
-      cogoToast.success(msg, {
-        position: `top-center`
-      });
-      messages.push(msg);
-      window.scrollTo(0, document.body.scrollHeight);
-      console.log(messages);
-      stateAanpassing(messages);
-      return messages;
+      this._isMounted = true;
+      if (this._isMounted) {
+        cogoToast.success(msg, {
+          position: `top-center`
+        });
+        messages.push(msg);
+        // window.scrollTo(0, document.body.scrollHeight);
+        console.log(messages);
+        stateAanpassing(messages);
+        return messages;
+      }
     });
 
     const stateAanpassing = messages => {
@@ -31,6 +40,11 @@ class LinesLijst extends Component {
       return messages;
     };
   }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
   render() {
     const showMessage = (message, index) => {
       return (
