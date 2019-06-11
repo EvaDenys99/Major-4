@@ -20,8 +20,29 @@
     background-color: white;
 }
 
+.backLink {
+    width: 20rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: underline;
+    margin-left: -5rem;
+    font-size: 1.6rem;
+}
+
 .back {
     border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    margin: 2rem;
+}
+
+.backPurple {
+    border: solid var(--primary-color);
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 5px;
@@ -48,4 +69,14 @@
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
     margin: 1rem 1rem 0rem 0rem; 
+}
+
+.rightArrow {
+    border: solid var(--primary-color);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    margin: 2rem;
 }

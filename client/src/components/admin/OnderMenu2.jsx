@@ -53,7 +53,7 @@ class OnderMenu2 extends Component {
 
     return adding ? (
       <div className={styles.container}>
-        <div className={styles.navigatie}>
+        <div className={styles.navigatieAlleen}>
           <div onClick={this.handleAddReset} className={styles.sluit}></div>
         </div>
       </div>

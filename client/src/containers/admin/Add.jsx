@@ -6,6 +6,7 @@ import AddNotificatie from "../../components/admin/AddNotificatie";
 import BackLink from "../../components/admin/BackLink";
 
 import stylesLayout from "./../../styles/layout.module.css";
+import stylesTypo from "./../../styles/typo.module.css";
 
 const Add = ({ id, zaal }) => {
   console.log(id);
@@ -13,11 +14,13 @@ const Add = ({ id, zaal }) => {
     <>
       <div className={stylesLayout.layoutAdmin}>
         <BovenMenu />
-        <section>
-          <BackLink />
-          <h2>Melding toevoegen</h2>
-          <AddNotificatie id={id} zaal={zaal} />
-        </section>
+        <div className={stylesLayout.contentAdminContainer}>
+          <section className={stylesLayout.contentAdmin}>
+            <BackLink />
+            <h2 className={stylesTypo.adminTitel}>Melding toevoegen</h2>
+            <AddNotificatie id={id} zaal={zaal} />
+          </section>
+        </div>
         <OnderMenu2 adding="true" />
       </div>
     </>

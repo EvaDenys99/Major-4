@@ -1,0 +1,14 @@
+.form {
+    composes: form from "./../../styles/form.module.css";
+    width: 93.6rem;
+}
+
+.formInput {
+    composes: formInput from "./../../styles/form.module.css";
+    width: 93.6rem;
+}
+
+.button {
+    composes: button from "./../../styles/uiControls.module.css";
+    align-self: flex-end;
+}

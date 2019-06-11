@@ -6,6 +6,7 @@ import { ROUTES } from "../../constants";
 
 import stylesForm from "./../../styles/form.module.css";
 import stylesUI from "./../../styles/uiControls.module.css";
+import stylesTypo from "./../../styles/typo.module.css";
 
 const LoginForm = ({ uiStore, history }) => {
   const emailInput = React.createRef();
@@ -23,9 +24,11 @@ const LoginForm = ({ uiStore, history }) => {
       <div>
         <form onSubmit={handleSubmit} className={stylesForm.form}>
           <div>
-            <h2>Login</h2>
+            <h2 className={stylesTypo.adminTitel}>Inloggen</h2>
             <div>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email" className={stylesTypo.adminKleineTitel}>
+                Email
+              </label>
               <input
                 type="email"
                 name="email"
@@ -36,7 +39,9 @@ const LoginForm = ({ uiStore, history }) => {
               />
             </div>
             <div>
-              <label htmlFor="username">Password</label>
+              <label htmlFor="username" className={stylesTypo.adminKleineTitel}>
+                Password
+              </label>
               <input
                 type="password"
                 name="password"
@@ -46,11 +51,11 @@ const LoginForm = ({ uiStore, history }) => {
                 required
               />
             </div>
-            <p>
+            <p className={stylesTypo.adminParagraphs}>
               No account? <Link to={ROUTES.register}>Sign up!</Link>
             </p>
           </div>
-          <input type="submit" value="Login" className={stylesUI.button} />
+          <input type="submit" value="Login" className={stylesForm.button} />
         </form>
       </div>
     </>

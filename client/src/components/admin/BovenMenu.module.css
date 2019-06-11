@@ -1,5 +1,7 @@
 .header {
-    width: 100%;
+    position: fixed;
+    top: 0;
+    width: 133.6rem;
     height: 9.7rem;
     background-color: var(--lighter-color);
     display: flex;
@@ -13,6 +15,7 @@
     font-size: 3.6rem;
     font-weight: bold; 
     color: var(--primary-color);
+    padding-left: 2rem;
 }
 
 .logout {

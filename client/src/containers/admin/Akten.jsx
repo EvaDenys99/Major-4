@@ -1,12 +1,13 @@
 import React from "react";
 import BovenMenu from "../../components/admin/BovenMenu";
 import OnderMenu from "../../components/admin/OnderMenu";
-import Notificaties from "./Notificaties";
 import { inject, PropTypes, observer } from "mobx-react";
 import { Link } from "react-router-dom";
-import Arrow from "../../assets/admin/arrowAkt.png";
 
 import stylesLayout from "./../../styles/layout.module.css";
+import stylesUI from "./../../styles/uiControls.module.css";
+import stylesTypo from "./../../styles/typo.module.css";
+import styles from "./Akten.module.css";
 
 const Akten = ({ id, aktStore, voorstellingStore }) => {
   // HIER WORDEN ALLE AKTS DIE OVEREEN KOMEN OPGEHAALD
@@ -20,32 +21,30 @@ const Akten = ({ id, aktStore, voorstellingStore }) => {
     <>
       <div className={stylesLayout.layoutAdmin}>
         <BovenMenu />
-        <section>
-          <h2>{voorstellingTitel.titel}</h2>
-          {akten.length > 0 ? (
-            <>
-              {akten.map(akt => (
-                <div key={akt.id}>
-                  <Link to={`/notificatie/${akt.id}/${akt.VoorstellingZaal}`}>
-                    <p>
-                      {akt.naam}
-                      <img
-                        src={Arrow}
-                        alt="een pijltje"
-                        width="40"
-                        height="40"
-                      />
-                    </p>
-                  </Link>
-                </div>
-              ))}
-            </>
-          ) : (
-            <div>
-              <p>Geen akts ter beschikking</p>
-            </div>
-          )}
-        </section>
+        <div className={stylesLayout.contentAdminContainer}>
+          <section className={stylesLayout.contentAdmin}>
+            <h2 className={stylesTypo.adminTitel}>{voorstellingTitel.titel}</h2>
+            {akten.length > 0 ? (
+              <>
+                {akten.map(akt => (
+                  <div key={akt.id} className={styles.listItem}>
+                    <Link
+                      to={`/notificatie/${akt.id}/${akt.VoorstellingZaal}`}
+                      className={styles.item}
+                    >
+                      <p>{akt.naam}</p>
+                      <span className={stylesUI.rightArrow}></span>
+                    </Link>
+                  </div>
+                ))}
+              </>
+            ) : (
+              <div>
+                <p>Geen akts ter beschikking</p>
+              </div>
+            )}
+          </section>
+        </div>
         <OnderMenu />
       </div>
     </>

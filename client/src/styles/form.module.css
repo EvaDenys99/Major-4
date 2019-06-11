@@ -1,5 +1,13 @@
 .form {
-    width: 45rem;
+    width: 27.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.formCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .label {
@@ -14,4 +22,11 @@
     width: 100%;
     height: 6.9rem;
     background-color: white;
+    padding-left: 1rem;
+}
+
+.button {
+    composes: button from "./uiControls.module.css";
+    margin: 2rem 0rem;
+    align-self: flex-end;
 }

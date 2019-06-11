@@ -7,16 +7,19 @@ import withAuthentication from "../../components/auth/WithAuthentication";
 import { observer } from "mobx-react";
 
 import stylesLayout from "./../../styles/layout.module.css";
+import stylesTypo from "./../../styles/typo.module.css";
 
 const Home = () => {
   return (
     <>
       <div className={stylesLayout.layoutAdmin}>
         <BovenMenu />
-        <section>
-          <h2>Komende voorstellingen</h2>
-          <VoorstellingLijst />
-        </section>
+        <div className={stylesLayout.contentAdminContainer}>
+          <section className={stylesLayout.contentAdmin}>
+            <h2 className={stylesTypo.adminTitel}>Komende voorstellingen</h2>
+            <VoorstellingLijst />
+          </section>
+        </div>
         <OnderMenu />
       </div>
     </>

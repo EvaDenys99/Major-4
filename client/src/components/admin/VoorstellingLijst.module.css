@@ -1,0 +1,23 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);  
+    width: 127.3rem;
+    margin-left: -15rem;
+}
+
+.item {
+    width: 38.2em;
+    height: 32.8rem;
+}
+
+.titel {
+    font-size: 2.4rem;
+    font-weight: 200;
+    text-align: center; 
+    margin: 2rem 0rem;
+    color: var(--primary-color);
+}
+
+.selection {
+    margin-bottom: 3rem;
+}
