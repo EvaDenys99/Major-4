@@ -6,6 +6,7 @@ class Voorstelling {
     duur,
     pauze,
     imageUser,
+    imageUserGroot,
     imageAdmin,
     plaats,
     zaalId,
@@ -17,6 +18,7 @@ class Voorstelling {
     this.duur = duur;
     this.pauze = pauze;
     this.imageUser = imageUser;
+    this.imageUserGroot = imageUserGroot;
     this.imageAdmin = imageAdmin;
     this.plaats = plaats;
     this.zaalId = zaalId;

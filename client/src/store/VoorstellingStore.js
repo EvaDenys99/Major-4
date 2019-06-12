@@ -16,6 +16,14 @@ import afscheidUser from "../assets/user/afscheidennieuwbegin.png";
 import doncarlosUser from "../assets/user/doncarlos.png";
 import mozartUser from "../assets/user/mozart.png";
 import requiemUser from "../assets/user/requiem.png";
+
+import backUserGroot from "../assets/user/bachGroot.png";
+import demonsUserGroot from "../assets/user/demons.png";
+import macbethUserGroot from "../assets/user/macbethGroot.png";
+import afscheidUserGroot from "../assets/user/afscheidennieuwbegin.png";
+import doncarlosUserGroot from "../assets/user/doncarlos.png";
+import mozartUserGroot from "../assets/user/mozart.png";
+import requiemUserGroot from "../assets/user/requiem.png";
 class VoorstellingStore {
   voorstellingen = [];
 
@@ -29,6 +37,7 @@ class VoorstellingStore {
       `3u`,
       `1x15min`,
       macbethUser,
+      macbethUserGroot,
       macbeth,
       `antwerpen`,
       2,
@@ -42,6 +51,7 @@ class VoorstellingStore {
       `2u`,
       `1x15min`,
       demonsUser,
+      demonsUserGroot,
       demons,
       `antwerpen`,
       2,
@@ -55,6 +65,7 @@ class VoorstellingStore {
       `2u`,
       `1xpauze`,
       doncarlosUser,
+      doncarlosUserGroot,
       doncarlos,
       `antwerpen`,
       2,
@@ -68,6 +79,7 @@ class VoorstellingStore {
       `2u`,
       `1xpauze`,
       afscheidUser,
+      afscheidUserGroot,
       afscheid,
       `antwerpen`,
       2,
@@ -81,6 +93,7 @@ class VoorstellingStore {
       `1u45`,
       `1x`,
       bachUser,
+      backUserGroot,
       bach,
       `gent`,
       1,
@@ -94,6 +107,7 @@ class VoorstellingStore {
       `2u`,
       `1xpauze`,
       afscheidUser,
+      afscheidUserGroot,
       afscheid,
       `gent`,
       1,
@@ -107,6 +121,7 @@ class VoorstellingStore {
       `2u`,
       `1xpauze`,
       mozartUser,
+      mozartUserGroot,
       mozart,
       `gent`,
       1,
@@ -120,6 +135,7 @@ class VoorstellingStore {
       `2u`,
       `1xpauze`,
       requiemUser,
+      requiemUserGroot,
       requiem,
       `gent`,
       1,

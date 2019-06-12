@@ -14,7 +14,7 @@ const Voorstelling = ({ voorstelling }) => {
   return (
     <>
       <img
-        src={voorstelling.imageUser}
+        src={voorstelling.imageUserGroot}
         alt="foto"
         className={styles.foto}
         width="375"
