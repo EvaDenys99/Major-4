@@ -17,10 +17,6 @@
     --font-family: "Open Sans"; 
 }
 
-.tekst {
-    font-family: 'Open Sans';
-}
-
 .userTitel {
     text-transform: uppercase;
     font-family: 'Montserrat';
@@ -29,7 +25,7 @@
     height: 3.5rem;
     width: 18rem;
     composes: color-primary from "./colors.module.css";
-    composes: line from "./layout.module.css";
+    border-bottom: 0.2rem solid var(--primary-color);
     margin: 4rem 0 3rem 0 ;
 }
 
@@ -44,7 +40,7 @@
     height: 4.4rem;
     width: 93.6rem;
     composes: color-primary from "./colors.module.css";
-    composes: line from "./layout.module.css";
+    border-bottom: 0.2rem solid var(--primary-color);
     margin: 4rem 0 3rem 0 ;
 }
 

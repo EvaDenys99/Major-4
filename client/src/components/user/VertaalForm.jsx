@@ -75,7 +75,7 @@ class VertaalForm extends Component {
             className={styles.formInput}
           />
         </div>
-        <div className={styles.buttonCentraal}>
+        <div className={styles.buttonRechts}>
           <button
             onClick={this.handleSubmitVertaal}
             className={stylesUI.button}
