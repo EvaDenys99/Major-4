@@ -3,6 +3,7 @@ import AktStore from "./AktStore";
 import NotificatieStore from "./NotificatieStore";
 import ZaalStore from "./ZaalStore";
 import UiStore from "./UiStore";
+import LineStore from "./LineStore";
 class Store {
   constructor() {
     this.voorstellingStore = new VoorstellingStore(this);
@@ -10,6 +11,7 @@ class Store {
     this.notificatieStore = new NotificatieStore(this);
     this.zaalStore = new ZaalStore(this);
     this.uiStore = new UiStore(this);
+    this.lineStore = new LineStore(this);
   }
 }
 

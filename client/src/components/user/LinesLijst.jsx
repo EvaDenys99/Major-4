@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { decorate, observable } from "mobx";
-import { observer } from "mobx-react";
+import { observer, inject } from "mobx-react";
 
 import styles from "./LinesLijst.module.css";
 import stylesTypo from "./../../styles/typo.module.css";
@@ -8,22 +8,24 @@ import cogoToast from "cogo-toast";
 const io = require(`socket.io-client`);
 const socket = io.connect(`:3000`);
 class LinesLijst extends Component {
-  _isMounted = true;
-
   constructor(props) {
     super(props);
     this.state = { messages: [] };
   }
 
+  componentWillMount() {
+    socket.close();
+    socket.off(`chat message`);
+  }
+
   componentDidMount() {
     const messages = [];
-
+    socket.open();
     socket.on(`chat message`, function(msg) {
       cogoToast.success(msg, {
         position: `top-center`
       });
       messages.push(msg);
-
       console.log(messages);
       stateAanpassing(messages);
       return messages;
@@ -33,12 +35,11 @@ class LinesLijst extends Component {
       this.setState({ messages: messages });
       return messages;
     };
-
-    socket.open();
   }
 
   componentWillUnmount() {
     socket.close();
+    socket.off(`chat message`);
   }
 
   render() {
@@ -72,4 +73,4 @@ decorate(LinesLijst, {
   messages: observable
 });
 
-export default observer(LinesLijst);
+export default inject(`lineStore`)(observer(LinesLijst));

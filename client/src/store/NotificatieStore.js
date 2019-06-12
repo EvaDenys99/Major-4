@@ -1,7 +1,7 @@
 import { decorate, observable, action, configure, runInAction } from "mobx";
 import Notificatie from "../models/Notificatie";
 import Api from "../api";
-import cogoToast from "cogo-toast";
+
 configure({ enforceActions: `observed` });
 
 class NotificatieStore {

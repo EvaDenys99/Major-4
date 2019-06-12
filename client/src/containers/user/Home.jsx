@@ -6,10 +6,8 @@ import ZaalLijst from "../../components/user/ZaalLijst";
 
 import stylesLayout from "./../../styles/layout.module.css";
 import stylesTypo from "./../../styles/typo.module.css";
-const io = require(`socket.io-client`);
+
 const Home = () => {
-  const socket = io.connect(`:3000`);
-  socket.removeListener(`chat message`);
   return (
     <>
       <div className={stylesLayout.layout}>
