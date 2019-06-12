@@ -40,7 +40,7 @@ const Akten = ({ id, aktStore, voorstellingStore }) => {
               </>
             ) : (
               <div>
-                <p>Geen akts ter beschikking</p>
+                <p className={styles.emptyState}>Geen akts ter beschikking</p>
               </div>
             )}
           </section>

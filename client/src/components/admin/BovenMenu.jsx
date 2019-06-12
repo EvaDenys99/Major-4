@@ -4,6 +4,8 @@ import { inject, observer } from "mobx-react";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+import logo from "./../../assets/admin/logo.png";
+
 import styles from "./BovenMenu.module.css";
 
 const BovenMenu = ({ uiStore, history }) => {
@@ -18,7 +20,8 @@ const BovenMenu = ({ uiStore, history }) => {
     <>
       <nav>
         <div className={styles.header}>
-          <Link to={ROUTES.homeAdmin}>
+          <Link to={ROUTES.homeAdmin} className={styles.logoContainer}>
+            <img src={logo} alt="" />
             <h1 className={styles.logoName}>PushLines</h1>
           </Link>
 

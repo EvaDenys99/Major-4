@@ -3,10 +3,9 @@ import { inject } from "mobx-react";
 
 import Voorstelling from "./../../components/user/Voorstelling";
 import MeerVoorstellingen from "./../../components/user/MeerVoorstellingen";
+import EmptyState from "./../../components/user/EmptyState.jsx";
 
 import NavigatieHome from "../../components/user/NavigatieHome";
-
-import emptyVoorstelling from "../../assets/user/emptyVoorstelling.png";
 
 import styles from "./Detail.module.css";
 import stylesLayout from "./../../styles/layout.module.css";
@@ -21,24 +20,26 @@ const Detail = ({ id, voorstellingStore }) => {
       <div className={stylesLayout.layout}>
         <Voorstelling voorstelling={voorstelling} />
         <div className={styles.container}>
-          <p className={styles.meerTitel}>Ook in deze zaal</p>
+          <div>
+            <p className={styles.meerTitel}>Ook in deze zaal</p>
+          </div>
+          <MeerVoorstellingen voorstellingen={voorstellingen} />
         </div>
-        <MeerVoorstellingen voorstellingen={voorstellingen} />
         <NavigatieHome />
       </div>
     </>
   ) : (
     <>
       <div className={stylesLayout.layout}>
+        <EmptyState id={id} />
         <div className={styles.container}>
-          <p>Geen voorstellingen</p>
-          <img src={emptyVoorstelling} alt="titel" />
+          <div>
+            <p className={styles.meerTitel}>In andere zalen</p>
+          </div>
+
+          <MeerVoorstellingen voorstellingen={alleVoorstellingen} />
         </div>
 
-        <div className={styles.container}>
-          <p className={styles.meerTitel}>In andere zalen</p>
-        </div>
-        <MeerVoorstellingen voorstellingen={alleVoorstellingen} />
         <NavigatieHome />
       </div>
     </>

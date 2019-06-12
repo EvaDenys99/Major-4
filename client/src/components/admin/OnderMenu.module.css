@@ -3,11 +3,12 @@
     bottom: 0;
     width: 133.6rem;
     background-image: url(./../../assets/admin/BgMenu.png);
+    background-position: bottom;
     background-repeat: no-repeat;
 }
 
 .navigatie {
-    height: 25rem;
+    height: 11.7rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -15,7 +16,7 @@
 }
 
 .navigatieAlleen {
-    height: 25rem;
+    height: 11.7rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;

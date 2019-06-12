@@ -75,8 +75,8 @@ class VoorstellingLijst extends Component {
               <img
                 src={voorstelling.imageAdmin}
                 alt="een foto"
-                width="382"
-                height="270"
+                width="300"
+                height="210"
               />
               <h3 className={styles.titel}>{voorstelling.titel}</h3>
             </div>

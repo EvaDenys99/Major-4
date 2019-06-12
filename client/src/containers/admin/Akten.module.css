@@ -13,5 +13,11 @@
 
 .item > p {
     margin-left: 2rem;
-    color: black;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.emptyState {
+    composes: adminParagraphs from "./../../styles/typo.module.css";
 }

@@ -5,8 +5,8 @@ import { withRouter } from "react-router-dom";
 import { ROUTES } from "../../constants";
 
 import stylesForm from "./../../styles/form.module.css";
-import stylesUI from "./../../styles/uiControls.module.css";
 import stylesTypo from "./../../styles/typo.module.css";
+import styles from "./LoginForm.module.css";
 
 const LoginForm = ({ uiStore, history }) => {
   const emailInput = React.createRef();
@@ -51,9 +51,10 @@ const LoginForm = ({ uiStore, history }) => {
                 required
               />
             </div>
-            <p className={stylesTypo.adminParagraphs}>
-              No account? <Link to={ROUTES.register}>Sign up!</Link>
-            </p>
+            <div className={styles.signUp}>
+              <p>No account?</p>
+              <Link to={ROUTES.register}>Registreer!</Link>
+            </div>
           </div>
           <input type="submit" value="Login" className={stylesForm.button} />
         </form>

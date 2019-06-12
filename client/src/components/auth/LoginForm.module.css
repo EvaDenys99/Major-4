@@ -1,0 +1,13 @@
+.signUp {
+    composes: adminParagraphs from "./../../styles/typo.module.css";
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signUp > a {
+    font-weight: 500;
+    color: black;
+    text-decoration: underline;
+}

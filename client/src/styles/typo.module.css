@@ -7,6 +7,7 @@
 }
 
 .userTitel {
+    text-transform: uppercase;
     font-family: 'Montserrat';
     font-size: 1.8rem;
     font-weight: bold;
@@ -23,9 +24,9 @@
 
 .adminTitel {
     font-family: 'Montserrat';
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: bold;
-    height: 6.4rem;
+    height: 4.4rem;
     width: 93.6rem;
     composes: color-primary from "./colors.module.css";
     composes: line from "./layout.module.css";

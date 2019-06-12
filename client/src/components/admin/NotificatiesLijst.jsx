@@ -56,7 +56,7 @@ const NotificatiesLijst = ({ id, notificatieStore, zaal }) => {
           </>
         ) : (
           <div>
-            <p>Maak een notificatie aan.</p>
+            <p className={styles.emptyState}>Maak een notificatie aan.</p>
           </div>
         )}
       </section>

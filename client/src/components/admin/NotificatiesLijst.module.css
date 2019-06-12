@@ -34,3 +34,7 @@
     height: 6.4rem;
     margin-left: -2rem;
 }
+
+.emptyState {
+    composes: adminParagraphs from "./../../styles/typo.module.css";
+}
