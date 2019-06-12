@@ -21,7 +21,7 @@ const BovenMenu = ({ uiStore, history }) => {
       <nav>
         <div className={styles.header}>
           <Link to={ROUTES.homeAdmin} className={styles.logoContainer}>
-            <img src={logo} alt="" />
+            <img src={logo} alt="" width="77" height="70" />
             <h1 className={styles.logoName}>PushLines</h1>
           </Link>
 

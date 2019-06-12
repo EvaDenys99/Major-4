@@ -135,18 +135,18 @@ class VoorstellingLijst extends Component {
             placeholder="--- Kies uw zaal ---"
           />
         </div>
-        <ul className={styles.container}>
-          {voorstellingen.length > 0 ? (
-            voorstellingen.map((voorstelling, index) =>
+        {voorstellingen.length > 0 ? (
+          <ul className={styles.container}>
+            {voorstellingen.map((voorstelling, index) =>
               showVoorstelling(voorstelling, index)
-            )
-          ) : (
-            <div>
-              <div>Geen voorstellingen</div>
-              <img src={emptyVoorstelling} alt="titel" />
-            </div>
-          )}
-        </ul>
+            )}
+          </ul>
+        ) : (
+          <div className={styles.emptyState}>
+            <p>Er lopen momenteel geen voorstellingen in deze zaal.</p>
+            <img src={emptyVoorstelling} alt="titel" width="176" height="106" />
+          </div>
+        )}
       </>
     );
   }

@@ -38,7 +38,12 @@ class ZaalLijst extends Component {
                 className={styles.groteZaal}
               >
                 <div>
-                  <img src={zaal.img} alt={zaal.naam} />
+                  <img
+                    src={zaal.img}
+                    alt={zaal.naam}
+                    width="324"
+                    height="168"
+                  />
                 </div>
               </Link>
             );
@@ -74,7 +79,12 @@ class ZaalLijst extends Component {
                 className={styles.groteZaal}
               >
                 <div>
-                  <img src={zaal.img} alt={zaal.naam} />
+                  <img
+                    src={zaal.img}
+                    alt={zaal.naam}
+                    width="324"
+                    height="168"
+                  />
                 </div>
               </Link>
             );

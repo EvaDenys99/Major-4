@@ -1,6 +1,7 @@
 import React from "react";
 import { inject, PropTypes, observer } from "mobx-react";
 import cogoToast from "cogo-toast";
+
 import Verzend from "../../assets/admin/send.png";
 
 import stylesLayout from "./../../styles/layout.module.css";

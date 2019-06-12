@@ -3,6 +3,7 @@ import RegisterForm from "../../components/auth/RegisterForm";
 
 import stylesLayout from "./../../styles/layout.module.css";
 import BovenMenu from "../../components/admin/BovenMenu";
+import OnderMenu from "./../../components/admin/OnderMenu";
 
 const Register = () => {
   return (
@@ -14,6 +15,7 @@ const Register = () => {
             <RegisterForm />
           </section>
         </div>
+        <OnderMenu />
       </div>
     </>
   );

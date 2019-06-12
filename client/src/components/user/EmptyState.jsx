@@ -20,6 +20,7 @@ const EmptyState = ({ id, zaalStore }) => {
         alt="foto"
         className={styles.foto}
         width="375"
+        height="275"
       />
       <div className={styles.header}>
         <div>
@@ -29,7 +30,7 @@ const EmptyState = ({ id, zaalStore }) => {
       </div>
       <div className={styles.containerEmpty}>
         <p>Er zijn momenteel geen voorstellingen hier.</p>
-        <img src={emptyVoorstelling} alt="titel" />
+        <img src={emptyVoorstelling} alt="titel" width="176" height="106" />
       </div>
     </>
   ) : bijZaal ? (
@@ -39,6 +40,7 @@ const EmptyState = ({ id, zaalStore }) => {
         alt="foto"
         className={styles.foto}
         width="375"
+        height="275"
       />
       <div className={styles.header}>
         <div>
@@ -48,13 +50,13 @@ const EmptyState = ({ id, zaalStore }) => {
       </div>
       <div className={styles.containerEmpty}>
         <p>Er zijn momenteel geen voorstellingen hier.</p>
-        <img src={emptyVoorstelling} alt="titel" />
+        <img src={emptyVoorstelling} alt="titel" width="176" height="106" />
       </div>
     </>
   ) : (
     <div className={styles.container}>
       <p>Er zijn momenteel geen voorstellingen hier.</p>
-      <img src={emptyVoorstelling} alt="titel" />
+      <img src={emptyVoorstelling} alt="titel" width="176" height="106" />
     </div>
   );
 };

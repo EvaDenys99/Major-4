@@ -3,6 +3,7 @@ import LoginForm from "../../components/auth/LoginForm";
 import Bovenmenu from "./../../components/admin/BovenMenu";
 
 import stylesLayout from "./../../styles/layout.module.css";
+import OnderMenu from "../../components/admin/OnderMenu";
 
 const Login = () => {
   return (
@@ -14,6 +15,7 @@ const Login = () => {
             <LoginForm />
           </section>
         </div>
+        <OnderMenu />
       </div>
     </>
   );

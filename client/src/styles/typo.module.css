@@ -1,9 +1,24 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url("./../assets/fonts/OpenSans-Regular.woff2") format("woff2"),
+         url("./../assets/fonts/OpenSans-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("./../assets/fonts/Montserrat-Bold.woff2") format("woff2"),
+         url("./../assets/fonts/Montserrat-Bold.woff") format("woff");
+}
+
 @import "./colors.module.css";
 
 :global(:root){
     --font-base-user: 1.7rem;
     --font-base-admin: 2rem;
     --font-family: "Open Sans"; 
+}
+
+.tekst {
+    font-family: 'Open Sans';
 }
 
 .userTitel {

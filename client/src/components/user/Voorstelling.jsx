@@ -18,6 +18,7 @@ const Voorstelling = ({ voorstelling }) => {
         alt="foto"
         className={styles.foto}
         width="375"
+        height="275"
       />
       <div className={styles.header}>
         <div>
@@ -30,12 +31,12 @@ const Voorstelling = ({ voorstelling }) => {
         <ProgressBar voorstelling={voorstelling} />
         <div className={styles.infoContainer}>
           <div className={styles.info}>
-            <img src={duur} alt="" />
+            <img src={duur} alt="" width="27" height="27" />
             <div className={stylesLayout.line}></div>
             <p className={stylesTypo.userParagraphs}>{voorstelling.duur}</p>
           </div>
           <div className={styles.info}>
-            <img src={pauze} alt="" />
+            <img src={pauze} alt="" width="13" height="20" />
             <div className={stylesLayout.line}></div>
             <p className={stylesTypo.userParagraphs}>{voorstelling.pauze}</p>
           </div>
