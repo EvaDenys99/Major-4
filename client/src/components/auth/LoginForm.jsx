@@ -17,7 +17,6 @@ const LoginForm = ({ uiStore, history }) => {
   const handleSubmit = e => {
     e.preventDefault();
     if (validator.allValid()) {
-      alert(`You submitted the form and stuff!`);
       uiStore
         .login(emailInput.current.value, pwdInput.current.value)
         .then(() => {
