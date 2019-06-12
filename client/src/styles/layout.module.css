@@ -7,6 +7,7 @@
 .layoutAdmin {
     max-width: 136.6rem;
     background-image: url(./../assets/admin/background.png);
+    background-repeat: no-repeat;
 }
 
 .content {
@@ -16,6 +17,19 @@
     padding: 2rem;
     min-height: 76.6rem;
     margin-bottom: 4.6rem;
+}
+
+.contentAdminContainer {
+    width: 133.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contentAdmin {
+    width: 93.6rem;
+    height: 102.4rem;
+    margin-top: 15rem;
 }
 
 .line {

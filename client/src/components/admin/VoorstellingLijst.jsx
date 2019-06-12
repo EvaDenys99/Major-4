@@ -11,6 +11,8 @@ import demonsUser from "../../assets/user/demons.png";
 import demons from "../../assets/admin/demons.png";
 import bachUser from "../../assets/user/bach.png";
 import bach from "../../assets/admin/bach.png";
+
+import styles from "./VoorstellingLijst.module.css";
 class VoorstellingLijst extends Component {
   constructor(props) {
     super(props);
@@ -64,7 +66,7 @@ class VoorstellingLijst extends Component {
 
     const showVoorstelling = (voorstelling, index) => {
       return (
-        <li key={index}>
+        <li key={index} className={styles.item}>
           <Link
             key={voorstelling.id}
             to={`admin/voorstelling/${voorstelling.id}`}
@@ -76,7 +78,7 @@ class VoorstellingLijst extends Component {
                 width="382"
                 height="270"
               />
-              <h3>{voorstelling.titel}</h3>
+              <h3 className={styles.titel}>{voorstelling.titel}</h3>
             </div>
           </Link>
         </li>
@@ -126,14 +128,14 @@ class VoorstellingLijst extends Component {
 
     return (
       <>
-        <div>
+        <div className={styles.selection}>
           <Select
             onChange={handleSelection}
             options={options}
             placeholder="--- Kies uw zaal ---"
           />
         </div>
-        <ul>
+        <ul className={styles.container}>
           {voorstellingen.length > 0 ? (
             voorstellingen.map((voorstelling, index) =>
               showVoorstelling(voorstelling, index)

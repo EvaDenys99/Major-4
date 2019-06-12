@@ -3,6 +3,10 @@ import { inject } from "mobx-react";
 import { withRouter } from "react-router-dom";
 import { ROUTES } from "../../constants";
 
+import stylesTypo from "./../../styles/typo.module.css";
+import stylesForm from "./../../styles/form.module.css";
+import { styles } from "ansi-colors";
+
 class RegisterForm extends Component {
   constructor() {
     super();
@@ -30,47 +34,65 @@ class RegisterForm extends Component {
     return (
       <>
         <div>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} className={stylesForm.form}>
             <div>
-              <h2>Register</h2>
+              <h2 className={stylesTypo.adminTitel}>Registeren</h2>
               <div>
-                <label htmlFor="email">Name</label>
+                <label htmlFor="email" className={stylesTypo.adminKleineTitel}>
+                  Name
+                </label>
                 <input
                   type="test"
                   name="name"
                   id="name="
                   value={name}
                   onChange={this.handleChange}
+                  className={stylesForm.formInput}
                 />
               </div>
               <div>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email" className={stylesTypo.adminKleineTitel}>
+                  Email
+                </label>
                 <input
                   type="email"
                   name="email"
                   id="email="
                   value={email}
                   onChange={this.handleChange}
+                  className={stylesForm.formInput}
                 />
               </div>
               <div>
-                <label htmlFor="username">Password</label>
+                <label
+                  htmlFor="username"
+                  className={stylesTypo.adminKleineTitel}
+                >
+                  Password
+                </label>
                 <input
                   type="password"
                   name="pwd"
                   id="pwd"
                   value={pwd}
                   onChange={this.handleChange}
+                  className={stylesForm.formInput}
                 />
               </div>
               <div>
-                <label htmlFor="username">Repeat password</label>
+                <label
+                  htmlFor="username"
+                  className={stylesTypo.adminKleineTitel}
+                >
+                  Repeat password
+                </label>
                 <input
                   type="password"
                   name="pwd2"
                   id="pwd2"
                   ref={pwd2}
                   onChange={this.handleChange}
+                  className={stylesForm.formInput}
                 />
               </div>
             </div>
@@ -78,6 +100,7 @@ class RegisterForm extends Component {
               type="submit"
               value="Register"
               disabled={pwd && pwd !== pwd2}
+              className={stylesForm.button}
             />
           </form>
         </div>

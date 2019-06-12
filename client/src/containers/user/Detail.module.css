@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.container > p {
+    margin: 2rem 0rem;
+}
+
 .meerTitel {
     composes: userTitel from "./../../styles/typo.module.css";
     width: 80%;

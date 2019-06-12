@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 2rem 0rem;
+}
+
+.listItem {
+    height: 5rem;
+    width: 82.5rem;
+    composes: listItem from "./../../styles/uiControls.module.css";
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.listItem > span {
+    margin-left: 2rem;
+}
+
+.deleteButton {
+    background-color: white;
+    border: none;
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+
+}
+
+.sendButton {
+    composes: button from "./../../styles/uiControls.module.css";
+    width: 12rem;
+    height: 6.4rem;
+    margin-left: -2rem;
+}

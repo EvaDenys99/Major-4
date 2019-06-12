@@ -2,7 +2,9 @@ import React from "react";
 import { PropTypes, inject } from "mobx-react";
 import { withRouter } from "react-router-dom";
 import cogoToast from "cogo-toast";
-import styles from "./../../styles/form.module.css";
+
+import styles from "./AddNotificatie.module.css";
+import stylesTypo from "./../../styles/typo.module.css";
 
 const AddNotificatie = ({ notificatieStore, history, id, zaal }) => {
   console.log(zaal);
@@ -42,7 +44,9 @@ const AddNotificatie = ({ notificatieStore, history, id, zaal }) => {
       <form onSubmit={handleSubmitForm} className={styles.form}>
         <div>
           <div>
-            <label htmlFor="tekst">Beschrijving</label>
+            <label htmlFor="tekst" className={stylesTypo.adminKleineTitel}>
+              Beschrijving
+            </label>
             <input
               name="tekst"
               placeholder="Kijk nu naar de man in het zwart."
@@ -66,7 +70,7 @@ const AddNotificatie = ({ notificatieStore, history, id, zaal }) => {
             />
           </div>
         </div>
-        <input type="submit" value="Voeg toe" />
+        <input type="submit" value="Voeg toe" className={styles.button} />
       </form>
     </div>
   );

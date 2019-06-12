@@ -1,6 +1,6 @@
 import React from "react";
-// import PageHeader from "../components/PageHeader";
 import LoginForm from "../../components/auth/LoginForm";
+import Bovenmenu from "./../../components/admin/BovenMenu";
 
 import stylesLayout from "./../../styles/layout.module.css";
 
@@ -8,11 +8,12 @@ const Login = () => {
   return (
     <>
       <div className={stylesLayout.layoutAdmin}>
-        <h1>Push Lines</h1>
-
-        <section>
-          <LoginForm />
-        </section>
+        <Bovenmenu />
+        <div className={stylesLayout.contentAdminContainer}>
+          <section className={stylesLayout.contentAdmin}>
+            <LoginForm />
+          </section>
+        </div>
       </div>
     </>
   );

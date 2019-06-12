@@ -1,0 +1,17 @@
+.listItem{
+    composes: listItem from "./../../styles/uiControls.module.css";
+    margin: 2rem 0rem;
+    width: 42rem;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item > p {
+    margin-left: 2rem;
+    color: black;
+}

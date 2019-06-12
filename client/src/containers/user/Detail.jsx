@@ -33,12 +33,13 @@ const Detail = ({ id, voorstellingStore }) => {
         <div className={styles.container}>
           <p>Geen voorstellingen</p>
           <img src={emptyVoorstelling} alt="titel" />
-          <div className={styles.container}>
-            <p className={styles.meerTitel}>In andere zalen</p>
-          </div>
-          <MeerVoorstellingen voorstellingen={alleVoorstellingen} />
-          <NavigatieHome />
         </div>
+
+        <div className={styles.container}>
+          <p className={styles.meerTitel}>In andere zalen</p>
+        </div>
+        <MeerVoorstellingen voorstellingen={alleVoorstellingen} />
+        <NavigatieHome />
       </div>
     </>
   );
