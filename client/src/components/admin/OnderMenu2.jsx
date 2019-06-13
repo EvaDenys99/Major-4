@@ -26,6 +26,7 @@ class OnderMenu2 extends Component {
     e.preventDefault();
     // SOCKET.IO DEFINIEREN
     const socket = io.connect(`:4000`);
+
     socket.emit(`start`, e.currentTarget.value);
     this.setState({ playing: true });
   };
@@ -34,6 +35,7 @@ class OnderMenu2 extends Component {
     e.preventDefault();
     // SOCKET.IO DEFINIEREN
     const socket = io.connect(`:4000`);
+
     socket.emit(`reset`, e.currentTarget.value);
     this.setState({ playing: false });
   };

@@ -6,6 +6,7 @@ import ZaalLijst from "../../components/user/ZaalLijst";
 
 import stylesLayout from "./../../styles/layout.module.css";
 import stylesTypo from "./../../styles/typo.module.css";
+
 const PORT = process.env.REACT_APP_PORT || `not found`;
 
 const Home = () => {
