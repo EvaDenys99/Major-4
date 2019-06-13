@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { observer, inject } from "mobx-react";
-
+import { decorate, observable } from "mobx";
 import styles from "./LinesLijst.module.css";
 import stylesTypo from "./../../styles/typo.module.css";
 import cogoToast from "cogo-toast";
@@ -11,14 +11,7 @@ class BaseLinesLijst extends Component {
     super(props);
     this.state = { messages: [] };
     this.socket = io.connect(`:${this.props.port}`);
-  }
 
-  componentWillMount() {
-    this.socket.close();
-    this.socket.off(`chat message`);
-  }
-
-  componentDidMount() {
     const messages = [];
     this.socket.open();
     this.socket.on(`chat message`, function(msg) {
@@ -36,6 +29,30 @@ class BaseLinesLijst extends Component {
       return messages;
     };
   }
+
+  // componentWillMount() {
+  //   this.socket.close();
+  //   this.socket.off(`chat message`);
+  // }
+
+  // componentDidMount() {
+  //   const messages = [];
+  //   this.socket.open();
+  //   this.socket.on(`chat message`, function(msg) {
+  //     cogoToast.success(msg, {
+  //       position: `top-center`
+  //     });
+  //     messages.push(msg);
+  //     console.log(messages);
+  //     stateAanpassing(messages);
+  //     return messages;
+  //   });
+
+  //   const stateAanpassing = messages => {
+  //     this.setState({ messages: messages });
+  //     return messages;
+  //   };
+  // }
 
   componentWillUnmount() {
     this.socket.close();
@@ -69,9 +86,9 @@ class BaseLinesLijst extends Component {
   }
 }
 
-/* decorate(LinesLijst, {
+decorate(BaseLinesLijst, {
   messages: observable
-}); */
+});
 
 inject(`lineStore`)(observer(BaseLinesLijst));
 
