@@ -25,7 +25,7 @@ class OnderMenu2 extends Component {
   handlePlay = e => {
     e.preventDefault();
     // SOCKET.IO DEFINIEREN
-    const socket = io.connect(`:3000`);
+    const socket = io.connect(`:4000`);
     socket.emit(`start`, e.currentTarget.value);
     this.setState({ playing: true });
   };
@@ -33,7 +33,7 @@ class OnderMenu2 extends Component {
   handlePauze = e => {
     e.preventDefault();
     // SOCKET.IO DEFINIEREN
-    const socket = io.connect(`:3000`);
+    const socket = io.connect(`:4000`);
     socket.emit(`reset`, e.currentTarget.value);
     this.setState({ playing: false });
   };

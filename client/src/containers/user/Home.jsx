@@ -6,8 +6,10 @@ import ZaalLijst from "../../components/user/ZaalLijst";
 
 import stylesLayout from "./../../styles/layout.module.css";
 import stylesTypo from "./../../styles/typo.module.css";
+const PORT = process.env.PORT || `not found`;
 
 const Home = () => {
+  console.log(PORT);
   return (
     <>
       <div className={stylesLayout.layout}>

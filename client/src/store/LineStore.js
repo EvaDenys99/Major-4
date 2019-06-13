@@ -2,9 +2,7 @@ import { configure } from "mobx";
 import cogoToast from "cogo-toast";
 configure({ enforceActions: `observed` });
 const io = require(`socket.io-client`);
-const socket = io.connect(`pushlines-obv.herokuapp.com`, {
-  transports: [`websocket`]
-});
+const socket = io.connect(`:4000`);
 class LineStore {
   messages = [];
 
