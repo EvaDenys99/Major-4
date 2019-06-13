@@ -23,6 +23,10 @@ const app = express();
 
 app.use(express.static(path.resolve(__dirname, "../client/build/")));
 
+app.get("/api/port", (req, res) => {
+  res.json({ port: PORT });
+});
+
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
