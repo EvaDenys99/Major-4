@@ -9,12 +9,13 @@ import stylesTypo from "./../../styles/typo.module.css";
 const PORT = process.env.PORT || `not found`;
 
 const Home = () => {
-  console.log(PORT);
+  console.log();
   return (
     <>
       <div className={stylesLayout.layout}>
         <section className={stylesLayout.content}>
           <h1 className={stylesTypo.userTitel}>Waar ben je?</h1>
+          {`De poort is ${PORT}`}
           <ZaalLijst />
         </section>
         <NavigatieHome />
