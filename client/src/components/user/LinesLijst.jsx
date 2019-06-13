@@ -14,8 +14,9 @@ class BaseLinesLijst extends Component {
 
     const messages = [];
 
-    this.socket.open();
+    // this.socket.open();
     this.socket.on(`chat message`, function(msg) {
+      console.log(`toegekomen`);
       cogoToast.success(msg, {
         position: `top-center`
       });

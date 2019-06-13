@@ -23,7 +23,7 @@ const NotificatiesLijst = ({ id, notificatieStore, zaal, portStore }) => {
   const handleSubmit = e => {
     e.preventDefault();
     // console.log(e.currentTarget.value);
-    socket.emit(`chat message`, console.log(e.currentTarget.value));
+    socket.emit(`chat message`, e.currentTarget.value);
     cogoToast.success(`Notificatie is verzonden`, {
       position: `top-center`
     });
