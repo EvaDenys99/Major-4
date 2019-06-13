@@ -19,7 +19,7 @@ mongoose
 
 const app = express();
 
-const server = require("https").createServer(app);
+const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 
 io.on("connection", function(socket) {
