@@ -4,10 +4,10 @@ import { withRouter } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import styles from "./OnderMenu.module.css";
 
-const socket = require(`socket.io-client`)(
-  `https://pushlines-obv.herokuapp.com`
-);
-class OnderMenu20 extends Component {
+// const socket = require(`socket.io-client`)(
+//   `https://pushlines-obv.herokuapp.com`
+// );
+class OnderMenu2 extends Component {
   constructor(props) {
     super(props);
     this.state = { playing: false, adding: props.adding };
@@ -27,6 +27,9 @@ class OnderMenu20 extends Component {
   handlePlay = e => {
     e.preventDefault();
     // SOCKET.IO DEFINIEREN
+    const socket = require(`socket.io-client`)(
+      `https://pushlines-obv.herokuapp.com`
+    );
     socket.emit(`start`, e.currentTarget.value);
     this.setState({ playing: true });
   };
@@ -34,6 +37,9 @@ class OnderMenu20 extends Component {
   handlePauze = e => {
     e.preventDefault();
     // SOCKET.IO DEFINIEREN
+    const socket = require(`socket.io-client`)(
+      `https://pushlines-obv.herokuapp.com`
+    );
     socket.emit(`reset`, e.currentTarget.value);
     this.setState({ playing: false });
   };
@@ -91,4 +97,4 @@ class OnderMenu20 extends Component {
   }
 }
 
-export default withRouter(OnderMenu20);
+export default observer(withRouter(OnderMenu2));

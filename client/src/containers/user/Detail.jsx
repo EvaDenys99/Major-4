@@ -14,6 +14,7 @@ const Detail = ({ id, voorstellingStore }) => {
   const voorstelling = voorstellingStore.findByZaalId(id);
   const voorstellingen = voorstellingStore.findAllesByZaalId(id);
   const alleVoorstellingen = voorstellingStore.getAll();
+  console.log(voorstelling);
 
   return voorstelling ? (
     <>

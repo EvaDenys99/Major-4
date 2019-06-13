@@ -11,6 +11,7 @@ import duur from "./../../assets/user/duur.png";
 import pauze from "./../../assets/user/pauze.png";
 
 const Voorstelling = ({ voorstelling }) => {
+  console.log(voorstelling);
   return (
     <>
       <img

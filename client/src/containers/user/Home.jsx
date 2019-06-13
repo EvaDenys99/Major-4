@@ -8,7 +8,6 @@ import stylesLayout from "./../../styles/layout.module.css";
 import stylesTypo from "./../../styles/typo.module.css";
 
 const Home = () => {
-  console.log();
   return (
     <>
       <div className={stylesLayout.layout}>
@@ -22,4 +21,4 @@ const Home = () => {
   );
 };
 
-export default inject(`zaalStore`)(observer(Home));
+export default observer(Home);

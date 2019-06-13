@@ -8,6 +8,7 @@ const socket = require(`socket.io-client`)(
 class ProgressbarBase extends Component {
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = {
       percentage: 0
     };
@@ -17,6 +18,7 @@ class ProgressbarBase extends Component {
     });
     socket.on(`reset`, function(msg) {
       resetProcess();
+      console.log(`reset`);
     });
 
     const startProcess = () => {
@@ -39,13 +41,15 @@ class ProgressbarBase extends Component {
   }
 
   render() {
+    const { percentage } = this.state;
+
     return (
       <div>
         <Progress
-          percent={this.state.percentage}
+          percent={percentage}
           theme={{
             active: {
-              symbol: this.state.percentage + `%`,
+              symbol: percentage + `%`,
               color: `rgb(223, 105, 180)`
             }
           }}
