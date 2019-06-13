@@ -13,6 +13,7 @@ class BaseLinesLijst extends Component {
     this.socket = io.connect(`:${this.props.port}`);
 
     const messages = [];
+
     this.socket.open();
     this.socket.on(`chat message`, function(msg) {
       cogoToast.success(msg, {
@@ -54,10 +55,10 @@ class BaseLinesLijst extends Component {
   //   };
   // }
 
-  componentWillUnmount() {
-    this.socket.close();
-    this.socket.off(`chat message`);
-  }
+  // componentWillUnmount() {
+  //   this.socket.close();
+  //   this.socket.off(`chat message`);
+  // }
 
   render() {
     const showMessage = (message, index) => {
