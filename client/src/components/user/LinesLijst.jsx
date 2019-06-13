@@ -6,23 +6,24 @@ import styles from "./LinesLijst.module.css";
 import stylesTypo from "./../../styles/typo.module.css";
 import cogoToast from "cogo-toast";
 const io = require(`socket.io-client`);
-const socket = io.connect(`:4000`);
+// const socket = io.connect(`:4000`);
 
-class LinesLijst extends Component {
+class BaseLinesLijst extends Component {
   constructor(props) {
     super(props);
     this.state = { messages: [] };
+    this.socket = io.connect(`:${this.props.port}`);
   }
 
   componentWillMount() {
-    socket.close();
-    socket.off(`chat message`);
+    this.socket.close();
+    this.socket.off(`chat message`);
   }
 
   componentDidMount() {
     const messages = [];
-    socket.open();
-    socket.on(`chat message`, function(msg) {
+    this.socket.open();
+    this.socket.on(`chat message`, function(msg) {
       cogoToast.success(msg, {
         position: `top-center`
       });
@@ -39,8 +40,8 @@ class LinesLijst extends Component {
   }
 
   componentWillUnmount() {
-    socket.close();
-    socket.off(`chat message`);
+    this.socket.close();
+    this.socket.off(`chat message`);
   }
 
   render() {
@@ -70,8 +71,16 @@ class LinesLijst extends Component {
   }
 }
 
-decorate(LinesLijst, {
+/* decorate(LinesLijst, {
   messages: observable
-});
+}); */
 
-export default inject(`lineStore`)(observer(LinesLijst));
+inject(`lineStore`)(observer(BaseLinesLijst));
+
+const LinesLijst = ({ portStore }) => {
+  const { port } = portStore;
+  if (port) return <BaseLinesLijst port={port} />;
+  return <p>Loading</p>;
+};
+
+export default inject(`portStore`)(observer(LinesLijst));
