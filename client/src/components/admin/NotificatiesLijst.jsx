@@ -11,7 +11,7 @@ const io = require(`socket.io-client`);
 
 const NotificatiesLijst = ({ id, notificatieStore, zaal }) => {
   // SOCKET.IO DEFINIEREN
-  const socket = io.connect(`:3000`);
+  const socket = io.connect(`https://pushlines-obv.herokuapp.com`);
   // HIER WORDEN ALLE NOTIFICATIES DIE OVEREEN KOMEN OPGEHAALD
   const notificaties = notificatieStore.findAllesByAktId(id);
   console.log(notificaties);
