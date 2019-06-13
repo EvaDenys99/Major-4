@@ -38,10 +38,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../client/build/", "index.html"));
 });
 
-/* app.listen(PORT, () => {
-  console.log(`Server luistert op poort ${PORT}`);
-}); */
-
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 

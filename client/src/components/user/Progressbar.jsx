@@ -2,19 +2,20 @@ import React, { Component } from "react";
 import { observer, inject } from "mobx-react";
 import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
-const io = require(`socket.io-client`);
+const socket = require(`socket.io-client`)(
+  `https://pushlines-obv.herokuapp.com`
+);
 class ProgressbarBase extends Component {
   constructor(props) {
     super(props);
     this.state = {
       percentage: 0
     };
-    this.socket = io.connect(`:${this.props.port}`);
 
-    this.socket.on(`start`, function(msg) {
+    socket.on(`start`, function(msg) {
       startProcess();
     });
-    this.socket.on(`reset`, function(msg) {
+    socket.on(`reset`, function(msg) {
       resetProcess();
     });
 
@@ -54,12 +55,4 @@ class ProgressbarBase extends Component {
   }
 }
 
-observer(ProgressbarBase);
-
-const Progressbar = ({ portStore }) => {
-  const { port } = portStore;
-  if (port) return <ProgressbarBase port={port} />;
-  return <p>Loading</p>;
-};
-
-export default inject(`portStore`)(observer(Progressbar));
+export default observer(ProgressbarBase);

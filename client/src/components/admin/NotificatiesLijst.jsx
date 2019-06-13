@@ -6,18 +6,12 @@ import Verzend from "../../assets/admin/send.png";
 
 import stylesLayout from "./../../styles/layout.module.css";
 import styles from "./NotificatiesLijst.module.css";
+// SOCKET.IO DEFINIEREN
 const socket = require(`socket.io-client`)(
   `https://pushlines-obv.herokuapp.com`
 );
 
-const NotificatiesLijst = ({ id, notificatieStore, zaal, portStore }) => {
-  const port = portStore.port;
-  if (!port) {
-    return <p>Loading</p>;
-  }
-  // SOCKET.IO DEFINIEREN
-  // const socket = io.connect(`pushlines-obv.herokuapp`);
-  // const socket = io.connect(`:${port}`);
+const NotificatiesLijst = ({ id, notificatieStore, zaal }) => {
   // HIER WORDEN ALLE NOTIFICATIES DIE OVEREEN KOMEN OPGEHAALD
   const notificaties = notificatieStore.findAllesByAktId(id);
   console.log(notificaties);
@@ -100,6 +94,4 @@ NotificatiesLijst.propTypes = {
   notificatieStore: PropTypes.observableObject.isRequired
 };
 
-export default inject(`notificatieStore`, `portStore`)(
-  observer(NotificatiesLijst)
-);
+export default inject(`notificatieStore`)(observer(NotificatiesLijst));

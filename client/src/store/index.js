@@ -3,10 +3,9 @@ import AktStore from "./AktStore";
 import NotificatieStore from "./NotificatieStore";
 import ZaalStore from "./ZaalStore";
 import UiStore from "./UiStore";
-import PortStore from "./PortStore";
+
 class Store {
   constructor() {
-    this.portStore = new PortStore(this);
     this.voorstellingStore = new VoorstellingStore(this);
     this.aktStore = new AktStore(this);
     this.notificatieStore = new NotificatieStore(this);

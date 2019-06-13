@@ -4,12 +4,13 @@ import { withRouter } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import styles from "./OnderMenu.module.css";
 
-const io = require(`socket.io-client`);
+const socket = require(`socket.io-client`)(
+  `https://pushlines-obv.herokuapp.com`
+);
 class OnderMenu20 extends Component {
   constructor(props) {
     super(props);
     this.state = { playing: false, adding: props.adding };
-    this.socket = io.connect(`:${this.props.port}`);
   }
 
   handleAdd = e => {
@@ -26,14 +27,14 @@ class OnderMenu20 extends Component {
   handlePlay = e => {
     e.preventDefault();
     // SOCKET.IO DEFINIEREN
-    this.socket.emit(`start`, e.currentTarget.value);
+    socket.emit(`start`, e.currentTarget.value);
     this.setState({ playing: true });
   };
 
   handlePauze = e => {
     e.preventDefault();
     // SOCKET.IO DEFINIEREN
-    this.socket.emit(`reset`, e.currentTarget.value);
+    socket.emit(`reset`, e.currentTarget.value);
     this.setState({ playing: false });
   };
 
@@ -90,12 +91,4 @@ class OnderMenu20 extends Component {
   }
 }
 
-withRouter(OnderMenu20);
-
-const OnderMenu2 = ({ portStore }) => {
-  const { port } = portStore;
-  if (port) return <OnderMenu20 port={port} />;
-  return <p>Loading</p>;
-};
-
-export default inject(`portStore`)(observer(OnderMenu2));
+export default withRouter(OnderMenu20);
