@@ -19,7 +19,7 @@ mongoose
 
 const app = express();
 
-const server = require("http").createServer(app);
+const server = require("https").createServer(app);
 const io = require("socket.io")(server);
 
 io.on("connection", function(socket) {
@@ -38,7 +38,7 @@ io.on("connection", function(socket) {
 });
 
 // server.listen(3000);
-server.listen(`pushlines-obv.herokuapp.com`, function() {
+server.listen(process.env.PORT, function() {
   console.log("listening on *:" + 3000);
 });
 
