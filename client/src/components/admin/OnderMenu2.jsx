@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-
+import { observer, inject } from "mobx-react";
 import styles from "./OnderMenu.module.css";
 
 const io = require(`socket.io-client`);
-class OnderMenu2 extends Component {
+class OnderMenu20 extends Component {
   constructor(props) {
     super(props);
     this.state = { playing: false, adding: props.adding };
+    this.socket = io.connect(`:${this.props.port}`);
   }
 
   handleAdd = e => {
@@ -25,18 +26,14 @@ class OnderMenu2 extends Component {
   handlePlay = e => {
     e.preventDefault();
     // SOCKET.IO DEFINIEREN
-    const socket = io.connect(`:4000`);
-
-    socket.emit(`start`, e.currentTarget.value);
+    this.socket.emit(`start`, e.currentTarget.value);
     this.setState({ playing: true });
   };
 
   handlePauze = e => {
     e.preventDefault();
     // SOCKET.IO DEFINIEREN
-    const socket = io.connect(`:4000`);
-
-    socket.emit(`reset`, e.currentTarget.value);
+    this.socket.emit(`reset`, e.currentTarget.value);
     this.setState({ playing: false });
   };
 
@@ -93,4 +90,12 @@ class OnderMenu2 extends Component {
   }
 }
 
-export default withRouter(OnderMenu2);
+withRouter(OnderMenu20);
+
+const OnderMenu2 = ({ portStore }) => {
+  const { port } = portStore;
+  if (port) return <OnderMenu20 port={port} />;
+  return <p>Loading</p>;
+};
+
+export default inject(`portStore`)(observer(OnderMenu2));

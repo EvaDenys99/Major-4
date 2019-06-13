@@ -6,7 +6,6 @@ import Verzend from "../../assets/admin/send.png";
 
 import stylesLayout from "./../../styles/layout.module.css";
 import styles from "./NotificatiesLijst.module.css";
-
 const io = require(`socket.io-client`);
 
 const NotificatiesLijst = ({ id, notificatieStore, zaal, portStore }) => {

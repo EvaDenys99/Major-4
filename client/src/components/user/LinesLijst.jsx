@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import { decorate, observable } from "mobx";
 import { observer, inject } from "mobx-react";
 
 import styles from "./LinesLijst.module.css";
 import stylesTypo from "./../../styles/typo.module.css";
 import cogoToast from "cogo-toast";
 const io = require(`socket.io-client`);
-// const socket = io.connect(`:4000`);
 
 class BaseLinesLijst extends Component {
   constructor(props) {
