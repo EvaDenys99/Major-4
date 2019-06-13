@@ -10,13 +10,37 @@ class BaseLinesLijst extends Component {
   constructor(props) {
     super(props);
     this.state = { messages: [] };
+    // this.socket = io.connect(`:${this.props.port}`);
+
+    // const messages = [];
+
+    // // this.socket.open();
+    // this.socket.on(`chat message`, function(msg) {
+    //   cogoToast.success(msg, {
+    //     position: `top-center`
+    //   });
+    //   messages.push(msg);
+    //   // console.log(messages);
+    //   stateAanpassing(messages);
+    //   return messages;
+    // });
+
+    // const stateAanpassing = messages => {
+    //   this.setState({ messages: messages });
+    //   return messages;
+    // };
+  }
+
+  // componentWillMount() {
+  //   this.socket.close();
+  //   this.socket.off(`chat message`);
+  // }
+
+  componentDidMount() {
     this.socket = io.connect(`:${this.props.port}`);
-
     const messages = [];
-
-    // this.socket.open();
+    this.socket.open();
     this.socket.on(`chat message`, function(msg) {
-      console.log(`toegekomen`);
       cogoToast.success(msg, {
         position: `top-center`
       });
@@ -31,30 +55,6 @@ class BaseLinesLijst extends Component {
       return messages;
     };
   }
-
-  // componentWillMount() {
-  //   this.socket.close();
-  //   this.socket.off(`chat message`);
-  // }
-
-  // componentDidMount() {
-  //   const messages = [];
-  //   this.socket.open();
-  //   this.socket.on(`chat message`, function(msg) {
-  //     cogoToast.success(msg, {
-  //       position: `top-center`
-  //     });
-  //     messages.push(msg);
-  //     console.log(messages);
-  //     stateAanpassing(messages);
-  //     return messages;
-  //   });
-
-  //   const stateAanpassing = messages => {
-  //     this.setState({ messages: messages });
-  //     return messages;
-  //   };
-  // }
 
   // componentWillUnmount() {
   //   this.socket.close();

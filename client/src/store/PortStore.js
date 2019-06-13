@@ -3,17 +3,17 @@ import { decorate, observable, configure, runInAction } from "mobx";
 configure({ enforceActions: `observed` });
 
 class PortStore {
-  port = null;
+  port = `https://pushlines-obv.herokuapp.com`;
   constructor(rootStore) {
     this.rootStore = rootStore;
 
-    fetch(`/api/port`)
-      .then(response => response.json())
-      .then(portObject => {
-        runInAction(() => {
-          this.port = portObject.port;
-        });
-      });
+    // fetch(`/api/port`)
+    //   .then(response => response.json())
+    //   .then(portObject => {
+    //     runInAction(() => {
+    //       this.port = portObject.port;
+    //     });
+    //   });
   }
 }
 
