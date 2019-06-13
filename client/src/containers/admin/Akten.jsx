@@ -13,7 +13,6 @@ const Akten = ({ id, aktStore, voorstellingStore }) => {
   // HIER WORDEN ALLE AKTS DIE OVEREEN KOMEN OPGEHAALD
   // om de titel op te halen van de voorstelling moeten we eerst de voorstelling ophalen die hierbij hoort
   const voorstellingTitel = voorstellingStore.findById(id);
-  // console.log(voorstellingTitel);
   // om de akts op te halen
   const akten = aktStore.findAllesByVoorstellingId(id);
 
@@ -56,27 +55,6 @@ const Akten = ({ id, aktStore, voorstellingStore }) => {
       <BovenMenu />
     </div>
   );
-
-  //HIER WERD ENKEL HET EERSTE OPGEHAALT
-  // const akt = aktStore.findByVoorstellingId(id);
-  // console.log(akt);
-
-  // return akt ? (
-  //   <div>
-  //     <BovenMenu />
-  //     <section>
-  //       <h2>{akt.VoorstellingTitel}</h2>
-  //       <Link to={`/notificatie/${akt.id}`}>
-  //         <p>{akt.naam} </p>
-  //       </Link>
-  //     </section>
-  //   </div>
-  // ) : (
-  //   <div>
-  //     <BovenMenu />
-  //     <p>Loading akts</p>
-  //   </div>
-  // );
 };
 
 Akten.propTypes = {

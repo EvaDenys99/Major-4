@@ -6,12 +6,6 @@ class Akt {
     this.VoorstellingZaal = VoorstellingZaal;
     this.store = store;
   }
-
-  // get voorstelling() {
-  //   return this.store.voorstellingStore.resolveVoorstelling(
-  //     this.voorstellingId
-  //   );
-  // }
 }
 
 export default Akt;

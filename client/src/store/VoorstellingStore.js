@@ -200,8 +200,6 @@ class VoorstellingStore {
     );
     return voorstelling2;
   };
-
-  // resolveVoorstelling = id => this.voorstellingen.find(test => test.id === id);
 }
 
 decorate(VoorstellingStore, {

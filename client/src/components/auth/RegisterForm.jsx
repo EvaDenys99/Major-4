@@ -5,7 +5,6 @@ import { ROUTES } from "../../constants";
 
 import stylesTypo from "./../../styles/typo.module.css";
 import stylesForm from "./../../styles/form.module.css";
-import { styles } from "ansi-colors";
 
 class RegisterForm extends Component {
   constructor() {

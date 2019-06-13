@@ -87,7 +87,6 @@ class VoorstellingLijst extends Component {
 
     const handleSelection = e => {
       const gefilterdeVoorstellingen = [];
-      // console.log(e.value);
       const voorstellinges = voorstellingStore.findAllesByPlaats(e.value);
       if (voorstellingen.length > 0) {
         // als er eerdere voorstellingen in de array zitten moeten die er eerst uit

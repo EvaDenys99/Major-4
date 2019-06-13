@@ -18,7 +18,7 @@ const NotificatiesLijst = ({ id, notificatieStore, zaal }) => {
   //
   const handleSubmit = e => {
     e.preventDefault();
-    // console.log(e.currentTarget.value);
+
     socket.emit(`chat message`, e.currentTarget.value);
     cogoToast.success(`Notificatie is verzonden`, {
       position: `top-center`
@@ -67,27 +67,6 @@ const NotificatiesLijst = ({ id, notificatieStore, zaal }) => {
       <p>Loading Notificaties</p>
     </div>
   );
-
-  //HIER WERD ENKEL HET EERSTE OPGEHAALT
-  // const notificatie = notificatieStore.findByAktId(id);
-  // console.log(id);
-
-  // return notificatie ? (
-  //   <div>
-  //     <BovenMenu />
-  //     <section>
-  //       <p>{notificatie.tekst}</p>
-  //       <button>📤</button>
-  //     </section>
-  //     <OnderMenu2 />
-  //   </div>
-  // ) : (
-  //   <div>
-  //     <BovenMenu />
-  //     <p>Loading Notificaties</p>
-  //     <OnderMenu2 />
-  //   </div>
-  // );
 };
 
 NotificatiesLijst.propTypes = {

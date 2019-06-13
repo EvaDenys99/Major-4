@@ -1,8 +1,3 @@
-/* purple -> titels */
-/* lightpurple -> vertaling */
-/* white -> kleinetitel */
-/* black -> broodtekst */
-
 :global(:root){
     --primary-color: #4F152D;
     --light-color: #A78A96;

@@ -19,7 +19,7 @@ class LinesLijst extends Component {
         position: `top-center`
       });
       messages.push(msg);
-      // console.log(messages);
+
       stateAanpassing(messages);
       return messages;
     });

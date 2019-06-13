@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-import { observer, inject } from "mobx-react";
+import { observer } from "mobx-react";
 import styles from "./OnderMenu.module.css";
 
-// const socket = require(`socket.io-client`)(
-//   `https://pushlines-obv.herokuapp.com`
-// );
 class OnderMenu2 extends Component {
   constructor(props) {
     super(props);

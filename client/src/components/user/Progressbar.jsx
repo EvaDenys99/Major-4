@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { observer, inject } from "mobx-react";
+import { observer } from "mobx-react";
 import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
 const socket = require(`socket.io-client`)(

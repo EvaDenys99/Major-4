@@ -44,8 +44,6 @@ const io = require("socket.io")(server);
 server.listen(PORT, () => console.log("Server op " + PORT));
 
 io.on("connection", function(socket) {
-  console.log("connected");
-  //moet erin anders werkt niet
   socket.on("chat message", function(msg) {
     io.emit("chat message", msg);
   });
@@ -55,5 +53,4 @@ io.on("connection", function(socket) {
   socket.on("reset", function(msg) {
     io.emit("reset", msg);
   });
-  /* … */
 });

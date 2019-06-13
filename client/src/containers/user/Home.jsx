@@ -1,5 +1,5 @@
 import React from "react";
-import { inject, observer } from "mobx-react";
+import { observer } from "mobx-react";
 
 import NavigatieHome from "../../components/user/NavigatieHome";
 import ZaalLijst from "../../components/user/ZaalLijst";
