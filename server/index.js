@@ -38,7 +38,7 @@ io.on("connection", function(socket) {
 });
 
 // server.listen(3000);
-server.listen(`https://pushlines-obv.herokuapp.com`, function() {
+server.listen(`pushlines-obv.herokuapp.com`, function() {
   console.log("listening on *:" + 3000);
 });
 

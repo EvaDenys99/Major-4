@@ -9,7 +9,7 @@ class Progressbar extends Component {
       percentage: 0
     };
 
-    const socket = io.connect(`https://pushlines-obv.herokuapp.com`);
+    const socket = io.connect(`pushlines-obv.herokuapp.com`);
     socket.on(`start`, function(msg) {
       startProcess();
     });
