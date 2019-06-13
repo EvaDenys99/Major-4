@@ -6,7 +6,7 @@ import styles from "./LinesLijst.module.css";
 import stylesTypo from "./../../styles/typo.module.css";
 import cogoToast from "cogo-toast";
 const io = require(`socket.io-client`);
-const socket = io.connect(`/lines`);
+const socket = io.connect(`pushlines-obv.herokuapp`);
 class LinesLijst extends Component {
   constructor(props) {
     super(props);
