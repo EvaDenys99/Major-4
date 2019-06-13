@@ -92,8 +92,6 @@
 //   messages: observable
 // });
 
-// inject(`lineStore`)(observer(BaseLinesLijst));
-
 // const LinesLijst = ({ portStore }) => {
 //   const { port } = portStore;
 //   if (port) return <BaseLinesLijst port={port} />;
@@ -198,7 +196,7 @@ decorate(LinesLijst, {
   messages: observable
 });
 
-export default inject(`lineStore`)(observer(LinesLijst));
+export default observer(LinesLijst);
 
 // const LinesLijst = ({ portStore }) => {
 //   const { port } = portStore;
