@@ -20,7 +20,10 @@ mongoose
 const app = express();
 
 const server = require("http").createServer(app);
-const io = require("socket.io")(server);
+const io = require("socket.io")(server, {
+  path: "/socket.io-client"
+});
+io.set("transports", ["websocket"]);
 
 io.on("connection", function(socket) {
   console.log("connected");
