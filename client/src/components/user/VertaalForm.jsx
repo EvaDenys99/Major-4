@@ -41,7 +41,7 @@ class VertaalForm extends Component {
             </option>
           </select>
         </div>
-        <div className={stylesLayout.line}></div>
+        <div className={stylesLayout.lijn}></div>
         <div>
           <p className={styles.vertalen}>Ik ken geen andere taal</p>
           <p className={styles.vertaald}>I don't know any other languages</p>
@@ -67,7 +67,7 @@ class VertaalForm extends Component {
             </option>
           </select>
         </div>
-        <div className={stylesLayout.line}></div>
+        <div className={stylesLayout.lijn}></div>
         <div>
           <input
             type="text"

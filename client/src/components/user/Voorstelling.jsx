@@ -33,19 +33,19 @@ const Voorstelling = ({ voorstelling }) => {
         <div className={styles.infoContainer}>
           <div className={styles.info}>
             <img src={duur} alt="" width="27" height="27" />
-            <div className={stylesLayout.line}></div>
+            <div className={stylesLayout.lijn} />
             <p className={stylesTypo.userParagraphs}>{voorstelling.duur}</p>
           </div>
           <div className={styles.info}>
             <img src={pauze} alt="" width="13" height="20" />
-            <div className={stylesLayout.line}></div>
+            <div className={stylesLayout.lijn} />
             <p className={stylesTypo.userParagraphs}>{voorstelling.pauze}</p>
           </div>
         </div>
         <div className={styles.descriptionContainer}>
-          <p className={styles.descriptionBoven}></p>
+          <p className={styles.descriptionBoven} />
           <p className={styles.description}>{voorstelling.discription}</p>
-          <p className={styles.descriptionOnder}></p>
+          <p className={styles.descriptionOnder} />
         </div>
         <div className={styles.checkbox}>
           <p htmlFor="checkbox" className={stylesTypo.userParagraphs}>
@@ -53,7 +53,7 @@ const Voorstelling = ({ voorstelling }) => {
           </p>
           <label className={styles.switch}>
             <input type="checkbox" />
-            <span className={styles.slider}></span>
+            <span className={styles.slider} />
           </label>
         </div>
       </div>
