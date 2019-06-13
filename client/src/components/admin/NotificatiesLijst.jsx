@@ -9,10 +9,14 @@ import styles from "./NotificatiesLijst.module.css";
 
 const io = require(`socket.io-client`);
 
-const NotificatiesLijst = ({ id, notificatieStore, zaal }) => {
+const NotificatiesLijst = ({ id, notificatieStore, zaal, portStore }) => {
+  const port = portStore.port;
+  if (!port) {
+    return <p>Loading</p>;
+  }
   // SOCKET.IO DEFINIEREN
   // const socket = io.connect(`pushlines-obv.herokuapp`);
-  const socket = io.connect(`:4000`);
+  const socket = io.connect(`:${port}`);
   // HIER WORDEN ALLE NOTIFICATIES DIE OVEREEN KOMEN OPGEHAALD
   const notificaties = notificatieStore.findAllesByAktId(id);
   console.log(notificaties);
@@ -95,4 +99,6 @@ NotificatiesLijst.propTypes = {
   notificatieStore: PropTypes.observableObject.isRequired
 };
 
-export default inject(`notificatieStore`)(observer(NotificatiesLijst));
+export default inject(`notificatieStore`, `portStore`)(
+  observer(NotificatiesLijst)
+);
