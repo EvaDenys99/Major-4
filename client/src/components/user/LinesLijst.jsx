@@ -6,8 +6,7 @@ import styles from "./LinesLijst.module.css";
 import stylesTypo from "./../../styles/typo.module.css";
 import cogoToast from "cogo-toast";
 const io = require(`socket.io-client`);
-const socket = io.connect(`:3000` || `pushlines-obv.herokuapp.com`, {
-  path: `/socket.io-client`,
+const socket = io.connect(`pushlines-obv.herokuapp.com`, {
   transports: [`websocket`]
 });
 
