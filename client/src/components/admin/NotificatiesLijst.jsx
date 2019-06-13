@@ -6,7 +6,9 @@ import Verzend from "../../assets/admin/send.png";
 
 import stylesLayout from "./../../styles/layout.module.css";
 import styles from "./NotificatiesLijst.module.css";
-const io = require(`socket.io-client`);
+const socket = require(`socket.io-client`)(
+  `https://pushlines-obv.herokuapp.com`
+);
 
 const NotificatiesLijst = ({ id, notificatieStore, zaal, portStore }) => {
   const port = portStore.port;
@@ -15,7 +17,7 @@ const NotificatiesLijst = ({ id, notificatieStore, zaal, portStore }) => {
   }
   // SOCKET.IO DEFINIEREN
   // const socket = io.connect(`pushlines-obv.herokuapp`);
-  const socket = io.connect(`:${port}`);
+  // const socket = io.connect(`:${port}`);
   // HIER WORDEN ALLE NOTIFICATIES DIE OVEREEN KOMEN OPGEHAALD
   const notificaties = notificatieStore.findAllesByAktId(id);
   console.log(notificaties);
